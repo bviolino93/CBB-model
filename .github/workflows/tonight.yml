@@ -1,0 +1,56 @@
+name: Tonight's picks
+
+# Tonight's college spread picks from the player-based trees line
+# (tools/tonight.py). No secrets: ESPN scoreboard lines.
+
+on:
+  push:
+    branches: [claude/project-thread-dz59v4]
+  workflow_dispatch:
+    inputs:
+      first:
+        description: "First training season (end year)"
+        default: "2021"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  tonight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      CBB_FETCH_MINUTES: "90"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore ESPN cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-tonight-${{ github.run_id }}
+          restore-keys: |
+            espn-cbb-tonight-
+            espn-cbb-lab-
+            espn-cbb-
+      - run: pip install -r requirements.txt
+      - name: Picks
+        run: |
+          python tools/tonight.py --first ${{ inputs.first || '2021' }} | tee out.txt
+          { echo '```'; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Save ESPN cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-tonight-${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tonight
+          path: |
+            out.txt
+            tonight.csv
