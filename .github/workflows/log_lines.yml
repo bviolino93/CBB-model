@@ -1,0 +1,48 @@
+name: Log college lines
+
+# Snapshots college basketball spreads, totals and moneylines (us + eu
+# regions, so Pinnacle is in) from The Odds API into data/lines/. 6
+# credits a run whatever the number of games. Needs secret ODDS_API_KEY.
+#
+# GitHub starts scheduled runs 3 to 5 hours late in practice (seen on the
+# NBA repo, Nov 2026), so these are set early: they usually land late
+# morning and mid-afternoon ET, before the first tips.
+
+on:
+  schedule:
+    - cron: "13 12 * 11,12,1-4 *"
+    - cron: "41 16 * 11,12,1-4 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: log-lines
+  cancel-in-progress: false
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pandas
+      - name: Snapshot
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python log_lines.py --out-dir data/lines
+      - name: Commit
+        run: |
+          git config user.name "line-logger"
+          git config user.email "line-logger@users.noreply.github.com"
+          git add data/lines
+          git diff --cached --quiet && exit 0
+          git commit -m "Line snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin main && git push && break
+            sleep $((2 ** i))
+          done

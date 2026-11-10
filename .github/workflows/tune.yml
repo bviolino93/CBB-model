@@ -1,0 +1,36 @@
+name: Tune ratings
+
+# Grid over half-life, offseason carry-over and the blowout cap, on the
+# tuning seasons only. Run "Backtest vs closing lines" first so the ESPN
+# cache is warm.
+
+on:
+  workflow_dispatch:
+    inputs:
+      first:
+        default: "2019"
+      split:
+        default: "2024"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  tune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-${{ github.run_id }}
+          restore-keys: espn-cbb-
+      - run: pip install -r requirements.txt
+      - run: |
+          python tools/tune_ratings.py --first ${{ inputs.first }} --split ${{ inputs.split }} | tee out.txt
+          { echo '```'; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,46 @@
+name: Log closing lines
+
+# The closing line, for closing-line value on every bet: every 10 minutes
+# from noon to midnight ET, check ESPN's free scoreboard for a tip in the
+# next 30 minutes that no snapshot has covered yet, and only then pull
+# sharp and DraftKings/FanDuel spreads and totals (2 credits) into
+# data/lines/close_<season>.csv. One snapshot covers a whole wave of tips.
+# Needs secret ODDS_API_KEY.
+
+on:
+  schedule:
+    - cron: "*/10 16-23,0-4 * 11,12,1-4 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: close-lines
+  cancel-in-progress: false
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests pandas
+      - name: Snapshot if a game tips soon
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python log_lines.py --out-dir data/lines --close 30
+      - name: Commit
+        run: |
+          git config user.name "line-logger"
+          git config user.email "line-logger@users.noreply.github.com"
+          git add data/lines
+          git diff --cached --quiet && exit 0
+          git commit -m "Closing lines $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin main && git push && break
+            sleep $((2 ** i))
+          done
