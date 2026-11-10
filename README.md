@@ -16,6 +16,9 @@ instead of assuming it.
 | `cbb_ratings.py` | Recency-weighted ridge ratings for margin (blowouts capped) and total, refitted every game day on earlier games only: our own line, no market input |
 | `backtest.py` | Our line against the close: slope, record at each gap and for the top N gaps a night, split by market depth (high-major / mixed / low-major), season stage and month; a blended line with its weight fitted on earlier seasons |
 | `tools/tune_ratings.py` | Grid over half-life, carry-over from last season and the blowout cap, on tuning seasons only |
+| `cbb_players.py` | Player box scores for every game from ESPN's game summaries (trimmed, cached per game, time-budgeted fetch) |
+| `cbb_predict.py` | Player-based line, no market input: player impact (game-level adjusted plus-minus, carried across transfers), box value per 40, roster continuity, pace and efficiency ratings, four factors, schedule; ridge and boosted trees. Two availability sets: the live roster (what we can know before tip) and who actually played (hindsight, for comparison only) |
+| `tools/model_lab.py` | Season-by-season test of each step of the player model against final scores and the closing line, with slices by market depth, season stage and month |
 | `log_lines.py` | Snapshots spreads, totals and moneylines from The Odds API into `data/lines/`; `--close` takes the closing line once per wave of tips |
 
 Seasons are labelled by the year they end (2027 = 2026-27), as ESPN does.
@@ -29,7 +32,7 @@ Seasons are labelled by the year they end (2027 = 2026-27), as ESPN does.
     python backtest.py --first 2019 --split 2024
     ODDS_API_KEY=... python log_lines.py
 
-On GitHub: Actions -> "Backtest vs closing lines" (no secrets; the first
+On GitHub: Actions -> "Player model lab" tests the player-based line; "Backtest vs closing lines" (no secrets; the first
 run fills the ESPN cache and may need a second run). "Log college lines"
 and "Log closing lines" need the secret `ODDS_API_KEY`; together they
 use about 1,400 credits a month in season.
@@ -37,5 +40,3 @@ use about 1,400 credits a month in season.
 ## Not built yet
 
 1. Daily picks with a graded record and closing-line value, and the dashboard
-2. Tempo and efficiency ratings from box scores (possessions), if the
-   score-based line shows any signal worth refining

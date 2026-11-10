@@ -1,0 +1,70 @@
+name: Player model lab
+
+# Walk-forward test of the player-based line (cbb_predict) against final
+# scores and ESPN's closing lines, season by season (tools/model_lab.py).
+# No secrets. A cold cache fetches ~45,000 box scores and game lines; if
+# the time budget runs out, the next run carries on from the cache.
+# Actions tab -> "Player model lab" -> Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      first:
+        description: "First projected season (end year; one warm-up season is loaded before it)"
+        default: "2019"
+      test:
+        description: "Number of held-out test seasons (the latest ones)"
+        default: "5"
+  push:
+    branches: [claude/project-thread-3qirm6]   # temporary: first run before merge
+    paths: [cbb_predict.py, tools/model_lab.py, cbb_players.py, .github/workflows/lab.yml]
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      CBB_FETCH_MINUTES: "100"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore ESPN cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-lab-${{ github.run_id }}
+          restore-keys: |
+            espn-cbb-lab-
+            espn-cbb-
+      - run: pip install -r requirements.txt
+      - name: Fetch games, lines and box scores
+        run: |
+          first=${{ inputs.first || '2019' }}
+          python cbb_players.py --first $((first - 1)) | tee data.txt
+      - name: Save ESPN cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-lab-${{ github.run_id }}
+      - name: Lab
+        env:
+          CBB_FETCH_MINUTES: "0"
+        run: |
+          python tools/model_lab.py --first ${{ inputs.first || '2019' }} \
+            --test ${{ inputs.test || '5' }} --out lab_games.csv | tee out.txt
+          { echo '```'; cat data.txt; echo; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lab
+          path: |
+            lab_games.csv
+            out.txt
+            data.txt
