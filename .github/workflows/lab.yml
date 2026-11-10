@@ -15,9 +15,6 @@ on:
       test:
         description: "Number of held-out test seasons (the latest ones)"
         default: "5"
-  push:
-    branches: [claude/project-thread-3qirm6]   # temporary: first run before merge
-    paths: [cbb_predict.py, tools/model_lab.py, cbb_players.py, .github/workflows/lab.yml]
 
 defaults:
   run:
