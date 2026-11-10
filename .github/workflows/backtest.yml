@@ -28,6 +28,10 @@ on:
         description: "Offseason counted as this many days"
         default: "120"
 
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
 jobs:
   backtest:
     runs-on: ubuntu-latest

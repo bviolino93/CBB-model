@@ -81,3 +81,15 @@ def test_schedule_features():
     assert f.loc["3", "home_rest"] == 4
     assert f.loc["3", "away_rest"] == 1
     assert f.loc["3", "min_n"] == 1
+
+
+def test_schedule_features_survive_a_team_listed_twice():
+    days = ["2025-11-04", "2025-11-07"]
+    g = pd.DataFrame({
+        "game_id": ["1", "2"], "season": 2026,
+        "game_date": pd.to_datetime(days).date,
+        "commence": pd.to_datetime(days, utc=True),
+        "home_team": ["A", "TBD"], "away_team": ["B", "TBD"],
+    })
+    f = cbb_data.schedule_features(g).set_index("game_id")
+    assert f.loc["2", "home_n"] == 0

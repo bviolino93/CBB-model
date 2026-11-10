@@ -365,6 +365,9 @@ def load_games(first: int = 2019, last: int | None = None,
     if past_lines:
         g = fill_lines(g, cache_dir)
     g = mark_non_d1(g)
+    # A game between two pooled non-D1 sides, or with a placeholder (TBD)
+    # on both sides, has the same name twice: no use to the ratings.
+    g = g[g["home_team"] != g["away_team"]]
     return g.reset_index(drop=True)
 
 
@@ -436,7 +439,8 @@ def team_games(g: pd.DataFrame) -> pd.DataFrame:
     home = g[cols].assign(team=g["home_team"], home=1)
     away = g[cols].assign(team=g["away_team"], home=0)
     t = pd.concat([home, away])
-    t = t[t["team"] != NON_D1].sort_values(["team", "commence"])
+    t = t[t["team"] != NON_D1].drop_duplicates(["game_id", "team"])
+    t = t.sort_values(["team", "commence"])
     gd = pd.to_datetime(t["game_date"])
     key = [t["team"], t["season"]]
     t["rest"] = (gd - gd.groupby(key).shift(1)).dt.days.clip(upper=7)

@@ -12,6 +12,10 @@ on:
       split:
         default: "2024"
 
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
 jobs:
   tune:
     runs-on: ubuntu-latest
