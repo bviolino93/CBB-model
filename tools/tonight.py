@@ -23,8 +23,33 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import cbb_data  # noqa: E402
 import cbb_predict as cp  # noqa: E402
-from cbb_data import CACHE_DIR, load_games, tier  # noqa: E402
+from cbb_data import CACHE_DIR, NON_D1, load_games, tier  # noqa: E402
+
+_mark = cbb_data.mark_non_d1
+
+
+def mark_non_d1(g: pd.DataFrame, min_games: int = 10) -> pd.DataFrame:
+    """mark_non_d1, except in the season under way: there every team has
+    played only a few games, so a team counts as D1 if it was D1 last
+    season (10+ games) or already has 10+ games this season."""
+    cur = g["season"].max()
+    out = _mark(g, min_games)
+    prev = out[out["season"] == cur - 1]
+    d1 = set(prev["home_team"]) | set(prev["away_team"])
+    d1.discard(NON_D1)
+    k = (g["season"] == cur).to_numpy()
+    for side in ("home", "away"):
+        t = g.loc[k, f"{side}_team"]
+        out.loc[k, f"{side}_team"] = t.where(t.isin(d1)
+                                             | (out.loc[k, f"{side}_team"] != NON_D1),
+                                             NON_D1)
+    out["vs_non_d1"] = (out["home_team"] == NON_D1) | (out["away_team"] == NON_D1)
+    return out
+
+
+cbb_data.mark_non_d1 = mark_non_d1
 from cbb_players import load_box  # noqa: E402
 
 
@@ -80,6 +105,8 @@ def main():
 
     te = h[(pd.to_datetime(h["game_date"]).dt.date == day)
            & ~h["completed"]].copy()
+    print(f"today {day}: {len(te)} games not final, "
+          f"{int(te['vs_non_d1'].sum())} against non-D1")
     te = te[~te["vs_non_d1"].astype(bool)]
     if te.empty:
         print("no D1 games left today")
