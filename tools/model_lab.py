@@ -61,6 +61,7 @@ VARIANTS = {
     "players only": (cp.PLAY_M["l"] + cp.SCHED_M,
                      cp.PLAY_T["l"] + cp.SCHED_T, False),
     "trees": (cp.MARGIN_F, cp.TOTAL_F, True),
+    "trees no players": (POSS_M, POSS_T, True),
 }
 
 
@@ -128,6 +129,7 @@ def main():
     ap.add_argument("--save", default="")
     ap.add_argument("--load", default="")
     ap.add_argument("--out", default="")
+    ap.add_argument("--min-train", dest="min_train", type=int, default=8000)
     a, _ = ap.parse_known_args()
     t0 = time.time()
     cfg = cp.PredictConfig()
@@ -157,7 +159,7 @@ def main():
         box=("box_diff_l", lambda s: s.notna().mean()))
     print("\ncoverage by season (D1 games)\n" + cov.round(3).to_string())
     seasons = sorted(h["season"].unique())
-    tests = [s for s in seasons[-a.test:] if (h["season"] < s).sum() >= 8000]
+    tests = [s for s in seasons[-a.test:] if (h["season"] < s).sum() >= a.min_train]
     print(f"\ntest seasons {tests}; each fitted on seasons {seasons[0]}.."
           "the one before")
 
@@ -253,6 +255,32 @@ def main():
              "later": ~early, "November": month == 11,
              "Dec": month == 12, "Jan-Feb": np.isin(month, (1, 2)),
              "March+": np.isin(month, (3, 4))}
+    # Is the edge real or an artefact of the line? By spread size, how
+    # many books ESPN's number came from, and which side we bet.
+    absl = np.abs(sm)
+    books = te["line_books"].fillna(-1).to_numpy() if "line_books" in te \
+        else np.full(len(te), -1.0)
+    for name in ("trees", "trees no players", "+players live"):
+        pred = P[name]["pred_margin"].to_numpy(float)
+        gap = pred - sm
+        res = np.sign(gap * (am - sm))
+        fav_home = sm > 0
+        bet_home = gap > 0
+        bet_fav = np.where(fav_home, bet_home, ~bet_home) & (sm != 0)
+        cuts = {"|line| < 5": absl < 5, "|line| 5-10": (absl >= 5) & (absl < 10),
+                "|line| 10-20": (absl >= 10) & (absl < 20),
+                "|line| 20+": absl >= 20,
+                "books: scoreboard": books < 0, "books 1-2": (books >= 0) & (books < 3),
+                "books 3+": books >= 3,
+                "bet favourite": bet_fav, "bet underdog": ~bet_fav & (sm != 0),
+                "bet home": bet_home, "bet away": ~bet_home}
+        print(f"\n{name.upper()} spreads, gap 4+, by line size / source / side")
+        for lab, k in cuts.items():
+            b, t = info(pred[k], sm[k], am[k])
+            kk = k & (np.abs(gap) >= 4)
+            print(f"  {lab:18s} n={k.sum():5d} slope {b:+.3f} (t {t:+.1f})  "
+                  f"{rec(res[kk], ss[kk])}")
+
     for name in ("ratings", "+players live", "trees", "+players played"):
         p = P[name]
         print(f"\n{name.upper()} by slice (slope vs close; record at gap)")
@@ -274,9 +302,9 @@ def main():
     if a.out:
         cols = ["game_id", "season", "game_date", "home_team", "away_team",
                 "home_score", "away_score", "spread_line", "total_line",
-                "tier", "min_n"]
+                "tier", "min_n", "line_books"]
         o = te[cols].copy()
-        for name in ("ratings", "+players live", "trees"):
+        for name in ("ratings", "+players live", "trees", "trees no players"):
             o[f"{name}_margin"] = P[name]["pred_margin"]
             o[f"{name}_total"] = P[name]["pred_total"]
         o.to_csv(a.out, index=False)
