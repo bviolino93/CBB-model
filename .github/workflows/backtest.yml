@@ -8,11 +8,6 @@ name: Backtest vs closing lines
 # Actions tab -> "Backtest vs closing lines" -> Run workflow.
 
 on:
-  # Temporary: runs on pushes to the first pull request's branch so the
-  # backtest can run before the workflow is on main. Remove after merge.
-  push:
-    branches: ["claude/**"]
-    paths: ["backtest.py", "cbb_data.py", "cbb_ratings.py", ".github/workflows/backtest.yml"]
   workflow_dispatch:
     inputs:
       first:
