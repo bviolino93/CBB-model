@@ -1,0 +1,32 @@
+name: Gap audit
+# Slices the last Player model lab's held-out predictions by gap size,
+# games played, tier and side (tools/gap_audit.py). Pass the lab run id.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Player model lab run id"
+        default: "42841592010"
+  push:
+    branches: [claude/project-thread-nsu1m8]
+    paths: [tools/gap_audit.py, .github/workflows/gap_audit.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas numpy
+      - uses: actions/download-artifact@v4
+        with:
+          name: lab
+          path: lab
+          run-id: ${{ inputs.run_id || '42841592010' }}
+          github-token: ${{ github.token }}
+      - run: python tools/gap_audit.py lab/lab_games.csv | tee -a "$GITHUB_STEP_SUMMARY"
