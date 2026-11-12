@@ -1,7 +1,7 @@
 name: Tonight's picks
 
 # Tonight's college spread picks from the player-based trees line
-# (tools/tonight.py). No secrets: ESPN scoreboard lines.
+# (tools/tonight.py). No secrets: ESPN scoreboard lines. Runs on push here.
 
 on:
   push:
