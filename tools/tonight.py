@@ -3,10 +3,10 @@ Tonight's college spread picks from the player-based trees line.
 
 Fits cbb_predict's trees model (live roster, no market input) on every
 completed Division I game from --first on, predicts today's games, and
-lists the spreads where our line is --gap+ points off ESPN's pregame
-line (the backtested rule: gap 4+ won 53.6% over five held-out seasons
-against ESPN's number; totals are not proven and are shown for reference
-only).
+lists the spreads as an A card (low/mixed tier, gap 6+, bet the favourite,
+|line| under 15: 56.6% on held-out 2025-26 after being chosen on 2022-24,
+see tools/rule_search.py) and a B card (low tier, gap 4+, the rest: 52.8%
+held out). Totals are not proven and are shown for reference only.
 
     python tools/tonight.py --first 2021 --date 2026-11-10
 """
@@ -133,17 +133,31 @@ def main():
     lines = lines.sort_values("commence")
     print(f"\n{len(te)} D1 games today not final, {len(lines)} with a "
           f"spread line")
-    picks = lines[lines["gap"].abs() >= a.gap].copy()
-    picks["abs"] = picks["gap"].abs()
-    print(f"\nPICKS: spreads where our line is {a.gap:g}+ off "
-          f"({len(picks)})")
-    for _, r in picks.sort_values("abs", ascending=False).iterrows():
-        print(f"  {r['tip_et']:>7s} ET  {r['away_team']} @ {r['home_team']}"
-              f"{' (neutral)' if r['neutral'] else ''}: "
-              f"BET {r['pick']}  | our home margin {r['pred_margin']:+.1f} vs "
-              f"line {r['spread_line']:+.1f} (gap {r['gap']:+.1f}) | "
-              f"{r['tier']}, games {r['home_n']:.0f}/{r['away_n']:.0f} | "
-              f"{r['provider']} | {r['state']} {r['status']}")
+    lines["abs"] = lines["gap"].abs()
+    bet_home = lines["gap"] > 0
+    lines["bet_fav"] = ((bet_home & (lines["spread_line"] > 0))
+                        | (~bet_home & (lines["spread_line"] < 0)))
+    # Card tiers from tools/rule_search.py (chosen on 2022-24 held-out
+    # seasons, confirmed on 2025-26 vs ESPN's close):
+    #   A: low or mixed tier, gap 6+, bet the favourite, |line| < 15
+    #      (63% chosen -> 56.6% confirmed, 244 bets)
+    #   B: low tier, gap 4+, everything else (55.9% -> 52.8%)
+    a_rule = ((lines["tier"] != "high") & (lines["abs"] >= 6)
+              & lines["bet_fav"] & (lines["spread_line"].abs() < 15))
+    b_rule = (lines["tier"] == "low") & (lines["abs"] >= a.gap) & ~a_rule
+    lines["card"] = np.where(a_rule, "A", np.where(b_rule, "B", ""))
+    for card, lab in (("A", "A PICKS (real money: low/mixed tier, gap 6+, "
+                       "favourite, line under 15)"),
+                      ("B", f"B PICKS (small or paper: low tier, gap {a.gap:g}+)")):
+        picks = lines[lines["card"] == card]
+        print(f"\n{lab}: {len(picks)}")
+        for _, r in picks.sort_values("abs", ascending=False).iterrows():
+            print(f"  {r['tip_et']:>7s} ET  {r['away_team']} @ {r['home_team']}"
+                  f"{' (neutral)' if r['neutral'] else ''}: "
+                  f"BET {r['pick']}  | our home margin {r['pred_margin']:+.1f} vs "
+                  f"line {r['spread_line']:+.1f} (gap {r['gap']:+.1f}) | "
+                  f"{r['tier']}, games {r['home_n']:.0f}/{r['away_n']:.0f} | "
+                  f"{r['provider']} | {r['state']} {r['status']}")
     print("\nALL GAMES (home margin: ours vs line; total: ours vs line)")
     for _, r in lines.iterrows():
         print(f"  {r['tip_et']:>7s}  {r['away_team']} @ {r['home_team']}: "

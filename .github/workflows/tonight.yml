@@ -5,7 +5,7 @@ name: Tonight's picks
 
 on:
   push:
-    branches: [claude/project-thread-dz59v4, claude/project-thread-nsu1m8]
+    branches: [claude/project-thread-dz59v4, claude/project-thread-nsu1m8, claude/project-thread-uwy0nd]
     paths: [.github/workflows/tonight.yml, tools/tonight.py]
   workflow_dispatch:
     inputs:
