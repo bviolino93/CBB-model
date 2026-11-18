@@ -1,0 +1,69 @@
+name: Backtest vs closing lines
+
+# Walk-forward backtest of our own line (score-based ratings, no market
+# input) against ESPN's pregame lines. No secrets.
+# The first run fills the ESPN cache: ~160 days a season of scoreboards,
+# then one core-odds request per game (~5,000 a season). If it runs out of
+# time it saves what it has and the next run carries on.
+# Actions tab -> "Backtest vs closing lines" -> Run workflow.
+
+on:
+  workflow_dispatch:
+    inputs:
+      first:
+        description: "First season (end year; 2019 = 2018-19)"
+        default: "2019"
+      split:
+        description: "First held-out season"
+        default: "2024"
+      half_life:
+        description: "Rating half-life in days"
+        default: "60"
+      offseason:
+        description: "Offseason counted as this many days"
+        default: "120"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      CBB_FETCH_MINUTES: "200"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Restore ESPN cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-${{ github.run_id }}
+          restore-keys: espn-cbb-
+      - run: pip install -r requirements.txt
+      - name: Data check
+        run: python cbb_data.py --first ${{ inputs.first || '2019' }} | tee data.txt
+      - name: Save ESPN cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-${{ github.run_id }}
+      - name: Backtest
+        run: |
+          python backtest.py --first ${{ inputs.first || '2019' }} --split ${{ inputs.split || '2024' }} \
+            --half-life ${{ inputs.half_life || '60' }} --offseason ${{ inputs.offseason || '120' }} \
+            --out games.csv | tee out.txt
+          { echo '```'; cat data.txt; echo; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: backtest
+          path: |
+            games.csv
+            out.txt
+            data.txt
