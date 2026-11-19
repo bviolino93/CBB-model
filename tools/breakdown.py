@@ -125,6 +125,66 @@ def notes(b: dict) -> list[str]:
     return out
 
 
+# Situational adjustment (fatigue). College has no injury report, so only
+# rest is used: a team that played yesterday loses REST_B2B points, and
+# each team on short rest takes TOTAL_B2B off the total. Not fitted.
+REST_B2B = 1.5
+TOTAL_B2B = 1.5
+
+
+def assess(b: dict) -> dict:
+    """Spread and total call with confidence 1-5 from the factors that
+    back it, lowered when our side is tired."""
+    p, ln = b["projection"], b["line"]
+    if p.get("margin") is None or ln.get("home_margin") is None:
+        return {}
+    s = b["schedule"]
+    tired = {side: (s.get(f"{side}_rest") or 9) <= 1 for side in ("home", "away")}
+    adj_m = p["margin"] - REST_B2B * tired["home"] + REST_B2B * tired["away"]
+    adj_t = (p["total"] or 0) - TOTAL_B2B * (tired["home"] + tired["away"])
+    fatigue = [f"{b[side]} played yesterday" for side in ("home", "away") if tired[side]]
+    pick_home = adj_m > ln["home_margin"]
+    side = "home" if pick_home else "away"
+    sgn = 1 if pick_home else -1
+    backs, against = [f"projection {b['home']} {adj_m:+.1f} vs line {ln['home_margin']:+.1f}"], []
+    fh, fa = b["form"]["home"], b["form"]["away"]
+    if fh.get("n") and fa.get("n"):
+        d = sgn * (fh["margin"] - fa["margin"])
+        if abs(d) > 5:
+            (backs if d > 0 else against).append("recent margins " +
+                                                 ("favour our side" if d > 0 else "favour the other side"))
+    rd = s.get("rest_diff")
+    if rd is not None and abs(rd) >= 2:
+        (backs if sgn * rd > 0 else against).append("rest edge" if sgn * rd > 0 else "less rest")
+    if b.get("a_card"):
+        backs.append("backtested A rule")
+    gap = abs(adj_m - ln["home_margin"])
+    conf = len(backs) + (1 if gap >= 6 else 0) - (1 if len(against) >= 2 else 0)
+    caution = [f for f in fatigue if b[side] in f]
+    if caution:
+        conf -= 1
+    if b["tier"] != "high" and abs(ln["home_margin"]) >= 20 and not (
+            (pick_home and ln["home_margin"] > 0) or (not pick_home and ln["home_margin"] < 0)):
+        conf = min(conf, 1)          # big underdogs on huge lines: weakest spot
+        against.append("big-line underdog")
+    team = b["home"] if pick_home else b["away"]
+    line = ln["spread"] if pick_home else -ln["spread"]
+    spread = {"side": team, "line": line, "confidence": int(min(5, max(1, conf))),
+              "why": "; ".join(backs + [f"against: {x}" for x in against]
+                               + [f"caution: {x}" for x in caution])}
+    tot = None
+    if ln.get("total") is not None and p.get("total") is not None:
+        over = adj_t > ln["total"]
+        tc = 1 + (1 if abs(adj_t - ln["total"]) >= 6 else 0) - (1 if over and fatigue else 0)
+        tot = {"side": "Over" if over else "Under", "line": ln["total"],
+               "confidence": int(min(5, max(1, tc))),
+               "why": f"adjusted total {adj_t:.1f} (model {p['total']:.1f})"
+                      + (f"; {'caution' if over else 'fatigue lowers scoring'}: "
+                         f"{'; '.join(fatigue)}" if fatigue else "")}
+    return {"adj_margin": round(adj_m, 1), "adj_total": round(adj_t, 1),
+            "fatigue": fatigue, "spread": spread, "total": tot}
+
+
 def to_markdown(day, games: list[dict]) -> str:
     out = [f"# College basketball breakdown {day}", "",
            "Line: home team's spread as books quote it (negative = home "
@@ -174,6 +234,13 @@ def to_markdown(day, games: list[dict]) -> str:
                        + (f" ({vl:+.1f} vs line)" if vl is not None else "")
                        + f"; O/U {f['over']}-{f['under']}; last 5 "
                        + ", ".join(f["last"]) + rest)
+        c = b.get("call") or {}
+        if c:
+            sp, t = c["spread"], c.get("total")
+            out.append(f"**Call:** {sp['side']} {sp['line']:+g} ({sp['confidence']}/5): "
+                       f"{sp['why']}"
+                       + (f" | {t['side']} {t['line']:g} ({t['confidence']}/5): {t['why']}"
+                          if t else ""))
         if b["notes"]:
             out.append("**Notes:** " + "; ".join(b["notes"]))
         out.append("")
@@ -237,6 +304,7 @@ def build_day(day, first: int = 2021) -> list[dict]:
                            "away_n")},
              "a_card": a_card(r["tier"], gap, lh)}
         b["notes"] = notes(b)
+        b["call"] = assess(b)
         out.append(b)
     print(f"breakdown done: {len(out)} games ({time.time() - t0:.0f}s)")
     return out

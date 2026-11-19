@@ -51,3 +51,26 @@ def test_notes_and_markdown():
     assert any("A rule" in n for n in b["notes"])
     md = bd.to_markdown("2026-11-18", [b])
     assert "Idaho Vandals 80, Cal Poly Mustangs 70" in md or "Idaho Vandals 79" in md
+
+
+def test_assess_tired_side_loses_points_and_confidence():
+    b = {"home": "A", "away": "B", "tier": "low", "a_card": False,
+         "line": {"home_margin": 3.0, "spread": -3.0, "total": 140.0},
+         "projection": {"margin": 4.0, "total": 141.0},
+         "form": {"home": {"n": 0}, "away": {"n": 0}},
+         "schedule": {"home_rest": 1.0, "away_rest": 3.0, "rest_diff": -2.0}}
+    c = bd.assess(b)
+    assert c["adj_margin"] == 2.5 and c["spread"]["side"] == "B"
+    assert c["total"]["side"] == "Under" and "A played yesterday" in c["total"]["why"]
+    b["schedule"] = {"home_rest": 3.0, "away_rest": 1.0, "rest_diff": 2.0}
+    c = bd.assess(b)
+    assert c["spread"]["side"] == "A" and "rest edge" in c["spread"]["why"]
+
+
+def test_assess_caps_big_line_underdogs():
+    b = {"home": "Big", "away": "Small", "tier": "mixed", "a_card": False,
+         "line": {"home_margin": 30.0, "spread": -30.0, "total": 150.0},
+         "projection": {"margin": 18.0, "total": 150.5},
+         "form": {"home": {"n": 0}, "away": {"n": 0}}, "schedule": {}}
+    c = bd.assess(b)
+    assert c["spread"]["side"] == "Small" and c["spread"]["confidence"] == 1
