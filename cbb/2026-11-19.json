@@ -2,119 +2,6 @@
  "date": "2026-11-19",
  "games": [
   {
-   "game_id": "401920517",
-   "home": "West Virginia Mountaineers",
-   "away": "Florida Gators",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-19 19:30:00+00:00",
-   "tip_et": "2:30 PM",
-   "line": {
-    "home_margin": -9.5,
-    "spread": 9.5,
-    "total": 149.5,
-    "provider": "Draft Kings"
-   },
-   "projection": {
-    "margin": -6.6,
-    "total": 145.4,
-    "home_pts": 69.4,
-    "away_pts": 76.0
-   },
-   "matchup": {
-    "pace": 68.0,
-    "home_ortg": 103.3,
-    "away_ortg": 104.9,
-    "apm_diff": -5.4,
-    "box_diff": -7.6,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.068,
-     "tov": 0.051,
-     "orb": -0.132,
-     "ftr": -0.021,
-     "3p": 0.018
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 5,
-     "margin": 12.3,
-     "pf": 79.8,
-     "pa": 67.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +45",
-      "W +38",
-      "W +14",
-      "W +6",
-      "L -4"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 12.6,
-     "pf": 82.2,
-     "pa": 69.6,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +31",
-      "W +9",
-      "W +29",
-      "W +8",
-      "L -10"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 5.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "West Virginia Mountaineers played yesterday",
-    "Florida Gators played yesterday"
-   ],
-   "call": {
-    "adj_margin": -6.6,
-    "adj_total": 142.4,
-    "fatigue": [
-     "West Virginia Mountaineers played yesterday",
-     "Florida Gators played yesterday"
-    ],
-    "spread": {
-     "side": "West Virginia Mountaineers",
-     "line": 9.5,
-     "confidence": 1,
-     "why": "projection West Virginia Mountaineers -6.6 vs line -9.5; caution: West Virginia Mountaineers played yesterday"
-    },
-    "total": {
-     "side": "Under",
-     "line": 149.5,
-     "confidence": 2,
-     "why": "adjusted total 142.4 (model 145.4); fatigue lowers scoring: West Virginia Mountaineers played yesterday; Florida Gators played yesterday"
-    }
-   }
-  },
-  {
    "game_id": "401920519",
    "home": "Auburn Tigers",
    "away": "Notre Dame Fighting Irish",
@@ -125,14 +12,14 @@
    "line": {
     "home_margin": 3.5,
     "spread": -3.5,
-    "total": 152.5,
-    "provider": "Draft Kings"
+    "total": 151.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 1.2,
+    "margin": 1.7,
     "total": 157.0,
-    "home_pts": 79.1,
-    "away_pts": 77.9
+    "home_pts": 79.3,
+    "away_pts": 77.7
    },
    "matchup": {
     "pace": 71.7,
@@ -204,10 +91,11 @@
    "a_card": false,
    "notes": [
     "Auburn Tigers played yesterday",
-    "Notre Dame Fighting Irish played yesterday"
+    "Notre Dame Fighting Irish played yesterday",
+    "Our total is 5.5 over the line"
    ],
    "call": {
-    "adj_margin": 1.2,
+    "adj_margin": 1.7,
     "adj_total": 154.0,
     "fatigue": [
      "Auburn Tigers played yesterday",
@@ -217,11 +105,11 @@
      "side": "Notre Dame Fighting Irish",
      "line": 3.5,
      "confidence": 1,
-     "why": "projection Auburn Tigers +1.2 vs line +3.5; against: recent margins favour the other side; caution: Notre Dame Fighting Irish played yesterday"
+     "why": "projection Auburn Tigers +1.7 vs line +3.5; against: recent margins favour the other side; caution: Notre Dame Fighting Irish played yesterday"
     },
     "total": {
      "side": "Over",
-     "line": 152.5,
+     "line": 151.5,
      "confidence": 1,
      "why": "adjusted total 154.0 (model 157.0); caution: Auburn Tigers played yesterday; Notre Dame Fighting Irish played yesterday"
     }
@@ -236,16 +124,16 @@
    "commence": "2026-11-19 23:00:00+00:00",
    "tip_et": "6:00 PM",
    "line": {
-    "home_margin": -4.5,
-    "spread": 4.5,
-    "total": 161.5,
-    "provider": "Draft Kings"
+    "home_margin": -3.5,
+    "spread": 3.5,
+    "total": 164.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 0.0,
+    "margin": 0.2,
     "total": 155.9,
     "home_pts": 78.0,
-    "away_pts": 78.0
+    "away_pts": 77.9
    },
    "matchup": {
     "pace": 73.3,
@@ -317,23 +205,22 @@
    "a_card": false,
    "notes": [
     "NC State Wolfpack has 3 more days of rest",
-    "Our projection is 4.5 pts better for Murray State Racers than the line",
-    "Our total is 5.6 under the line"
+    "Our total is 8.6 under the line"
    ],
    "call": {
-    "adj_margin": 0.0,
+    "adj_margin": 0.2,
     "adj_total": 155.9,
     "fatigue": [],
     "spread": {
      "side": "Murray State Racers",
-     "line": 4.5,
+     "line": 3.5,
      "confidence": 1,
-     "why": "projection Murray State Racers +0.0 vs line -4.5; against: less rest"
+     "why": "projection Murray State Racers +0.2 vs line -3.5; against: less rest"
     },
     "total": {
      "side": "Under",
-     "line": 161.5,
-     "confidence": 1,
+     "line": 164.5,
+     "confidence": 2,
      "why": "adjusted total 155.9 (model 155.9)"
     }
    }
@@ -347,15 +234,15 @@
    "commence": "2026-11-20 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 6.5,
-    "spread": -6.5,
+    "home_margin": 7.5,
+    "spread": -7.5,
     "total": 144.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 8.0,
+    "margin": 8.1,
     "total": 147.1,
-    "home_pts": 77.5,
+    "home_pts": 77.6,
     "away_pts": 69.5
    },
    "matchup": {
@@ -428,14 +315,14 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 8.0,
+    "adj_margin": 8.1,
     "adj_total": 147.1,
     "fatigue": [],
     "spread": {
      "side": "Toledo Rockets",
-     "line": -6.5,
+     "line": -7.5,
      "confidence": 1,
-     "why": "projection Toledo Rockets +8.0 vs line +6.5"
+     "why": "projection Toledo Rockets +8.1 vs line +7.5"
     },
     "total": {
      "side": "Over",
@@ -454,10 +341,10 @@
    "commence": "2026-11-20 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 13.5,
-    "spread": -13.5,
+    "home_margin": 12.5,
+    "spread": -12.5,
     "total": 144.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 15.9,
@@ -542,9 +429,9 @@
     "fatigue": [],
     "spread": {
      "side": "High Point Panthers",
-     "line": -13.5,
+     "line": -12.5,
      "confidence": 3,
-     "why": "projection High Point Panthers +15.9 vs line +13.5; recent margins favour our side; rest edge"
+     "why": "projection High Point Panthers +15.9 vs line +12.5; recent margins favour our side; rest edge"
     },
     "total": {
      "side": "Under",
@@ -563,10 +450,10 @@
    "commence": "2026-11-20 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 11.5,
-    "spread": -11.5,
-    "total": 136.5,
-    "provider": "Draft Kings"
+    "home_margin": 8.5,
+    "spread": -8.5,
+    "total": 133.5,
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 12.3,
@@ -642,20 +529,22 @@
     "away_n": 5.0
    },
    "a_card": false,
-   "notes": [],
+   "notes": [
+    "Our total is 5.1 over the line"
+   ],
    "call": {
     "adj_margin": 12.3,
     "adj_total": 138.6,
     "fatigue": [],
     "spread": {
      "side": "Quinnipiac Bobcats",
-     "line": -11.5,
+     "line": -8.5,
      "confidence": 1,
-     "why": "projection Quinnipiac Bobcats +12.3 vs line +11.5"
+     "why": "projection Quinnipiac Bobcats +12.3 vs line +8.5"
     },
     "total": {
      "side": "Over",
-     "line": 136.5,
+     "line": 133.5,
      "confidence": 1,
      "why": "adjusted total 138.6 (model 138.6)"
     }
@@ -670,13 +559,13 @@
    "commence": "2026-11-20 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 15.5,
-    "spread": -15.5,
-    "total": 164.5,
-    "provider": "Draft Kings"
+    "home_margin": 16.5,
+    "spread": -16.5,
+    "total": 163.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 16.1,
+    "margin": 16.2,
     "total": 162.5,
     "home_pts": 89.3,
     "away_pts": 73.2
@@ -753,18 +642,18 @@
     "Northeastern Huskies has 3 more days of rest"
    ],
    "call": {
-    "adj_margin": 16.1,
+    "adj_margin": 16.2,
     "adj_total": 162.5,
     "fatigue": [],
     "spread": {
-     "side": "Butler Bulldogs",
-     "line": -15.5,
+     "side": "Northeastern Huskies",
+     "line": 16.5,
      "confidence": 2,
-     "why": "projection Butler Bulldogs +16.1 vs line +15.5; recent margins favour our side; against: less rest"
+     "why": "projection Butler Bulldogs +16.2 vs line +16.5; rest edge; against: recent margins favour the other side"
     },
     "total": {
      "side": "Under",
-     "line": 164.5,
+     "line": 163.5,
      "confidence": 1,
      "why": "adjusted total 162.5 (model 162.5)"
     }
@@ -782,13 +671,13 @@
     "home_margin": 11.5,
     "spread": -11.5,
     "total": 146.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 10.6,
+    "margin": 10.5,
     "total": 148.8,
     "home_pts": 79.7,
-    "away_pts": 69.1
+    "away_pts": 69.2
    },
    "matchup": {
     "pace": 71.3,
@@ -860,14 +749,14 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 10.6,
+    "adj_margin": 10.5,
     "adj_total": 148.8,
     "fatigue": [],
     "spread": {
      "side": "Buffalo Bulls",
      "line": 11.5,
      "confidence": 1,
-     "why": "projection St. Bonaventure Bonnies +10.6 vs line +11.5; against: recent margins favour the other side"
+     "why": "projection St. Bonaventure Bonnies +10.5 vs line +11.5; against: recent margins favour the other side"
     },
     "total": {
      "side": "Over",
@@ -888,14 +777,14 @@
    "line": {
     "home_margin": 1.5,
     "spread": -1.5,
-    "total": 144.5,
-    "provider": "Draft Kings"
+    "total": 143.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 10.3,
+    "margin": 10.2,
     "total": 155.1,
-    "home_pts": 82.7,
-    "away_pts": 72.4
+    "home_pts": 82.6,
+    "away_pts": 72.5
    },
    "matchup": {
     "pace": 70.4,
@@ -967,23 +856,23 @@
    "a_card": true,
    "notes": [
     "Little Rock Trojans has 2 more days of rest",
-    "Our projection is 8.8 pts better for Jacksonville Dolphins than the line",
-    "Our total is 10.6 over the line",
+    "Our projection is 8.7 pts better for Jacksonville Dolphins than the line",
+    "Our total is 11.6 over the line",
     "Backtested A rule fires (low/mixed tier, 6+ gap, favourite, line under 15: 56.6% on unseen seasons)"
    ],
    "call": {
-    "adj_margin": 10.3,
+    "adj_margin": 10.2,
     "adj_total": 155.1,
     "fatigue": [],
     "spread": {
      "side": "Jacksonville Dolphins",
      "line": -1.5,
      "confidence": 4,
-     "why": "projection Jacksonville Dolphins +10.3 vs line +1.5; recent margins favour our side; backtested A rule; against: less rest"
+     "why": "projection Jacksonville Dolphins +10.2 vs line +1.5; recent margins favour our side; backtested A rule; against: less rest"
     },
     "total": {
      "side": "Over",
-     "line": 144.5,
+     "line": 143.5,
      "confidence": 2,
      "why": "adjusted total 155.1 (model 155.1)"
     }
@@ -998,15 +887,15 @@
    "commence": "2026-11-20 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 31.5,
-    "spread": -31.5,
-    "total": 158.5,
-    "provider": "Draft Kings"
+    "home_margin": 28.5,
+    "spread": -28.5,
+    "total": 155.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 15.9,
+    "margin": 15.8,
     "total": 153.8,
-    "home_pts": 84.9,
+    "home_pts": 84.8,
     "away_pts": 69.0
    },
    "matchup": {
@@ -1015,7 +904,7 @@
     "away_ortg": 95.0,
     "apm_diff": 14.9,
     "box_diff": 9.7,
-    "same_diff": -0.0,
+    "same_diff": 0.0,
     "new_diff": 0.0,
     "four_factors": {
      "efg": -0.006,
@@ -1078,21 +967,21 @@
    },
    "a_card": false,
    "notes": [
-    "Our projection is 15.6 pts better for UMBC Retrievers than the line"
+    "Our projection is 12.7 pts better for UMBC Retrievers than the line"
    ],
    "call": {
-    "adj_margin": 15.9,
+    "adj_margin": 15.8,
     "adj_total": 153.8,
     "fatigue": [],
     "spread": {
      "side": "UMBC Retrievers",
-     "line": 31.5,
+     "line": 28.5,
      "confidence": 1,
-     "why": "projection Ohio State Buckeyes +15.9 vs line +31.5; against: big-line underdog"
+     "why": "projection Ohio State Buckeyes +15.8 vs line +28.5; against: big-line underdog"
     },
     "total": {
      "side": "Under",
-     "line": 158.5,
+     "line": 155.5,
      "confidence": 1,
      "why": "adjusted total 153.8 (model 153.8)"
     }
@@ -1109,14 +998,14 @@
    "line": {
     "home_margin": 1.5,
     "spread": -1.5,
-    "total": 159.5,
-    "provider": "Draft Kings"
+    "total": 158.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": -2.3,
+    "margin": -2.2,
     "total": 158.9,
-    "home_pts": 78.3,
-    "away_pts": 80.6
+    "home_pts": 78.4,
+    "away_pts": 80.5
    },
    "matchup": {
     "pace": 73.1,
@@ -1188,18 +1077,18 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": -2.3,
+    "adj_margin": -2.2,
     "adj_total": 158.9,
     "fatigue": [],
     "spread": {
      "side": "Charleston Cougars",
      "line": 1.5,
      "confidence": 2,
-     "why": "projection Drake Bulldogs -2.3 vs line +1.5; recent margins favour our side"
+     "why": "projection Drake Bulldogs -2.2 vs line +1.5; recent margins favour our side"
     },
     "total": {
-     "side": "Under",
-     "line": 159.5,
+     "side": "Over",
+     "line": 158.5,
      "confidence": 1,
      "why": "adjusted total 158.9 (model 158.9)"
     }
@@ -1214,16 +1103,16 @@
    "commence": "2026-11-20 00:30:00+00:00",
    "tip_et": "7:30 PM",
    "line": {
-    "home_margin": -1.5,
-    "spread": 1.5,
-    "total": 143.5,
-    "provider": "Draft Kings"
+    "home_margin": 2.5,
+    "spread": -2.5,
+    "total": 142.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 4.1,
+    "margin": 4.3,
     "total": 144.1,
-    "home_pts": 74.1,
-    "away_pts": 70.0
+    "home_pts": 74.2,
+    "away_pts": 69.9
    },
    "matchup": {
     "pace": 67.9,
@@ -1294,22 +1183,21 @@
    },
    "a_card": false,
    "notes": [
-    "Tulane Green Wave has 3 more days of rest",
-    "Our projection is 5.6 pts better for Louisiana Tech Bulldogs than the line"
+    "Tulane Green Wave has 3 more days of rest"
    ],
    "call": {
-    "adj_margin": 4.1,
+    "adj_margin": 4.3,
     "adj_total": 144.1,
     "fatigue": [],
     "spread": {
      "side": "Louisiana Tech Bulldogs",
-     "line": 1.5,
+     "line": -2.5,
      "confidence": 2,
-     "why": "projection Louisiana Tech Bulldogs +4.1 vs line -1.5; recent margins favour our side; against: less rest"
+     "why": "projection Louisiana Tech Bulldogs +4.3 vs line +2.5; recent margins favour our side; against: less rest"
     },
     "total": {
      "side": "Over",
-     "line": 143.5,
+     "line": 142.5,
      "confidence": 1,
      "why": "adjusted total 144.1 (model 144.1)"
     }
@@ -1326,8 +1214,8 @@
    "line": {
     "home_margin": 3.5,
     "spread": -3.5,
-    "total": 150.5,
-    "provider": "Draft Kings"
+    "total": 153.5,
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 15.6,
@@ -1406,7 +1294,6 @@
    "notes": [
     "Houston Christian Huskies has 3 more days of rest",
     "Our projection is 12.1 pts better for Houston Christian Huskies than the line",
-    "Our total is 6.9 over the line",
     "Backtested A rule fires (low/mixed tier, 6+ gap, favourite, line under 15: 56.6% on unseen seasons)"
    ],
    "call": {
@@ -1421,8 +1308,8 @@
     },
     "total": {
      "side": "Over",
-     "line": 150.5,
-     "confidence": 2,
+     "line": 153.5,
+     "confidence": 1,
      "why": "adjusted total 157.4 (model 157.4)"
     }
    }
@@ -1436,10 +1323,10 @@
    "commence": "2026-11-20 01:00:00+00:00",
    "tip_et": "8:00 PM",
    "line": {
-    "home_margin": -1.5,
-    "spread": 1.5,
+    "home_margin": 1.5,
+    "spread": -1.5,
     "total": 163.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 2.7,
@@ -1516,8 +1403,7 @@
    },
    "a_card": false,
    "notes": [
-    "TCU Horned Frogs has 2 more days of rest",
-    "Our projection is 4.2 pts better for TCU Horned Frogs than the line"
+    "TCU Horned Frogs has 2 more days of rest"
    ],
    "call": {
     "adj_margin": 2.7,
@@ -1525,9 +1411,9 @@
     "fatigue": [],
     "spread": {
      "side": "TCU Horned Frogs",
-     "line": 1.5,
+     "line": -1.5,
      "confidence": 2,
-     "why": "projection TCU Horned Frogs +2.7 vs line -1.5; rest edge"
+     "why": "projection TCU Horned Frogs +2.7 vs line +1.5; rest edge"
     },
     "total": {
      "side": "Over",
@@ -1546,16 +1432,16 @@
    "commence": "2026-11-20 01:00:00+00:00",
    "tip_et": "8:00 PM",
    "line": {
-    "home_margin": 7.5,
-    "spread": -7.5,
+    "home_margin": 6.5,
+    "spread": -6.5,
     "total": 149.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 5.7,
+    "margin": 5.9,
     "total": 152.8,
-    "home_pts": 79.2,
-    "away_pts": 73.6
+    "home_pts": 79.4,
+    "away_pts": 73.5
    },
    "matchup": {
     "pace": 71.2,
@@ -1627,14 +1513,14 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 5.7,
+    "adj_margin": 5.9,
     "adj_total": 152.8,
     "fatigue": [],
     "spread": {
      "side": "Southeast Missouri State Redhawks",
-     "line": 7.5,
+     "line": 6.5,
      "confidence": 1,
-     "why": "projection St. Thomas Tommies +5.7 vs line +7.5"
+     "why": "projection St. Thomas Tommies +5.9 vs line +6.5"
     },
     "total": {
      "side": "Over",
@@ -1653,16 +1539,16 @@
    "commence": "2026-11-20 01:00:00+00:00",
    "tip_et": "8:00 PM",
    "line": {
-    "home_margin": 35.5,
-    "spread": -35.5,
+    "home_margin": 36.5,
+    "spread": -36.5,
     "total": 154.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 24.6,
+    "margin": 24.4,
     "total": 152.3,
-    "home_pts": 88.5,
-    "away_pts": 63.9
+    "home_pts": 88.4,
+    "away_pts": 64.0
    },
    "matchup": {
     "pace": 69.6,
@@ -1733,17 +1619,17 @@
    },
    "a_card": false,
    "notes": [
-    "Our projection is 10.9 pts better for Stetson Hatters than the line"
+    "Our projection is 12.1 pts better for Stetson Hatters than the line"
    ],
    "call": {
-    "adj_margin": 24.6,
+    "adj_margin": 24.4,
     "adj_total": 152.3,
     "fatigue": [],
     "spread": {
      "side": "Stetson Hatters",
-     "line": 35.5,
+     "line": 36.5,
      "confidence": 1,
-     "why": "projection Louisville Cardinals +24.6 vs line +35.5; against: recent margins favour the other side; against: big-line underdog"
+     "why": "projection Louisville Cardinals +24.4 vs line +36.5; against: recent margins favour the other side; against: big-line underdog"
     },
     "total": {
      "side": "Under",
@@ -1762,16 +1648,16 @@
    "commence": "2026-11-20 01:00:00+00:00",
    "tip_et": "8:00 PM",
    "line": {
-    "home_margin": 38.5,
-    "spread": -38.5,
-    "total": 157.5,
-    "provider": "Draft Kings"
+    "home_margin": 35.5,
+    "spread": -35.5,
+    "total": 156.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 20.0,
+    "margin": 19.9,
     "total": 161.8,
     "home_pts": 90.9,
-    "away_pts": 70.9
+    "away_pts": 71.0
    },
    "matchup": {
     "pace": 73.6,
@@ -1842,21 +1728,22 @@
    },
    "a_card": false,
    "notes": [
-    "Our projection is 18.5 pts better for Southern Utah Thunderbirds than the line"
+    "Our projection is 15.6 pts better for Southern Utah Thunderbirds than the line",
+    "Our total is 5.3 over the line"
    ],
    "call": {
-    "adj_margin": 20.0,
+    "adj_margin": 19.9,
     "adj_total": 161.8,
     "fatigue": [],
     "spread": {
      "side": "Southern Utah Thunderbirds",
-     "line": 38.5,
+     "line": 35.5,
      "confidence": 1,
-     "why": "projection Texas Longhorns +20.0 vs line +38.5; against: big-line underdog"
+     "why": "projection Texas Longhorns +19.9 vs line +35.5; against: big-line underdog"
     },
     "total": {
      "side": "Over",
-     "line": 157.5,
+     "line": 156.5,
      "confidence": 1,
      "why": "adjusted total 161.8 (model 161.8)"
     }
@@ -1871,16 +1758,16 @@
    "commence": "2026-11-20 01:30:00+00:00",
    "tip_et": "8:30 PM",
    "line": {
-    "home_margin": 4.5,
-    "spread": -4.5,
-    "total": 139.5,
-    "provider": "Draft Kings"
+    "home_margin": 5.5,
+    "spread": -5.5,
+    "total": 138.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 3.7,
+    "margin": 4.0,
     "total": 146.2,
-    "home_pts": 74.9,
-    "away_pts": 71.2
+    "home_pts": 75.1,
+    "away_pts": 71.1
    },
    "matchup": {
     "pace": 70.9,
@@ -1951,21 +1838,21 @@
    },
    "a_card": false,
    "notes": [
-    "Our total is 6.7 over the line"
+    "Our total is 7.7 over the line"
    ],
    "call": {
-    "adj_margin": 3.7,
+    "adj_margin": 4.0,
     "adj_total": 146.2,
     "fatigue": [],
     "spread": {
      "side": "Seton Hall Pirates",
-     "line": 4.5,
+     "line": 5.5,
      "confidence": 1,
-     "why": "projection Wisconsin Badgers +3.7 vs line +4.5; against: recent margins favour the other side"
+     "why": "projection Wisconsin Badgers +4.0 vs line +5.5; against: recent margins favour the other side"
     },
     "total": {
      "side": "Over",
-     "line": 139.5,
+     "line": 138.5,
      "confidence": 2,
      "why": "adjusted total 146.2 (model 146.2)"
     }
@@ -1980,10 +1867,10 @@
    "commence": "2026-11-20 01:30:00+00:00",
    "tip_et": "8:30 PM",
    "line": {
-    "home_margin": -3.5,
-    "spread": 3.5,
-    "total": 156.5,
-    "provider": "Draft Kings"
+    "home_margin": -2.5,
+    "spread": 2.5,
+    "total": 157.5,
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": -3.3,
@@ -2071,16 +1958,16 @@
      "Rutgers Scarlet Knights played yesterday"
     ],
     "spread": {
-     "side": "UNLV Rebels",
-     "line": 3.5,
+     "side": "Rutgers Scarlet Knights",
+     "line": -2.5,
      "confidence": 1,
-     "why": "projection UNLV Rebels -3.3 vs line -3.5; against: recent margins favour the other side; caution: UNLV Rebels played yesterday"
+     "why": "projection UNLV Rebels -3.3 vs line -2.5; recent margins favour our side; caution: Rutgers Scarlet Knights played yesterday"
     },
     "total": {
-     "side": "Over",
-     "line": 156.5,
+     "side": "Under",
+     "line": 157.5,
      "confidence": 1,
-     "why": "adjusted total 156.8 (model 159.8); caution: UNLV Rebels played yesterday; Rutgers Scarlet Knights played yesterday"
+     "why": "adjusted total 156.8 (model 159.8); fatigue lowers scoring: UNLV Rebels played yesterday; Rutgers Scarlet Knights played yesterday"
     }
    }
   },
@@ -2095,13 +1982,13 @@
    "line": {
     "home_margin": 1.5,
     "spread": -1.5,
-    "total": 135.5,
-    "provider": "Draft Kings"
+    "total": 132.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 2.9,
+    "margin": 2.8,
     "total": 135.7,
-    "home_pts": 69.3,
+    "home_pts": 69.2,
     "away_pts": 66.4
    },
    "matchup": {
@@ -2174,18 +2061,18 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 2.9,
+    "adj_margin": 2.8,
     "adj_total": 135.7,
     "fatigue": [],
     "spread": {
      "side": "New Mexico State Aggies",
      "line": -1.5,
      "confidence": 1,
-     "why": "projection New Mexico State Aggies +2.9 vs line +1.5; against: recent margins favour the other side"
+     "why": "projection New Mexico State Aggies +2.8 vs line +1.5; against: recent margins favour the other side"
     },
     "total": {
      "side": "Over",
-     "line": 135.5,
+     "line": 132.5,
      "confidence": 1,
      "why": "adjusted total 135.7 (model 135.7)"
     }
@@ -2200,16 +2087,16 @@
    "commence": "2026-11-20 02:00:00+00:00",
    "tip_et": "9:00 PM",
    "line": {
-    "home_margin": 18.5,
-    "spread": -18.5,
-    "total": 158.5,
-    "provider": "Draft Kings"
+    "home_margin": 16.5,
+    "spread": -16.5,
+    "total": 155.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 13.9,
+    "margin": 13.7,
     "total": 156.3,
-    "home_pts": 85.1,
-    "away_pts": 71.2
+    "home_pts": 85.0,
+    "away_pts": 71.3
    },
    "matchup": {
     "pace": 71.0,
@@ -2280,22 +2167,21 @@
    },
    "a_card": false,
    "notes": [
-    "Utah Tech Trailblazers has 3 more days of rest",
-    "Our projection is 4.6 pts better for Utah Tech Trailblazers than the line"
+    "Utah Tech Trailblazers has 3 more days of rest"
    ],
    "call": {
-    "adj_margin": 13.9,
+    "adj_margin": 13.7,
     "adj_total": 156.3,
     "fatigue": [],
     "spread": {
      "side": "Utah Tech Trailblazers",
-     "line": 18.5,
+     "line": 16.5,
      "confidence": 2,
-     "why": "projection Washington Huskies +13.9 vs line +18.5; rest edge; against: recent margins favour the other side"
+     "why": "projection Washington Huskies +13.7 vs line +16.5; rest edge; against: recent margins favour the other side"
     },
     "total": {
-     "side": "Under",
-     "line": 158.5,
+     "side": "Over",
+     "line": 155.5,
      "confidence": 1,
      "why": "adjusted total 156.3 (model 156.3)"
     }
@@ -2313,12 +2199,12 @@
     "home_margin": 1.5,
     "spread": -1.5,
     "total": 160.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": -0.0,
+    "margin": 0.2,
     "total": 163.1,
-    "home_pts": 81.5,
+    "home_pts": 81.6,
     "away_pts": 81.5
    },
    "matchup": {
@@ -2391,14 +2277,14 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 0.0,
+    "adj_margin": 0.2,
     "adj_total": 163.1,
     "fatigue": [],
     "spread": {
      "side": "Oregon State Beavers",
      "line": 1.5,
      "confidence": 2,
-     "why": "projection Oregon Ducks +0.0 vs line +1.5; recent margins favour our side"
+     "why": "projection Oregon Ducks +0.2 vs line +1.5; recent margins favour our side"
     },
     "total": {
      "side": "Over",
@@ -2419,14 +2305,14 @@
    "line": {
     "home_margin": -1.5,
     "spread": 1.5,
-    "total": 147.5,
-    "provider": "Draft Kings"
+    "total": 145.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": -0.3,
+    "margin": -0.2,
     "total": 146.8,
-    "home_pts": 73.2,
-    "away_pts": 73.6
+    "home_pts": 73.3,
+    "away_pts": 73.5
    },
    "matchup": {
     "pace": 73.6,
@@ -2498,18 +2384,18 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": -0.3,
+    "adj_margin": -0.2,
     "adj_total": 146.8,
     "fatigue": [],
     "spread": {
      "side": "Grambling Tigers",
      "line": 1.5,
      "confidence": 1,
-     "why": "projection Grambling Tigers -0.3 vs line -1.5; against: recent margins favour the other side"
+     "why": "projection Grambling Tigers -0.2 vs line -1.5; against: recent margins favour the other side"
     },
     "total": {
-     "side": "Under",
-     "line": 147.5,
+     "side": "Over",
+     "line": 145.5,
      "confidence": 1,
      "why": "adjusted total 146.8 (model 146.8)"
     }
@@ -2524,10 +2410,10 @@
    "commence": "2026-11-20 02:00:00+00:00",
    "tip_et": "9:00 PM",
    "line": {
-    "home_margin": -2.5,
-    "spread": 2.5,
-    "total": 150.5,
-    "provider": "Draft Kings"
+    "home_margin": -1.5,
+    "spread": 1.5,
+    "total": 148.5,
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 1.8,
@@ -2603,22 +2489,20 @@
     "away_n": 4.0
    },
    "a_card": false,
-   "notes": [
-    "Our projection is 4.3 pts better for Pepperdine Waves than the line"
-   ],
+   "notes": [],
    "call": {
     "adj_margin": 1.8,
     "adj_total": 147.0,
     "fatigue": [],
     "spread": {
      "side": "Pepperdine Waves",
-     "line": 2.5,
+     "line": 1.5,
      "confidence": 1,
-     "why": "projection Pepperdine Waves +1.8 vs line -2.5"
+     "why": "projection Pepperdine Waves +1.8 vs line -1.5"
     },
     "total": {
      "side": "Under",
-     "line": 150.5,
+     "line": 148.5,
      "confidence": 1,
      "why": "adjusted total 147.0 (model 147.0)"
     }
@@ -2633,13 +2517,13 @@
    "commence": "2026-11-20 03:00:00+00:00",
    "tip_et": "10:00 PM",
    "line": {
-    "home_margin": 13.5,
-    "spread": -13.5,
+    "home_margin": 14.5,
+    "spread": -14.5,
     "total": 145.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 8.6,
+    "margin": 8.7,
     "total": 153.6,
     "home_pts": 81.1,
     "away_pts": 72.5
@@ -2714,18 +2598,18 @@
    "a_card": false,
    "notes": [
     "California Golden Bears has 2 more days of rest",
-    "Our projection is 4.9 pts better for East Texas A&M Lions than the line",
+    "Our projection is 5.8 pts better for East Texas A&M Lions than the line",
     "Our total is 8.1 over the line"
    ],
    "call": {
-    "adj_margin": 8.6,
+    "adj_margin": 8.7,
     "adj_total": 153.6,
     "fatigue": [],
     "spread": {
      "side": "East Texas A&M Lions",
-     "line": 13.5,
+     "line": 14.5,
      "confidence": 1,
-     "why": "projection California Golden Bears +8.6 vs line +13.5; against: recent margins favour the other side; against: less rest"
+     "why": "projection California Golden Bears +8.7 vs line +14.5; against: recent margins favour the other side; against: less rest"
     },
     "total": {
      "side": "Over",
@@ -2747,7 +2631,7 @@
     "home_margin": 16.5,
     "spread": -16.5,
     "total": 154.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 13.1,
@@ -2854,16 +2738,16 @@
    "commence": "2026-11-20 03:30:00+00:00",
    "tip_et": "10:30 PM",
    "line": {
-    "home_margin": 2.5,
-    "spread": -2.5,
-    "total": 164.5,
-    "provider": "Draft Kings"
+    "home_margin": 1.5,
+    "spread": -1.5,
+    "total": 163.5,
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": 4.4,
+    "margin": 4.7,
     "total": 161.7,
-    "home_pts": 83.0,
-    "away_pts": 78.6
+    "home_pts": 83.2,
+    "away_pts": 78.5
    },
    "matchup": {
     "pace": 74.8,
@@ -2935,18 +2819,18 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 4.4,
+    "adj_margin": 4.7,
     "adj_total": 161.7,
     "fatigue": [],
     "spread": {
      "side": "Santa Clara Broncos",
-     "line": -2.5,
+     "line": -1.5,
      "confidence": 1,
-     "why": "projection Santa Clara Broncos +4.4 vs line +2.5"
+     "why": "projection Santa Clara Broncos +4.7 vs line +1.5"
     },
     "total": {
      "side": "Under",
-     "line": 164.5,
+     "line": 163.5,
      "confidence": 1,
      "why": "adjusted total 161.7 (model 161.7)"
     }
@@ -2961,15 +2845,15 @@
    "commence": "2026-11-20 04:00:00+00:00",
    "tip_et": "11:00 PM",
    "line": {
-    "home_margin": -2.5,
-    "spread": 2.5,
+    "home_margin": -3.5,
+    "spread": 3.5,
     "total": 150.5,
-    "provider": "Draft Kings"
+    "provider": "DraftKings"
    },
    "projection": {
-    "margin": -1.0,
+    "margin": -0.9,
     "total": 153.5,
-    "home_pts": 76.2,
+    "home_pts": 76.3,
     "away_pts": 77.2
    },
    "matchup": {
@@ -3045,7 +2929,7 @@
     "Houston Cougars played yesterday"
    ],
    "call": {
-    "adj_margin": -1.0,
+    "adj_margin": -0.9,
     "adj_total": 150.5,
     "fatigue": [
      "Kansas Jayhawks played yesterday",
@@ -3053,9 +2937,9 @@
     ],
     "spread": {
      "side": "Kansas Jayhawks",
-     "line": 2.5,
+     "line": 3.5,
      "confidence": 1,
-     "why": "projection Kansas Jayhawks -1.0 vs line -2.5; against: recent margins favour the other side; caution: Kansas Jayhawks played yesterday"
+     "why": "projection Kansas Jayhawks -0.9 vs line -3.5; against: recent margins favour the other side; caution: Kansas Jayhawks played yesterday"
     },
     "total": {
      "side": "Under",
@@ -3074,10 +2958,10 @@
    "commence": "2026-11-20 04:00:00+00:00",
    "tip_et": "11:00 PM",
    "line": {
-    "home_margin": 26.5,
-    "spread": -26.5,
-    "total": 159.5,
-    "provider": "Draft Kings"
+    "home_margin": 28.5,
+    "spread": -28.5,
+    "total": 158.5,
+    "provider": "DraftKings"
    },
    "projection": {
     "margin": 21.6,
@@ -3154,8 +3038,7 @@
    },
    "a_card": false,
    "notes": [
-    "Our projection is 4.9 pts better for Tarleton State Texans than the line",
-    "Our total is 5.7 under the line"
+    "Our projection is 6.9 pts better for Tarleton State Texans than the line"
    ],
    "call": {
     "adj_margin": 21.6,
@@ -3163,13 +3046,13 @@
     "fatigue": [],
     "spread": {
      "side": "Tarleton State Texans",
-     "line": 26.5,
+     "line": 28.5,
      "confidence": 1,
-     "why": "projection USC Trojans +21.6 vs line +26.5; against: big-line underdog"
+     "why": "projection USC Trojans +21.6 vs line +28.5; against: big-line underdog"
     },
     "total": {
      "side": "Under",
-     "line": 159.5,
+     "line": 158.5,
      "confidence": 1,
      "why": "adjusted total 153.8 (model 153.8)"
     }
