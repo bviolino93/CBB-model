@@ -74,3 +74,15 @@ def test_assess_caps_big_line_underdogs():
          "form": {"home": {"n": 0}, "away": {"n": 0}}, "schedule": {}}
     c = bd.assess(b)
     assert c["spread"]["side"] == "Small" and c["spread"]["confidence"] == 1
+
+
+def test_assess_big_gap_caps_confidence_and_rest_not_counted():
+    # 11-19 Houston Christian: projection +15.6 vs line +3.5, A rule, rest edge -> was 5/5
+    b = {"home": "HCU", "away": "GSU", "tier": "low", "a_card": True,
+         "line": {"home_margin": 3.5, "spread": -3.5, "total": 150.5},
+         "projection": {"margin": 15.6, "total": 157.4},
+         "form": {"home": {"n": 5, "margin": 8.0}, "away": {"n": 5, "margin": -2.0}},
+         "schedule": {"home_rest": 4.0, "away_rest": 2.0, "rest_diff": 2.0}}
+    sp = bd.assess(b)["spread"]
+    assert sp["side"] == "HCU" and sp["confidence"] == 2
+    assert "from the line" in sp["why"] and "rest edge (not counted)" in sp["why"]
