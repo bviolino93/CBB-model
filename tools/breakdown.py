@@ -132,6 +132,9 @@ REST_B2B = 1.5
 TOTAL_B2B = 1.5
 
 
+BIG_GAP = 10.0      # pts between our margin and the line that caps confidence
+
+
 def assess(b: dict) -> dict:
     """Spread and total call with confidence 1-5 from the factors that
     back it, lowered when our side is tired."""
@@ -154,15 +157,26 @@ def assess(b: dict) -> dict:
             (backs if d > 0 else against).append("recent margins " +
                                                  ("favour our side" if d > 0 else "favour the other side"))
     rd = s.get("rest_diff")
+    notes = []
+    # Less rest counts against us; more rest no longer adds confidence
+    # (11-19: three rest-edge top plays went 0-3).
     if rd is not None and abs(rd) >= 2:
-        (backs if sgn * rd > 0 else against).append("rest edge" if sgn * rd > 0 else "less rest")
+        if sgn * rd > 0:
+            notes.append("note: rest edge (not counted)")
+        else:
+            against.append("less rest")
     if b.get("a_card"):
         backs.append("backtested A rule")
     gap = abs(adj_m - ln["home_margin"])
-    conf = len(backs) + (1 if gap >= 6 else 0) - (1 if len(against) >= 2 else 0)
+    conf = len(backs) - (1 if len(against) >= 2 else 0)
     caution = [f for f in fatigue if b[side] in f]
     if caution:
         conf -= 1
+    if gap >= BIG_GAP:
+        # This far off the line the model is usually missing something
+        # (11-19: Houston Christian, gap 12, went from 5/5 to a loss).
+        conf = min(conf, 2)
+        against.append(f"projection {gap:.1f} pts from the line, model likely missing something")
     if b["tier"] != "high" and abs(ln["home_margin"]) >= 20 and not (
             (pick_home and ln["home_margin"] > 0) or (not pick_home and ln["home_margin"] < 0)):
         conf = min(conf, 1)          # big underdogs on huge lines: weakest spot
@@ -171,7 +185,7 @@ def assess(b: dict) -> dict:
     line = ln["spread"] if pick_home else -ln["spread"]
     spread = {"side": team, "line": line, "confidence": int(min(5, max(1, conf))),
               "why": "; ".join(backs + [f"against: {x}" for x in against]
-                               + [f"caution: {x}" for x in caution])}
+                               + [f"caution: {x}" for x in caution] + notes)}
     tot = None
     if ln.get("total") is not None and p.get("total") is not None:
         over = adj_t > ln["total"]
