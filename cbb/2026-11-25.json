@@ -2,2021 +2,6 @@
  "date": "2026-11-25",
  "games": [
   {
-   "game_id": "401921702",
-   "home": "Charlotte 49ers",
-   "away": "Northern Iowa Panthers",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 16:00:00+00:00",
-   "tip_et": "11:00 AM",
-   "line": {
-    "home_margin": null,
-    "spread": null,
-    "total": null,
-    "provider": ""
-   },
-   "projection": {
-    "margin": 6.0,
-    "total": 150.7,
-    "home_pts": 78.3,
-    "away_pts": 72.3
-   },
-   "matchup": {
-    "pace": 70.5,
-    "home_ortg": 108.9,
-    "away_ortg": 97.6,
-    "apm_diff": 5.3,
-    "box_diff": 1.5,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.023,
-     "tov": -0.054,
-     "orb": 0.096,
-     "ftr": 0.029,
-     "3p": 0.092
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 0.0,
-     "pf": 70.2,
-     "pa": 70.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +10",
-      "L -6",
-      "L -6",
-      "W +7",
-      "W +13"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 7,
-     "margin": -3.5,
-     "pf": 76.5,
-     "pa": 80.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +13",
-      "L -34",
-      "L -4",
-      "W +7",
-      "L -31"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 2.0,
-    "away_rest": 2.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {}
-  },
-  {
-   "game_id": "401928845",
-   "home": "Ohio Bobcats",
-   "away": "Rice Owls",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 16:00:00+00:00",
-   "tip_et": "11:00 AM",
-   "line": {
-    "home_margin": null,
-    "spread": null,
-    "total": null,
-    "provider": ""
-   },
-   "projection": {
-    "margin": 3.6,
-    "total": 154.0,
-    "home_pts": 78.8,
-    "away_pts": 75.2
-   },
-   "matchup": {
-    "pace": 72.9,
-    "home_ortg": 101.2,
-    "away_ortg": 101.6,
-    "apm_diff": 1.2,
-    "box_diff": 11.3,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.01,
-     "tov": 0.013,
-     "orb": -0.049,
-     "ftr": 0.043,
-     "3p": -0.042
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 5,
-     "margin": -1.3,
-     "pf": 79.4,
-     "pa": 80.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +9",
-      "W +10",
-      "L -18",
-      "W +14",
-      "W +1"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 7,
-     "margin": 5.2,
-     "pf": 77.7,
-     "pa": 72.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -18",
-      "W +3",
-      "W +7",
-      "W +4",
-      "W +1"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 5.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Ohio Bobcats played yesterday",
-    "Rice Owls played yesterday"
-   ],
-   "call": {}
-  },
-  {
-   "game_id": "401920428",
-   "home": "Marquette Golden Eagles",
-   "away": "Virginia Cavaliers",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-25 17:00:00+00:00",
-   "tip_et": "12:00 PM",
-   "line": {
-    "home_margin": null,
-    "spread": null,
-    "total": null,
-    "provider": ""
-   },
-   "projection": {
-    "margin": -5.5,
-    "total": 152.7,
-    "home_pts": 73.6,
-    "away_pts": 79.1
-   },
-   "matchup": {
-    "pace": 71.3,
-    "home_ortg": 101.5,
-    "away_ortg": 103.1,
-    "apm_diff": -4.4,
-    "box_diff": -1.7,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.042,
-     "tov": 0.022,
-     "orb": -0.104,
-     "ftr": 0.029,
-     "3p": -0.033
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 15.0,
-     "pf": 77.4,
-     "pa": 62.4,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +61",
-      "L -14",
-      "L -5",
-      "W +14",
-      "W +44"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 7,
-     "margin": 17.1,
-     "pf": 87.1,
-     "pa": 70.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +19",
-      "W +34",
-      "W +4",
-      "W +20",
-      "W +42"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 5.0,
-    "rest_diff": -2.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Virginia Cavaliers has 2 more days of rest"
-   ],
-   "call": {}
-  },
-  {
-   "game_id": "401920547",
-   "home": "Detroit Mercy Titans",
-   "away": "Northern Colorado Bears",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 17:30:00+00:00",
-   "tip_et": "12:30 PM",
-   "line": {
-    "home_margin": null,
-    "spread": null,
-    "total": null,
-    "provider": ""
-   },
-   "projection": {
-    "margin": -6.6,
-    "total": 148.3,
-    "home_pts": 70.9,
-    "away_pts": 77.5
-   },
-   "matchup": {
-    "pace": 73.6,
-    "home_ortg": 95.3,
-    "away_ortg": 101.6,
-    "apm_diff": -6.6,
-    "box_diff": -5.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.139,
-     "tov": -0.008,
-     "orb": -0.025,
-     "ftr": 0.051,
-     "3p": -0.107
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -15.7,
-     "pf": 67.0,
-     "pa": 82.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -45",
-      "L -13",
-      "L -37",
-      "L -21",
-      "L -10"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 7,
-     "margin": 5.1,
-     "pf": 78.1,
-     "pa": 73.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +50",
-      "L -25",
-      "L -44",
-      "W +23",
-      "L -10"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Detroit Mercy Titans played yesterday",
-    "Northern Colorado Bears played yesterday"
-   ],
-   "call": {}
-  },
-  {
-   "game_id": "401928831",
-   "home": "Wright State Raiders",
-   "away": "Yale Bulldogs",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 17:31:00+00:00",
-   "tip_et": "12:31 PM",
-   "line": {
-    "home_margin": null,
-    "spread": null,
-    "total": null,
-    "provider": ""
-   },
-   "projection": {
-    "margin": 10.8,
-    "total": 140.7,
-    "home_pts": 75.8,
-    "away_pts": 64.9
-   },
-   "matchup": {
-    "pace": 66.5,
-    "home_ortg": 105.2,
-    "away_ortg": 96.6,
-    "apm_diff": 11.2,
-    "box_diff": 7.1,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.042,
-     "tov": -0.017,
-     "orb": 0.018,
-     "ftr": 0.042,
-     "3p": 0.014
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 7,
-     "margin": 11.3,
-     "pf": 82.0,
-     "pa": 70.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +8",
-      "W +24",
-      "W +17",
-      "W +2",
-      "L -2"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 8,
-     "margin": -0.1,
-     "pf": 72.8,
-     "pa": 72.9,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -11",
-      "W +45",
-      "W +2",
-      "L -8",
-      "W +7"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 7.0,
-    "away_n": 8.0
-   },
-   "a_card": false,
-   "notes": [
-    "Wright State Raiders played yesterday",
-    "Yale Bulldogs played yesterday"
-   ],
-   "call": {}
-  },
-  {
-   "game_id": "401926835",
-   "home": "Stony Brook Seawolves",
-   "away": "Lindenwood Lions",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 18:00:00+00:00",
-   "tip_et": "1:00 PM",
-   "line": {
-    "home_margin": 11.5,
-    "spread": -11.5,
-    "total": 144.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 9.9,
-    "total": 142.6,
-    "home_pts": 76.2,
-    "away_pts": 66.3
-   },
-   "matchup": {
-    "pace": 69.5,
-    "home_ortg": 112.3,
-    "away_ortg": 96.0,
-    "apm_diff": 11.9,
-    "box_diff": 1.2,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.024,
-     "tov": 0.044,
-     "orb": -0.077,
-     "ftr": 0.064,
-     "3p": 0.078
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 5,
-     "margin": 6.5,
-     "pf": 74.4,
-     "pa": 67.9,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +50",
-      "L -13",
-      "L -10",
-      "W +57",
-      "W +15"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 7,
-     "margin": 8.1,
-     "pf": 77.3,
-     "pa": 69.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +71",
-      "L -34",
-      "L -11",
-      "L -7",
-      "L -3"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 1.0,
-    "rest_diff": 3.0,
-    "home_n": 5.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Stony Brook Seawolves has 3 more days of rest",
-    "Lindenwood Lions played yesterday"
-   ],
-   "call": {
-    "adj_margin": 11.4,
-    "adj_total": 141.1,
-    "fatigue": [
-     "Lindenwood Lions played yesterday"
-    ],
-    "spread": {
-     "side": "Lindenwood Lions",
-     "line": 11.5,
-     "confidence": 1,
-     "why": "projection Stony Brook Seawolves +11.4 vs line +11.5; against: less rest; caution: Lindenwood Lions played yesterday"
-    },
-    "total": {
-     "side": "Under",
-     "line": 144.5,
-     "confidence": 1,
-     "why": "adjusted total 141.1 (model 142.6); fatigue lowers scoring: Lindenwood Lions played yesterday"
-    }
-   }
-  },
-  {
-   "game_id": "401924268",
-   "home": "Long Beach State Beach",
-   "away": "Southern Utah Thunderbirds",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 18:00:00+00:00",
-   "tip_et": "1:00 PM",
-   "line": {
-    "home_margin": 1.5,
-    "spread": -1.5,
-    "total": 149.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -3.6,
-    "total": 155.7,
-    "home_pts": 76.0,
-    "away_pts": 79.6
-   },
-   "matchup": {
-    "pace": 73.1,
-    "home_ortg": 102.4,
-    "away_ortg": 107.9,
-    "apm_diff": 1.7,
-    "box_diff": -9.2,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.055,
-     "tov": 0.022,
-     "orb": -0.083,
-     "ftr": -0.013,
-     "3p": -0.016
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -8.7,
-     "pf": 75.1,
-     "pa": 83.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -13",
-      "W +3",
-      "L -39",
-      "L -4",
-      "L -25"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 8,
-     "margin": 8.2,
-     "pf": 85.8,
-     "pa": 77.6,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -29",
-      "L -38",
-      "L -24",
-      "L -2",
-      "L -15"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 8.0
-   },
-   "a_card": false,
-   "notes": [
-    "Long Beach State Beach played yesterday",
-    "Southern Utah Thunderbirds played yesterday",
-    "Our projection is 5.1 pts better for Southern Utah Thunderbirds than the line",
-    "Our total is 6.2 over the line"
-   ],
-   "call": {
-    "adj_margin": -3.6,
-    "adj_total": 152.7,
-    "fatigue": [
-     "Long Beach State Beach played yesterday",
-     "Southern Utah Thunderbirds played yesterday"
-    ],
-    "spread": {
-     "side": "Southern Utah Thunderbirds",
-     "line": 1.5,
-     "confidence": 1,
-     "why": "projection Long Beach State Beach -3.6 vs line +1.5; recent margins favour our side; caution: Southern Utah Thunderbirds played yesterday"
-    },
-    "total": {
-     "side": "Over",
-     "line": 149.5,
-     "confidence": 1,
-     "why": "adjusted total 152.7 (model 155.7); caution: Long Beach State Beach played yesterday; Southern Utah Thunderbirds played yesterday"
-    }
-   }
-  },
-  {
-   "game_id": "401911029",
-   "home": "Miami (OH) RedHawks",
-   "away": "Eastern Kentucky Colonels",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 18:00:00+00:00",
-   "tip_et": "1:00 PM",
-   "line": {
-    "home_margin": 14.5,
-    "spread": -14.5,
-    "total": 159.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 9.8,
-    "total": 164.8,
-    "home_pts": 87.3,
-    "away_pts": 77.5
-   },
-   "matchup": {
-    "pace": 75.5,
-    "home_ortg": 114.9,
-    "away_ortg": 98.1,
-    "apm_diff": 9.3,
-    "box_diff": 5.1,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.055,
-     "tov": -0.018,
-     "orb": -0.058,
-     "ftr": 0.127,
-     "3p": 0.043
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 5,
-     "margin": 4.5,
-     "pf": 82.6,
-     "pa": 78.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +9",
-      "W +7",
-      "W +8",
-      "W +22",
-      "W +11"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 7,
-     "margin": 12.8,
-     "pf": 87.5,
-     "pa": 74.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -14",
-      "W +47",
-      "W +16",
-      "L -3",
-      "W +29"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 3.0,
-    "rest_diff": 0.0,
-    "home_n": 5.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Our projection is 4.7 pts better for Eastern Kentucky Colonels than the line",
-    "Our total is 5.3 over the line"
-   ],
-   "call": {
-    "adj_margin": 9.8,
-    "adj_total": 164.8,
-    "fatigue": [],
-    "spread": {
-     "side": "Eastern Kentucky Colonels",
-     "line": 14.5,
-     "confidence": 2,
-     "why": "projection Miami (OH) RedHawks +9.8 vs line +14.5; recent margins favour our side"
-    },
-    "total": {
-     "side": "Over",
-     "line": 159.5,
-     "confidence": 1,
-     "why": "adjusted total 164.8 (model 164.8)"
-    }
-   }
-  },
-  {
-   "game_id": "401919007",
-   "home": "Davidson Wildcats",
-   "away": "Tulane Green Wave",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 18:30:00+00:00",
-   "tip_et": "1:30 PM",
-   "line": {
-    "home_margin": 9.5,
-    "spread": -9.5,
-    "total": 137.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 7.3,
-    "total": 140.3,
-    "home_pts": 73.8,
-    "away_pts": 66.5
-   },
-   "matchup": {
-    "pace": 67.7,
-    "home_ortg": 100.0,
-    "away_ortg": 94.4,
-    "apm_diff": 7.0,
-    "box_diff": 1.7,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.073,
-     "tov": 0.004,
-     "orb": 0.138,
-     "ftr": -0.169,
-     "3p": 0.101
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 5.6,
-     "pf": 69.9,
-     "pa": 64.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +12",
-      "W +17",
-      "L -6",
-      "L -7",
-      "W +31"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -3.7,
-     "pf": 75.1,
-     "pa": 78.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -2",
-      "W +14",
-      "L -2",
-      "L -7",
-      "L -10"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 2.0,
-    "away_rest": 2.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": 7.3,
-    "adj_total": 140.3,
-    "fatigue": [],
-    "spread": {
-     "side": "Tulane Green Wave",
-     "line": 9.5,
-     "confidence": 1,
-     "why": "projection Davidson Wildcats +7.3 vs line +9.5; against: recent margins favour the other side"
-    },
-    "total": {
-     "side": "Over",
-     "line": 137.5,
-     "confidence": 1,
-     "why": "adjusted total 140.3 (model 140.3)"
-    }
-   }
-  },
-  {
-   "game_id": "401921669",
-   "home": "Arizona State Sun Devils",
-   "away": "LSU Tigers",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-25 19:00:00+00:00",
-   "tip_et": "2:00 PM",
-   "line": {
-    "home_margin": -4.5,
-    "spread": 4.5,
-    "total": 145.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -5.3,
-    "total": 150.5,
-    "home_pts": 72.6,
-    "away_pts": 77.9
-   },
-   "matchup": {
-    "pace": 70.9,
-    "home_ortg": 96.4,
-    "away_ortg": 104.4,
-    "apm_diff": -3.6,
-    "box_diff": -9.1,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.053,
-     "tov": 0.009,
-     "orb": 0.0,
-     "ftr": 0.04,
-     "3p": 0.049
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 5,
-     "margin": 4.9,
-     "pf": 74.3,
-     "pa": 69.4,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +10",
-      "W +27",
-      "W +22",
-      "W +30",
-      "W +3"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 13.0,
-     "pf": 86.2,
-     "pa": 73.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +41",
-      "W +40",
-      "W +1",
-      "W +12",
-      "W +31"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 7.0,
-    "away_rest": 4.0,
-    "rest_diff": 1.0,
-    "home_n": 5.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Our total is 5.0 over the line"
-   ],
-   "call": {
-    "adj_margin": -5.3,
-    "adj_total": 150.5,
-    "fatigue": [],
-    "spread": {
-     "side": "LSU Tigers",
-     "line": -4.5,
-     "confidence": 2,
-     "why": "projection Arizona State Sun Devils -5.3 vs line -4.5; recent margins favour our side"
-    },
-    "total": {
-     "side": "Over",
-     "line": 145.5,
-     "confidence": 1,
-     "why": "adjusted total 150.5 (model 150.5)"
-    }
-   }
-  },
-  {
-   "game_id": "401917967",
-   "home": "South Dakota State Jackrabbits",
-   "away": "Abilene Christian Wildcats",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 19:00:00+00:00",
-   "tip_et": "2:00 PM",
-   "line": {
-    "home_margin": 6.5,
-    "spread": -6.5,
-    "total": 139.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 9.7,
-    "total": 136.8,
-    "home_pts": 73.2,
-    "away_pts": 63.6
-   },
-   "matchup": {
-    "pace": 66.8,
-    "home_ortg": 114.8,
-    "away_ortg": 97.9,
-    "apm_diff": 13.0,
-    "box_diff": 0.9,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.072,
-     "tov": -0.046,
-     "orb": 0.07,
-     "ftr": -0.052,
-     "3p": -0.119
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 9.0,
-     "pf": 77.0,
-     "pa": 68.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +22",
-      "W +12",
-      "W +25",
-      "W +40",
-      "L -15"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 6,
-     "margin": -1.2,
-     "pf": 73.0,
-     "pa": 74.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +2",
-      "L -5",
-      "L -9",
-      "W +62",
-      "W +19"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 5.0,
-    "away_rest": 4.0,
-    "rest_diff": 1.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": 9.7,
-    "adj_total": 136.8,
-    "fatigue": [],
-    "spread": {
-     "side": "South Dakota State Jackrabbits",
-     "line": -6.5,
-     "confidence": 2,
-     "why": "projection South Dakota State Jackrabbits +9.7 vs line +6.5; recent margins favour our side"
-    },
-    "total": {
-     "side": "Under",
-     "line": 139.5,
-     "confidence": 1,
-     "why": "adjusted total 136.8 (model 136.8)"
-    }
-   }
-  },
-  {
-   "game_id": "401920868",
-   "home": "NJIT Highlanders",
-   "away": "Manhattan Jaspers",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 19:00:00+00:00",
-   "tip_et": "2:00 PM",
-   "line": {
-    "home_margin": 1.5,
-    "spread": -1.5,
-    "total": 141.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 4.8,
-    "total": 141.3,
-    "home_pts": 73.1,
-    "away_pts": 68.2
-   },
-   "matchup": {
-    "pace": 70.2,
-    "home_ortg": 105.9,
-    "away_ortg": 94.9,
-    "apm_diff": 5.7,
-    "box_diff": -1.2,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.001,
-     "tov": -0.011,
-     "orb": 0.05,
-     "ftr": -0.067,
-     "3p": 0.007
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 2,
-     "l": 8,
-     "this_season": 8,
-     "margin": -16.9,
-     "pf": 57.3,
-     "pa": 74.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -37",
-      "L -38",
-      "L -3",
-      "L -12",
-      "L -20"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 1,
-     "l": 9,
-     "this_season": 6,
-     "margin": -15.0,
-     "pf": 63.0,
-     "pa": 78.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -4",
-      "W +6",
-      "L -14",
-      "L -19",
-      "L -52"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 5.0,
-    "rest_diff": -2.0,
-    "home_n": 8.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Manhattan Jaspers has 2 more days of rest"
-   ],
-   "call": {
-    "adj_margin": 4.8,
-    "adj_total": 141.3,
-    "fatigue": [],
-    "spread": {
-     "side": "NJIT Highlanders",
-     "line": -1.5,
-     "confidence": 1,
-     "why": "projection NJIT Highlanders +4.8 vs line +1.5; against: less rest"
-    },
-    "total": {
-     "side": "Under",
-     "line": 141.5,
-     "confidence": 1,
-     "why": "adjusted total 141.3 (model 141.3)"
-    }
-   }
-  },
-  {
-   "game_id": "401924705",
-   "home": "Columbia Lions",
-   "away": "Saint Peter's Peacocks",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 19:00:00+00:00",
-   "tip_et": "2:00 PM",
-   "line": {
-    "home_margin": 13.5,
-    "spread": -13.5,
-    "total": 124.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 24.5,
-    "total": 131.6,
-    "home_pts": 78.0,
-    "away_pts": 53.5
-   },
-   "matchup": {
-    "pace": 65.8,
-    "home_ortg": 112.2,
-    "away_ortg": 82.7,
-    "apm_diff": 21.8,
-    "box_diff": 13.8,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.087,
-     "tov": 0.003,
-     "orb": 0.035,
-     "ftr": 0.124,
-     "3p": -0.025
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 11.9,
-     "pf": 76.6,
-     "pa": 64.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +62",
-      "W +20",
-      "W +18",
-      "W +22",
-      "W +9"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 2,
-     "l": 8,
-     "this_season": 6,
-     "margin": -10.6,
-     "pf": 54.9,
-     "pa": 65.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -3",
-      "L -2",
-      "L -36",
-      "L -15",
-      "L -15"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 4.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": true,
-   "notes": [
-    "Our projection is 11.0 pts better for Columbia Lions than the line",
-    "Our total is 7.1 over the line",
-    "Backtested A rule fires (low/mixed tier, 6+ gap, favourite, line under 15: 56.6% on unseen seasons)"
-   ],
-   "call": {
-    "adj_margin": 24.5,
-    "adj_total": 131.6,
-    "fatigue": [],
-    "spread": {
-     "side": "Columbia Lions",
-     "line": -13.5,
-     "confidence": 2,
-     "why": "projection Columbia Lions +24.5 vs line +13.5; recent margins favour our side; backtested A rule; against: projection 11.0 pts from the line, model likely missing something"
-    },
-    "total": {
-     "side": "Over",
-     "line": 124.5,
-     "confidence": 2,
-     "why": "adjusted total 131.6 (model 131.6)"
-    }
-   }
-  },
-  {
-   "game_id": "401929406",
-   "home": "South Dakota Coyotes",
-   "away": "Arkansas-Pine Bluff Golden Lions",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 19:00:00+00:00",
-   "tip_et": "2:00 PM",
-   "line": {
-    "home_margin": 21.5,
-    "spread": -21.5,
-    "total": 149.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 18.9,
-    "total": 151.0,
-    "home_pts": 85.0,
-    "away_pts": 66.0
-   },
-   "matchup": {
-    "pace": 73.6,
-    "home_ortg": 117.9,
-    "away_ortg": 92.5,
-    "apm_diff": 14.2,
-    "box_diff": 11.2,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.056,
-     "tov": 0.054,
-     "orb": 0.109,
-     "ftr": 0.114,
-     "3p": 0.052
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 8,
-     "margin": -0.2,
-     "pf": 76.1,
-     "pa": 76.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -11",
-      "L -9",
-      "W +24",
-      "L -26",
-      "W +1"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 1,
-     "l": 9,
-     "this_season": 6,
-     "margin": -26.3,
-     "pf": 63.7,
-     "pa": 90.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -56",
-      "L -69",
-      "L -14",
-      "L -76",
-      "L -31"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 7.0,
-    "rest_diff": -2.0,
-    "home_n": 8.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Arkansas-Pine Bluff Golden Lions has 2 more days of rest"
-   ],
-   "call": {
-    "adj_margin": 18.9,
-    "adj_total": 151.0,
-    "fatigue": [],
-    "spread": {
-     "side": "Arkansas-Pine Bluff Golden Lions",
-     "line": 21.5,
-     "confidence": 1,
-     "why": "projection South Dakota Coyotes +18.9 vs line +21.5; against: recent margins favour the other side; against: big-line underdog; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 149.5,
-     "confidence": 1,
-     "why": "adjusted total 151.0 (model 151.0)"
-    }
-   }
-  },
-  {
-   "game_id": "401921715",
-   "home": "Arizona Wildcats",
-   "away": "Ole Miss Rebels",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-25 19:30:00+00:00",
-   "tip_et": "2:30 PM",
-   "line": {
-    "home_margin": 5.5,
-    "spread": -5.5,
-    "total": 153.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -0.2,
-    "total": 154.8,
-    "home_pts": 77.3,
-    "away_pts": 77.5
-   },
-   "matchup": {
-    "pace": 75.0,
-    "home_ortg": 96.7,
-    "away_ortg": 101.0,
-    "apm_diff": 0.1,
-    "box_diff": 2.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.04,
-     "tov": -0.075,
-     "orb": 0.083,
-     "ftr": 0.179,
-     "3p": 0.002
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 7,
-     "margin": 10.8,
-     "pf": 87.5,
-     "pa": 76.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +31",
-      "W +11",
-      "W +6",
-      "W +13",
-      "W +18"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 9,
-     "l": 1,
-     "this_season": 6,
-     "margin": 19.0,
-     "pf": 83.5,
-     "pa": 64.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +32",
-      "W +40",
-      "W +35",
-      "W +20",
-      "W +10"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 7.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Arizona Wildcats played yesterday",
-    "Ole Miss Rebels played yesterday",
-    "Our projection is 5.7 pts better for Ole Miss Rebels than the line"
-   ],
-   "call": {
-    "adj_margin": -0.2,
-    "adj_total": 151.8,
-    "fatigue": [
-     "Arizona Wildcats played yesterday",
-     "Ole Miss Rebels played yesterday"
-    ],
-    "spread": {
-     "side": "Ole Miss Rebels",
-     "line": 5.5,
-     "confidence": 1,
-     "why": "projection Arizona Wildcats -0.2 vs line +5.5; recent margins favour our side; caution: Ole Miss Rebels played yesterday"
-    },
-    "total": {
-     "side": "Under",
-     "line": 153.5,
-     "confidence": 1,
-     "why": "adjusted total 151.8 (model 154.8); fatigue lowers scoring: Arizona Wildcats played yesterday; Ole Miss Rebels played yesterday"
-    }
-   }
-  },
-  {
-   "game_id": "401920809",
-   "home": "Xavier Musketeers",
-   "away": "Texas A&M Aggies",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-25 19:30:00+00:00",
-   "tip_et": "2:30 PM",
-   "line": {
-    "home_margin": -3.5,
-    "spread": 3.5,
-    "total": 170.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -2.9,
-    "total": 167.6,
-    "home_pts": 82.3,
-    "away_pts": 85.2
-   },
-   "matchup": {
-    "pace": 78.7,
-    "home_ortg": 94.2,
-    "away_ortg": 100.2,
-    "apm_diff": -4.7,
-    "box_diff": 2.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.078,
-     "tov": -0.007,
-     "orb": 0.009,
-     "ftr": 0.027,
-     "3p": 0.02
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 7.6,
-     "pf": 79.7,
-     "pa": 72.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +23",
-      "W +45",
-      "W +18",
-      "W +8",
-      "L -18"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 6,
-     "margin": 13.0,
-     "pf": 87.2,
-     "pa": 74.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +37",
-      "W +41",
-      "W +19",
-      "W +32",
-      "W +5"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 5.0,
-    "away_rest": 6.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": -2.9,
-    "adj_total": 167.6,
-    "fatigue": [],
-    "spread": {
-     "side": "Xavier Musketeers",
-     "line": 3.5,
-     "confidence": 1,
-     "why": "projection Xavier Musketeers -2.9 vs line -3.5; against: recent margins favour the other side"
-    },
-    "total": {
-     "side": "Under",
-     "line": 170.5,
-     "confidence": 1,
-     "why": "adjusted total 167.6 (model 167.6)"
-    }
-   }
-  },
-  {
-   "game_id": "401919042",
-   "home": "Oklahoma State Cowboys",
-   "away": "Jackson State Tigers",
-   "neutral": false,
-   "tier": "mixed",
-   "commence": "2026-11-25 20:00:00+00:00",
-   "tip_et": "3:00 PM",
-   "line": {
-    "home_margin": 35.5,
-    "spread": -35.5,
-    "total": 159.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 24.2,
-    "total": 156.7,
-    "home_pts": 90.4,
-    "away_pts": 66.2
-   },
-   "matchup": {
-    "pace": 73.7,
-    "home_ortg": 122.7,
-    "away_ortg": 93.0,
-    "apm_diff": 18.9,
-    "box_diff": 15.7,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.062,
-     "tov": 0.021,
-     "orb": 0.116,
-     "ftr": 0.094,
-     "3p": -0.101
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 8.6,
-     "pf": 88.7,
-     "pa": 80.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +50",
-      "L -19",
-      "W +33",
-      "L -15",
-      "W +26"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 6,
-     "margin": -11.8,
-     "pf": 69.1,
-     "pa": 80.9,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +2",
-      "L -41",
-      "L -4",
-      "W +4",
-      "L -49"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 7.0,
-    "rest_diff": -2.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Jackson State Tigers has 2 more days of rest",
-    "Our projection is 11.3 pts better for Jackson State Tigers than the line"
-   ],
-   "call": {
-    "adj_margin": 24.2,
-    "adj_total": 156.7,
-    "fatigue": [],
-    "spread": {
-     "side": "Jackson State Tigers",
-     "line": 35.5,
-     "confidence": 1,
-     "why": "projection Oklahoma State Cowboys +24.2 vs line +35.5; against: recent margins favour the other side; against: projection 11.3 pts from the line, model likely missing something; against: big-line underdog; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Under",
-     "line": 159.5,
-     "confidence": 1,
-     "why": "adjusted total 156.7 (model 156.7)"
-    }
-   }
-  },
-  {
-   "game_id": "401920548",
-   "home": "North Dakota Fighting Hawks",
-   "away": "SE Louisiana Lions",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 20:00:00+00:00",
-   "tip_et": "3:00 PM",
-   "line": {
-    "home_margin": -1.5,
-    "spread": 1.5,
-    "total": 142.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 3.7,
-    "total": 147.5,
-    "home_pts": 75.6,
-    "away_pts": 71.9
-   },
-   "matchup": {
-    "pace": 70.7,
-    "home_ortg": 103.1,
-    "away_ortg": 102.0,
-    "apm_diff": 3.8,
-    "box_diff": 1.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.043,
-     "tov": 0.047,
-     "orb": 0.02,
-     "ftr": 0.002,
-     "3p": -0.005
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 7,
-     "margin": -0.7,
-     "pf": 75.4,
-     "pa": 76.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -15",
-      "L -9",
-      "W +5",
-      "W +25",
-      "W +10"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -15.8,
-     "pf": 67.6,
-     "pa": 83.4,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +4",
-      "L -40",
-      "L -32",
-      "L -37",
-      "W +10"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 7.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "North Dakota Fighting Hawks played yesterday",
-    "SE Louisiana Lions played yesterday",
-    "Our projection is 5.2 pts better for North Dakota Fighting Hawks than the line",
-    "Our total is 5.0 over the line"
-   ],
-   "call": {
-    "adj_margin": 3.7,
-    "adj_total": 144.5,
-    "fatigue": [
-     "North Dakota Fighting Hawks played yesterday",
-     "SE Louisiana Lions played yesterday"
-    ],
-    "spread": {
-     "side": "North Dakota Fighting Hawks",
-     "line": 1.5,
-     "confidence": 1,
-     "why": "projection North Dakota Fighting Hawks +3.7 vs line -1.5; recent margins favour our side; caution: North Dakota Fighting Hawks played yesterday"
-    },
-    "total": {
-     "side": "Over",
-     "line": 142.5,
-     "confidence": 1,
-     "why": "adjusted total 144.5 (model 147.5); caution: North Dakota Fighting Hawks played yesterday; SE Louisiana Lions played yesterday"
-    }
-   }
-  },
-  {
-   "game_id": "401928836",
-   "home": "App State Mountaineers",
-   "away": "Akron Zips",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 20:00:00+00:00",
-   "tip_et": "3:00 PM",
-   "line": {
-    "home_margin": -4.5,
-    "spread": 4.5,
-    "total": 134.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -5.5,
-    "total": 139.6,
-    "home_pts": 67.0,
-    "away_pts": 72.5
-   },
-   "matchup": {
-    "pace": 66.5,
-    "home_ortg": 98.9,
-    "away_ortg": 100.9,
-    "apm_diff": -0.8,
-    "box_diff": -11.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.032,
-     "tov": -0.03,
-     "orb": -0.063,
-     "ftr": 0.059,
-     "3p": 0.03
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 7,
-     "margin": 5.5,
-     "pf": 70.5,
-     "pa": 65.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -22",
-      "W +6",
-      "W +6",
-      "L -6",
-      "L -7"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 7,
-     "margin": 11.6,
-     "pf": 79.3,
-     "pa": 67.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +2",
-      "L -4",
-      "W +45",
-      "L -2",
-      "W +23"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 7.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "App State Mountaineers played yesterday",
-    "Akron Zips played yesterday",
-    "Our total is 5.1 over the line"
-   ],
-   "call": {
-    "adj_margin": -5.5,
-    "adj_total": 136.6,
-    "fatigue": [
-     "App State Mountaineers played yesterday",
-     "Akron Zips played yesterday"
-    ],
-    "spread": {
-     "side": "Akron Zips",
-     "line": -4.5,
-     "confidence": 1,
-     "why": "projection App State Mountaineers -5.5 vs line -4.5; recent margins favour our side; caution: Akron Zips played yesterday"
-    },
-    "total": {
-     "side": "Over",
-     "line": 134.5,
-     "confidence": 1,
-     "why": "adjusted total 136.6 (model 139.6); caution: App State Mountaineers played yesterday; Akron Zips played yesterday"
-    }
-   }
-  },
-  {
    "game_id": "401928359",
    "home": "Florida International Panthers",
    "away": "Arkansas State Red Wolves",
@@ -2025,10 +10,10 @@
    "commence": "2026-11-25 20:30:00+00:00",
    "tip_et": "3:30 PM",
    "line": {
-    "home_margin": 1.5,
-    "spread": -1.5,
-    "total": 176.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
     "margin": 3.9,
@@ -2106,29 +91,100 @@
    "a_card": false,
    "notes": [
     "Florida International Panthers played yesterday",
-    "Arkansas State Red Wolves played yesterday",
-    "Our total is 9.8 under the line"
+    "Arkansas State Red Wolves played yesterday"
    ],
-   "call": {
-    "adj_margin": 3.9,
-    "adj_total": 163.7,
-    "fatigue": [
-     "Florida International Panthers played yesterday",
-     "Arkansas State Red Wolves played yesterday"
-    ],
-    "spread": {
-     "side": "Florida International Panthers",
-     "line": -1.5,
-     "confidence": 1,
-     "why": "projection Florida International Panthers +3.9 vs line +1.5; caution: Florida International Panthers played yesterday"
-    },
-    "total": {
-     "side": "Under",
-     "line": 176.5,
-     "confidence": 2,
-     "why": "adjusted total 163.7 (model 166.7); fatigue lowers scoring: Florida International Panthers played yesterday; Arkansas State Red Wolves played yesterday"
+   "call": {}
+  },
+  {
+   "game_id": "401920858",
+   "home": "Marshall Thundering Herd",
+   "away": "Prairie View A&M Panthers",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-25 21:00:00+00:00",
+   "tip_et": "4:00 PM",
+   "line": {
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
+   },
+   "projection": {
+    "margin": 12.6,
+    "total": 154.1,
+    "home_pts": 83.3,
+    "away_pts": 70.8
+   },
+   "matchup": {
+    "pace": 74.6,
+    "home_ortg": 114.8,
+    "away_ortg": 92.2,
+    "apm_diff": 12.2,
+    "box_diff": 1.5,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.05,
+     "tov": -0.043,
+     "orb": 0.121,
+     "ftr": -0.023,
+     "3p": 0.091
     }
-   }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 3,
+     "l": 7,
+     "this_season": 6,
+     "margin": -1.1,
+     "pf": 78.4,
+     "pa": 79.5,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -5",
+      "L -10",
+      "L -3",
+      "W +12",
+      "L -16"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 5,
+     "l": 5,
+     "this_season": 6,
+     "margin": -8.2,
+     "pf": 70.4,
+     "pa": 78.6,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +13",
+      "L -5",
+      "L -35",
+      "L -27",
+      "L -27"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 5.0,
+    "away_rest": 7.0,
+    "rest_diff": 0.0,
+    "home_n": 6.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [],
+   "call": {}
   },
   {
    "game_id": "401925050",
@@ -2139,16 +195,16 @@
    "commence": "2026-11-25 21:00:00+00:00",
    "tip_et": "4:00 PM",
    "line": {
-    "home_margin": 3.5,
-    "spread": -3.5,
-    "total": 148.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
     "margin": 6.4,
-    "total": 156.3,
-    "home_pts": 81.4,
-    "away_pts": 75.0
+    "total": 156.1,
+    "home_pts": 81.2,
+    "away_pts": 74.8
    },
    "matchup": {
     "pace": 75.2,
@@ -2219,26 +275,9 @@
    },
    "a_card": false,
    "notes": [
-    "LSU New Orleans Privateers has 2 more days of rest",
-    "Our total is 7.8 over the line"
+    "LSU New Orleans Privateers has 2 more days of rest"
    ],
-   "call": {
-    "adj_margin": 6.4,
-    "adj_total": 156.3,
-    "fatigue": [],
-    "spread": {
-     "side": "LSU New Orleans Privateers",
-     "line": -3.5,
-     "confidence": 1,
-     "why": "projection LSU New Orleans Privateers +6.4 vs line +3.5; against: recent margins favour the other side; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 148.5,
-     "confidence": 2,
-     "why": "adjusted total 156.3 (model 156.3)"
-    }
-   }
+   "call": {}
   },
   {
    "game_id": "401924737",
@@ -2249,16 +288,16 @@
    "commence": "2026-11-25 21:00:00+00:00",
    "tip_et": "4:00 PM",
    "line": {
-    "home_margin": 3.5,
-    "spread": -3.5,
-    "total": 137.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
-    "margin": 1.5,
+    "margin": 1.8,
     "total": 139.2,
-    "home_pts": 70.3,
-    "away_pts": 68.8
+    "home_pts": 70.5,
+    "away_pts": 68.7
    },
    "matchup": {
     "pace": 64.6,
@@ -2331,23 +370,7 @@
    "notes": [
     "Princeton Tigers has 2 more days of rest"
    ],
-   "call": {
-    "adj_margin": 1.5,
-    "adj_total": 139.2,
-    "fatigue": [],
-    "spread": {
-     "side": "Princeton Tigers",
-     "line": 3.5,
-     "confidence": 1,
-     "why": "projection Liberty Flames +1.5 vs line +3.5; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 137.5,
-     "confidence": 1,
-     "why": "adjusted total 139.2 (model 139.2)"
-    }
-   }
+   "call": {}
   },
   {
    "game_id": "401921703",
@@ -2358,15 +381,15 @@
    "commence": "2026-11-25 21:00:00+00:00",
    "tip_et": "4:00 PM",
    "line": {
-    "home_margin": -1.5,
-    "spread": 1.5,
-    "total": 142.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
-    "margin": -2.4,
+    "margin": -2.3,
     "total": 145.8,
-    "home_pts": 71.7,
+    "home_pts": 71.8,
     "away_pts": 74.1
    },
    "matchup": {
@@ -2438,683 +461,98 @@
    },
    "a_card": false,
    "notes": [],
-   "call": {
-    "adj_margin": -2.4,
-    "adj_total": 145.8,
-    "fatigue": [],
-    "spread": {
-     "side": "Georgia State Panthers",
-     "line": -1.5,
-     "confidence": 1,
-     "why": "projection Florida Gulf Coast Eagles -2.4 vs line -1.5"
-    },
-    "total": {
-     "side": "Over",
-     "line": 142.5,
-     "confidence": 1,
-     "why": "adjusted total 145.8 (model 145.8)"
-    }
-   }
+   "call": {}
   },
   {
-   "game_id": "401920858",
-   "home": "Marshall Thundering Herd",
-   "away": "Prairie View A&M Panthers",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 21:00:00+00:00",
-   "tip_et": "4:00 PM",
+   "game_id": "401920809",
+   "home": "Xavier Musketeers",
+   "away": "Texas A&M Aggies",
+   "neutral": true,
+   "tier": "high",
+   "commence": "2026-11-25 21:13:00+00:00",
+   "tip_et": "4:13 PM",
    "line": {
-    "home_margin": 14.5,
-    "spread": -14.5,
-    "total": 150.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
-    "margin": 12.8,
-    "total": 154.0,
-    "home_pts": 83.4,
-    "away_pts": 70.6
+    "margin": -2.8,
+    "total": 167.9,
+    "home_pts": 82.5,
+    "away_pts": 85.4
    },
    "matchup": {
-    "pace": 74.6,
-    "home_ortg": 114.8,
-    "away_ortg": 92.2,
-    "apm_diff": 12.2,
-    "box_diff": 1.5,
+    "pace": 78.7,
+    "home_ortg": 94.2,
+    "away_ortg": 100.2,
+    "apm_diff": -4.7,
+    "box_diff": 2.4,
     "same_diff": 0.0,
     "new_diff": 0.0,
     "four_factors": {
-     "efg": 0.05,
-     "tov": -0.043,
-     "orb": 0.121,
-     "ftr": -0.023,
-     "3p": 0.091
+     "efg": -0.078,
+     "tov": -0.007,
+     "orb": 0.009,
+     "ftr": 0.027,
+     "3p": 0.02
     }
    },
    "form": {
     "home": {
      "n": 10,
-     "w": 3,
-     "l": 7,
+     "w": 6,
+     "l": 4,
      "this_season": 6,
-     "margin": -1.1,
-     "pf": 78.4,
-     "pa": 79.5,
+     "margin": 7.6,
+     "pf": 79.7,
+     "pa": 72.1,
      "cover": 0,
      "no_cover": 0,
      "vs_line": null,
      "over": 0,
      "under": 0,
      "last": [
-      "L -5",
-      "L -10",
-      "L -3",
-      "W +12",
-      "L -16"
+      "W +23",
+      "W +45",
+      "W +18",
+      "W +8",
+      "L -18"
      ]
     },
     "away": {
      "n": 10,
-     "w": 5,
-     "l": 5,
+     "w": 8,
+     "l": 2,
      "this_season": 6,
-     "margin": -8.2,
-     "pf": 70.4,
-     "pa": 78.6,
+     "margin": 13.0,
+     "pf": 87.2,
+     "pa": 74.2,
      "cover": 0,
      "no_cover": 0,
      "vs_line": null,
      "over": 0,
      "under": 0,
      "last": [
-      "W +13",
-      "L -5",
-      "L -35",
-      "L -27",
-      "L -27"
+      "W +37",
+      "W +41",
+      "W +19",
+      "W +32",
+      "W +5"
      ]
     }
    },
    "schedule": {
     "home_rest": 5.0,
-    "away_rest": 7.0,
+    "away_rest": 6.0,
     "rest_diff": 0.0,
     "home_n": 6.0,
     "away_n": 6.0
    },
    "a_card": false,
    "notes": [],
-   "call": {
-    "adj_margin": 12.8,
-    "adj_total": 154.0,
-    "fatigue": [],
-    "spread": {
-     "side": "Prairie View A&M Panthers",
-     "line": 14.5,
-     "confidence": 1,
-     "why": "projection Marshall Thundering Herd +12.8 vs line +14.5; against: recent margins favour the other side"
-    },
-    "total": {
-     "side": "Over",
-     "line": 150.5,
-     "confidence": 1,
-     "why": "adjusted total 154.0 (model 154.0)"
-    }
-   }
-  },
-  {
-   "game_id": "401921670",
-   "home": "USC Trojans",
-   "away": "South Carolina Gamecocks",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-25 21:30:00+00:00",
-   "tip_et": "4:30 PM",
-   "line": {
-    "home_margin": 10.5,
-    "spread": -10.5,
-    "total": 144.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 7.7,
-    "total": 150.2,
-    "home_pts": 78.9,
-    "away_pts": 71.2
-   },
-   "matchup": {
-    "pace": 71.5,
-    "home_ortg": 106.6,
-    "away_ortg": 94.3,
-    "apm_diff": 3.5,
-    "box_diff": 12.5,
-    "same_diff": -0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.067,
-     "tov": -0.009,
-     "orb": 0.062,
-     "ftr": 0.017,
-     "3p": -0.063
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 13.9,
-     "pf": 85.1,
-     "pa": 71.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +7",
-      "W +12",
-      "W +76",
-      "W +45",
-      "W +26"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 5,
-     "margin": 4.1,
-     "pf": 72.3,
-     "pa": 68.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +26",
-      "W +10",
-      "W +36",
-      "W +17",
-      "W +8"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 7.0,
-    "rest_diff": -2.0,
-    "home_n": 6.0,
-    "away_n": 5.0
-   },
-   "a_card": false,
-   "notes": [
-    "South Carolina Gamecocks has 2 more days of rest",
-    "Our total is 5.7 over the line"
-   ],
-   "call": {
-    "adj_margin": 7.7,
-    "adj_total": 150.2,
-    "fatigue": [],
-    "spread": {
-     "side": "South Carolina Gamecocks",
-     "line": 10.5,
-     "confidence": 1,
-     "why": "projection USC Trojans +7.7 vs line +10.5; against: recent margins favour the other side; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 144.5,
-     "confidence": 1,
-     "why": "adjusted total 150.2 (model 150.2)"
-    }
-   }
-  },
-  {
-   "game_id": "401920237",
-   "home": "Dartmouth Big Green",
-   "away": "Holy Cross Crusaders",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 22:00:00+00:00",
-   "tip_et": "5:00 PM",
-   "line": {
-    "home_margin": 11.5,
-    "spread": -11.5,
-    "total": 147.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 22.6,
-    "total": 153.0,
-    "home_pts": 87.8,
-    "away_pts": 65.2
-   },
-   "matchup": {
-    "pace": 72.8,
-    "home_ortg": 119.2,
-    "away_ortg": 91.3,
-    "apm_diff": 21.5,
-    "box_diff": 7.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.072,
-     "tov": 0.012,
-     "orb": 0.086,
-     "ftr": -0.03,
-     "3p": 0.132
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 6,
-     "margin": 5.1,
-     "pf": 81.0,
-     "pa": 75.9,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +57",
-      "L -7",
-      "W +9",
-      "L -15",
-      "W +50"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 1,
-     "l": 9,
-     "this_season": 6,
-     "margin": -13.8,
-     "pf": 65.3,
-     "pa": 79.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -29",
-      "L -13",
-      "L -2",
-      "L -11",
-      "L -12"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 7.0,
-    "away_rest": 5.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": true,
-   "notes": [
-    "Our projection is 11.1 pts better for Dartmouth Big Green than the line",
-    "Our total is 5.5 over the line",
-    "Backtested A rule fires (low/mixed tier, 6+ gap, favourite, line under 15: 56.6% on unseen seasons)"
-   ],
-   "call": {
-    "adj_margin": 22.6,
-    "adj_total": 153.0,
-    "fatigue": [],
-    "spread": {
-     "side": "Dartmouth Big Green",
-     "line": -11.5,
-     "confidence": 2,
-     "why": "projection Dartmouth Big Green +22.6 vs line +11.5; recent margins favour our side; backtested A rule; against: projection 11.1 pts from the line, model likely missing something"
-    },
-    "total": {
-     "side": "Over",
-     "line": 147.5,
-     "confidence": 1,
-     "why": "adjusted total 153.0 (model 153.0)"
-    }
-   }
-  },
-  {
-   "game_id": "401925688",
-   "home": "Texas State Bobcats",
-   "away": "Alcorn State Braves",
-   "neutral": true,
-   "tier": "mixed",
-   "commence": "2026-11-25 22:00:00+00:00",
-   "tip_et": "5:00 PM",
-   "line": {
-    "home_margin": 26.5,
-    "spread": -26.5,
-    "total": 147.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 37.8,
-    "total": 149.3,
-    "home_pts": 93.6,
-    "away_pts": 55.8
-   },
-   "matchup": {
-    "pace": 73.8,
-    "home_ortg": 113.8,
-    "away_ortg": 82.4,
-    "apm_diff": 16.6,
-    "box_diff": 24.1,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.207,
-     "tov": 0.035,
-     "orb": 0.211,
-     "ftr": 0.138,
-     "3p": -0.057
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 7,
-     "margin": 17.3,
-     "pf": 81.6,
-     "pa": 64.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +7",
-      "W +20",
-      "W +20",
-      "W +33",
-      "W +26"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 1,
-     "l": 9,
-     "this_season": 7,
-     "margin": -28.8,
-     "pf": 58.7,
-     "pa": 87.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -37",
-      "L -4",
-      "L -60",
-      "L -61",
-      "L -42"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 1.0,
-    "rest_diff": 2.0,
-    "home_n": 7.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Texas State Bobcats has 2 more days of rest",
-    "Alcorn State Braves played yesterday",
-    "Our projection is 11.3 pts better for Texas State Bobcats than the line"
-   ],
-   "call": {
-    "adj_margin": 39.3,
-    "adj_total": 147.8,
-    "fatigue": [
-     "Alcorn State Braves played yesterday"
-    ],
-    "spread": {
-     "side": "Texas State Bobcats",
-     "line": -26.5,
-     "confidence": 2,
-     "why": "projection Texas State Bobcats +39.3 vs line +26.5; recent margins favour our side; against: projection 12.8 pts from the line, model likely missing something; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 147.5,
-     "confidence": 1,
-     "why": "adjusted total 147.8 (model 149.3); caution: Alcorn State Braves played yesterday"
-    }
-   }
-  },
-  {
-   "game_id": "401917182",
-   "home": "Penn State Nittany Lions",
-   "away": "Memphis Tigers",
-   "neutral": true,
-   "tier": "mixed",
-   "commence": "2026-11-25 22:00:00+00:00",
-   "tip_et": "5:00 PM",
-   "line": {
-    "home_margin": -4.5,
-    "spread": 4.5,
-    "total": 162.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -3.2,
-    "total": 161.1,
-    "home_pts": 79.0,
-    "away_pts": 82.1
-   },
-   "matchup": {
-    "pace": 73.1,
-    "home_ortg": 107.4,
-    "away_ortg": 105.8,
-    "apm_diff": -0.7,
-    "box_diff": -7.8,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.001,
-     "tov": -0.019,
-     "orb": -0.012,
-     "ftr": 0.179,
-     "3p": 0.018
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 4.2,
-     "pf": 77.0,
-     "pa": 72.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +4",
-      "L -6",
-      "W +15",
-      "W +34",
-      "W +7"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 5,
-     "margin": -1.9,
-     "pf": 83.4,
-     "pa": 85.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +4",
-      "W +1",
-      "L -24",
-      "W +20",
-      "W +20"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 7.0,
-    "away_rest": 3.0,
-    "rest_diff": 2.0,
-    "home_n": 6.0,
-    "away_n": 5.0
-   },
-   "a_card": false,
-   "notes": [
-    "Penn State Nittany Lions has 2 more days of rest"
-   ],
-   "call": {
-    "adj_margin": -3.2,
-    "adj_total": 161.1,
-    "fatigue": [],
-    "spread": {
-     "side": "Penn State Nittany Lions",
-     "line": 4.5,
-     "confidence": 2,
-     "why": "projection Penn State Nittany Lions -3.2 vs line -4.5; recent margins favour our side; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Under",
-     "line": 162.5,
-     "confidence": 1,
-     "why": "adjusted total 161.1 (model 161.1)"
-    }
-   }
-  },
-  {
-   "game_id": "401926065",
-   "home": "Nebraska Cornhuskers",
-   "away": "Southern Jaguars",
-   "neutral": false,
-   "tier": "mixed",
-   "commence": "2026-11-25 22:00:00+00:00",
-   "tip_et": "5:00 PM",
-   "line": {
-    "home_margin": 34.5,
-    "spread": -34.5,
-    "total": 149.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 29.3,
-    "total": 147.1,
-    "home_pts": 88.2,
-    "away_pts": 58.9
-   },
-   "matchup": {
-    "pace": 71.6,
-    "home_ortg": 120.9,
-    "away_ortg": 89.5,
-    "apm_diff": 20.1,
-    "box_diff": 21.4,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.136,
-     "tov": 0.017,
-     "orb": 0.026,
-     "ftr": 0.1,
-     "3p": 0.072
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 6,
-     "margin": 14.9,
-     "pf": 79.7,
-     "pa": 64.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +9",
-      "W +34",
-      "W +27",
-      "W +26",
-      "W +2"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 6,
-     "margin": -9.4,
-     "pf": 71.3,
-     "pa": 80.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -52",
-      "L -7",
-      "L -37",
-      "L -30",
-      "W +42"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 7.0,
-    "rest_diff": -2.0,
-    "home_n": 6.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Southern Jaguars has 2 more days of rest",
-    "Our projection is 5.2 pts better for Southern Jaguars than the line"
-   ],
-   "call": {
-    "adj_margin": 29.3,
-    "adj_total": 147.1,
-    "fatigue": [],
-    "spread": {
-     "side": "Southern Jaguars",
-     "line": 34.5,
-     "confidence": 1,
-     "why": "projection Nebraska Cornhuskers +29.3 vs line +34.5; against: recent margins favour the other side; against: big-line underdog; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Under",
-     "line": 149.5,
-     "confidence": 1,
-     "why": "adjusted total 147.1 (model 147.1)"
-    }
-   }
+   "call": {}
   },
   {
    "game_id": "401925917",
@@ -3125,16 +563,16 @@
    "commence": "2026-11-25 22:00:00+00:00",
    "tip_et": "5:00 PM",
    "line": {
-    "home_margin": 2.5,
-    "spread": -2.5,
-    "total": 152.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
-    "margin": 5.3,
-    "total": 151.4,
-    "home_pts": 78.4,
-    "away_pts": 73.0
+    "margin": 5.4,
+    "total": 151.7,
+    "home_pts": 78.5,
+    "away_pts": 73.1
    },
    "matchup": {
     "pace": 74.1,
@@ -3207,23 +645,378 @@
    "notes": [
     "UC Riverside Highlanders has 2 more days of rest"
    ],
-   "call": {
-    "adj_margin": 5.3,
-    "adj_total": 151.4,
-    "fatigue": [],
-    "spread": {
-     "side": "UC Riverside Highlanders",
-     "line": -2.5,
-     "confidence": 1,
-     "why": "projection UC Riverside Highlanders +5.3 vs line +2.5; against: recent margins favour the other side; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Under",
-     "line": 152.5,
-     "confidence": 1,
-     "why": "adjusted total 151.4 (model 151.4)"
+   "call": {}
+  },
+  {
+   "game_id": "401920237",
+   "home": "Dartmouth Big Green",
+   "away": "Holy Cross Crusaders",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-25 22:00:00+00:00",
+   "tip_et": "5:00 PM",
+   "line": {
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
+   },
+   "projection": {
+    "margin": 22.6,
+    "total": 153.2,
+    "home_pts": 87.9,
+    "away_pts": 65.3
+   },
+   "matchup": {
+    "pace": 72.8,
+    "home_ortg": 119.2,
+    "away_ortg": 91.3,
+    "apm_diff": 21.5,
+    "box_diff": 7.4,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.072,
+     "tov": 0.012,
+     "orb": 0.086,
+     "ftr": -0.03,
+     "3p": 0.132
     }
-   }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 5,
+     "l": 5,
+     "this_season": 6,
+     "margin": 5.1,
+     "pf": 81.0,
+     "pa": 75.9,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +57",
+      "L -7",
+      "W +9",
+      "L -15",
+      "W +50"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 1,
+     "l": 9,
+     "this_season": 6,
+     "margin": -13.8,
+     "pf": 65.3,
+     "pa": 79.1,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -29",
+      "L -13",
+      "L -2",
+      "L -11",
+      "L -12"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 7.0,
+    "away_rest": 5.0,
+    "rest_diff": 0.0,
+    "home_n": 6.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [],
+   "call": {}
+  },
+  {
+   "game_id": "401925688",
+   "home": "Texas State Bobcats",
+   "away": "Alcorn State Braves",
+   "neutral": true,
+   "tier": "mixed",
+   "commence": "2026-11-25 22:00:00+00:00",
+   "tip_et": "5:00 PM",
+   "line": {
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
+   },
+   "projection": {
+    "margin": 37.7,
+    "total": 149.5,
+    "home_pts": 93.6,
+    "away_pts": 55.9
+   },
+   "matchup": {
+    "pace": 73.8,
+    "home_ortg": 113.8,
+    "away_ortg": 82.4,
+    "apm_diff": 16.6,
+    "box_diff": 24.1,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.207,
+     "tov": 0.035,
+     "orb": 0.211,
+     "ftr": 0.138,
+     "3p": -0.057
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 8,
+     "l": 2,
+     "this_season": 7,
+     "margin": 17.3,
+     "pf": 81.6,
+     "pa": 64.3,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +7",
+      "W +20",
+      "W +20",
+      "W +33",
+      "W +26"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 1,
+     "l": 9,
+     "this_season": 7,
+     "margin": -28.8,
+     "pf": 58.7,
+     "pa": 87.5,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -37",
+      "L -4",
+      "L -60",
+      "L -61",
+      "L -42"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 3.0,
+    "away_rest": 1.0,
+    "rest_diff": 2.0,
+    "home_n": 7.0,
+    "away_n": 7.0
+   },
+   "a_card": false,
+   "notes": [
+    "Texas State Bobcats has 2 more days of rest",
+    "Alcorn State Braves played yesterday"
+   ],
+   "call": {}
+  },
+  {
+   "game_id": "401926065",
+   "home": "Nebraska Cornhuskers",
+   "away": "Southern Jaguars",
+   "neutral": false,
+   "tier": "mixed",
+   "commence": "2026-11-25 22:00:00+00:00",
+   "tip_et": "5:00 PM",
+   "line": {
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
+   },
+   "projection": {
+    "margin": 29.2,
+    "total": 147.2,
+    "home_pts": 88.2,
+    "away_pts": 59.0
+   },
+   "matchup": {
+    "pace": 71.6,
+    "home_ortg": 120.9,
+    "away_ortg": 89.5,
+    "apm_diff": 20.1,
+    "box_diff": 21.4,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.136,
+     "tov": 0.017,
+     "orb": 0.026,
+     "ftr": 0.1,
+     "3p": 0.072
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 8,
+     "l": 2,
+     "this_season": 6,
+     "margin": 14.9,
+     "pf": 79.7,
+     "pa": 64.8,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +9",
+      "W +34",
+      "W +27",
+      "W +26",
+      "W +2"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 4,
+     "l": 6,
+     "this_season": 6,
+     "margin": -9.4,
+     "pf": 71.3,
+     "pa": 80.7,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -52",
+      "L -7",
+      "L -37",
+      "L -30",
+      "W +42"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 3.0,
+    "away_rest": 7.0,
+    "rest_diff": -2.0,
+    "home_n": 6.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [
+    "Southern Jaguars has 2 more days of rest"
+   ],
+   "call": {}
+  },
+  {
+   "game_id": "401921670",
+   "home": "USC Trojans",
+   "away": "South Carolina Gamecocks",
+   "neutral": true,
+   "tier": "high",
+   "commence": "2026-11-25 22:17:00+00:00",
+   "tip_et": "5:17 PM",
+   "line": {
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
+   },
+   "projection": {
+    "margin": 8.0,
+    "total": 150.2,
+    "home_pts": 79.1,
+    "away_pts": 71.1
+   },
+   "matchup": {
+    "pace": 71.5,
+    "home_ortg": 106.6,
+    "away_ortg": 94.3,
+    "apm_diff": 3.5,
+    "box_diff": 12.5,
+    "same_diff": -0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.067,
+     "tov": -0.009,
+     "orb": 0.062,
+     "ftr": 0.017,
+     "3p": -0.063
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 6,
+     "margin": 13.9,
+     "pf": 85.1,
+     "pa": 71.2,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +7",
+      "W +12",
+      "W +76",
+      "W +45",
+      "W +26"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 5,
+     "margin": 4.1,
+     "pf": 72.3,
+     "pa": 68.2,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +26",
+      "W +10",
+      "W +36",
+      "W +17",
+      "W +8"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 3.0,
+    "away_rest": 7.0,
+    "rest_diff": -2.0,
+    "home_n": 6.0,
+    "away_n": 5.0
+   },
+   "a_card": false,
+   "notes": [
+    "South Carolina Gamecocks has 2 more days of rest"
+   ],
+   "call": {}
   },
   {
    "game_id": "401921716",
@@ -3234,16 +1027,16 @@
    "commence": "2026-11-25 22:30:00+00:00",
    "tip_et": "5:30 PM",
    "line": {
-    "home_margin": -2.5,
-    "spread": 2.5,
-    "total": 154.5,
-    "provider": "DraftKings"
+    "home_margin": null,
+    "spread": null,
+    "total": null,
+    "provider": ""
    },
    "projection": {
-    "margin": -2.4,
-    "total": 151.3,
-    "home_pts": 74.5,
-    "away_pts": 76.9
+    "margin": -2.2,
+    "total": 151.4,
+    "home_pts": 74.6,
+    "away_pts": 76.8
    },
    "matchup": {
     "pace": 72.8,
@@ -3317,24 +1110,114 @@
     "Providence Friars played yesterday",
     "BYU Cougars played yesterday"
    ],
+   "call": {}
+  },
+  {
+   "game_id": "401911241",
+   "home": "Richmond Spiders",
+   "away": "Bethune-Cookman Wildcats",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-25 23:00:00+00:00",
+   "tip_et": "6:00 PM",
+   "line": {
+    "home_margin": 11.5,
+    "spread": -11.5,
+    "total": 148.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 10.5,
+    "total": 151.0,
+    "home_pts": 80.8,
+    "away_pts": 70.2
+   },
+   "matchup": {
+    "pace": 70.5,
+    "home_ortg": 118.1,
+    "away_ortg": 98.6,
+    "apm_diff": 12.5,
+    "box_diff": 1.5,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.007,
+     "tov": 0.078,
+     "orb": -0.054,
+     "ftr": -0.068,
+     "3p": -0.008
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 4,
+     "l": 6,
+     "this_season": 7,
+     "margin": 5.8,
+     "pf": 78.8,
+     "pa": 73.0,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +26",
+      "L -10",
+      "L -17",
+      "L -14",
+      "W +4"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 3,
+     "l": 7,
+     "this_season": 6,
+     "margin": -5.7,
+     "pf": 73.9,
+     "pa": 79.6,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -18",
+      "L -18",
+      "L -13",
+      "W +24",
+      "L -23"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 3.0,
+    "away_rest": 7.0,
+    "rest_diff": -2.0,
+    "home_n": 7.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [
+    "Bethune-Cookman Wildcats has 2 more days of rest"
+   ],
    "call": {
-    "adj_margin": -2.4,
-    "adj_total": 148.3,
-    "fatigue": [
-     "Providence Friars played yesterday",
-     "BYU Cougars played yesterday"
-    ],
+    "adj_margin": 10.5,
+    "adj_total": 151.0,
+    "fatigue": [],
     "spread": {
-     "side": "Providence Friars",
-     "line": 2.5,
+     "side": "Bethune-Cookman Wildcats",
+     "line": 11.5,
      "confidence": 1,
-     "why": "projection Providence Friars -2.4 vs line -2.5; against: recent margins favour the other side; caution: Providence Friars played yesterday"
+     "why": "projection Richmond Spiders +10.5 vs line +11.5; against: recent margins favour the other side; note: rest edge (not counted)"
     },
     "total": {
-     "side": "Under",
-     "line": 154.5,
-     "confidence": 2,
-     "why": "adjusted total 148.3 (model 151.3); fatigue lowers scoring: Providence Friars played yesterday; BYU Cougars played yesterday"
+     "side": "Over",
+     "line": 148.5,
+     "confidence": 1,
+     "why": "adjusted total 151.0 (model 151.0)"
     }
    }
   },
@@ -3347,15 +1230,15 @@
    "commence": "2026-11-25 23:00:00+00:00",
    "tip_et": "6:00 PM",
    "line": {
-    "home_margin": 26.5,
-    "spread": -26.5,
-    "total": 146.5,
-    "provider": "DraftKings"
+    "home_margin": 24.5,
+    "spread": -24.5,
+    "total": 145.5,
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 22.8,
-    "total": 152.3,
-    "home_pts": 87.6,
+    "margin": 22.5,
+    "total": 152.2,
+    "home_pts": 87.3,
     "away_pts": 64.8
    },
    "matchup": {
@@ -3427,247 +1310,23 @@
    },
    "a_card": false,
    "notes": [
-    "Our total is 5.8 over the line"
+    "Our total is 6.7 over the line"
    ],
    "call": {
-    "adj_margin": 22.8,
-    "adj_total": 152.3,
+    "adj_margin": 22.5,
+    "adj_total": 152.2,
     "fatigue": [],
     "spread": {
      "side": "UAlbany Great Danes",
-     "line": 26.5,
+     "line": 24.5,
      "confidence": 1,
-     "why": "projection Syracuse Orange +22.8 vs line +26.5; against: recent margins favour the other side; against: big-line underdog"
+     "why": "projection Syracuse Orange +22.5 vs line +24.5; against: recent margins favour the other side; against: big-line underdog"
     },
     "total": {
      "side": "Over",
-     "line": 146.5,
-     "confidence": 1,
-     "why": "adjusted total 152.3 (model 152.3)"
-    }
-   }
-  },
-  {
-   "game_id": "401922253",
-   "home": "Northwestern State Demons",
-   "away": "West Florida Argonauts",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-25 23:00:00+00:00",
-   "tip_et": "6:00 PM",
-   "line": {
-    "home_margin": 1.5,
-    "spread": -1.5,
-    "total": 139.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -3.3,
-    "total": 144.7,
-    "home_pts": 70.7,
-    "away_pts": 74.0
-   },
-   "matchup": {
-    "pace": 70.1,
-    "home_ortg": 104.7,
-    "away_ortg": 103.9,
-    "apm_diff": 0.2,
-    "box_diff": -6.0,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.103,
-     "tov": -0.062,
-     "orb": -0.035,
-     "ftr": 0.121,
-     "3p": -0.232
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 2,
-     "l": 8,
-     "this_season": 6,
-     "margin": -9.5,
-     "pf": 62.4,
-     "pa": 71.9,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -38",
-      "L -22",
-      "W +28",
-      "L -1",
-      "L -7"
-     ]
-    },
-    "away": {
-     "n": 7,
-     "w": 3,
-     "l": 4,
-     "this_season": 7,
-     "margin": 18.1,
-     "pf": 87.9,
-     "pa": 69.7,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +51",
-      "L -2",
-      "L -2",
-      "W +18",
-      "L -13"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 5.0,
-    "away_rest": 3.0,
-    "rest_diff": 2.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Northwestern State Demons has 2 more days of rest",
-    "Our projection is 4.8 pts better for West Florida Argonauts than the line",
-    "Our total is 5.2 over the line"
-   ],
-   "call": {
-    "adj_margin": -3.3,
-    "adj_total": 144.7,
-    "fatigue": [],
-    "spread": {
-     "side": "West Florida Argonauts",
-     "line": 1.5,
+     "line": 145.5,
      "confidence": 2,
-     "why": "projection Northwestern State Demons -3.3 vs line +1.5; recent margins favour our side; against: less rest"
-    },
-    "total": {
-     "side": "Over",
-     "line": 139.5,
-     "confidence": 1,
-     "why": "adjusted total 144.7 (model 144.7)"
-    }
-   }
-  },
-  {
-   "game_id": "401920549",
-   "home": "Charleston Cougars",
-   "away": "Kennesaw State Owls",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-25 23:00:00+00:00",
-   "tip_et": "6:00 PM",
-   "line": {
-    "home_margin": 1.5,
-    "spread": -1.5,
-    "total": 160.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 1.6,
-    "total": 163.0,
-    "home_pts": 82.3,
-    "away_pts": 80.7
-   },
-   "matchup": {
-    "pace": 77.2,
-    "home_ortg": 100.3,
-    "away_ortg": 100.0,
-    "apm_diff": 4.8,
-    "box_diff": 5.9,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.023,
-     "tov": 0.018,
-     "orb": -0.116,
-     "ftr": 0.17,
-     "3p": -0.065
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 11.2,
-     "pf": 83.7,
-     "pa": 72.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +46",
-      "W +10",
-      "W +24",
-      "L -16",
-      "L -11"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 7,
-     "margin": 14.6,
-     "pf": 83.9,
-     "pa": 69.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +9",
-      "W +53",
-      "L -18",
-      "W +37",
-      "L -4"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 1.0,
-    "away_rest": 1.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Charleston Cougars played yesterday",
-    "Kennesaw State Owls played yesterday"
-   ],
-   "call": {
-    "adj_margin": 1.6,
-    "adj_total": 160.0,
-    "fatigue": [
-     "Charleston Cougars played yesterday",
-     "Kennesaw State Owls played yesterday"
-    ],
-    "spread": {
-     "side": "Charleston Cougars",
-     "line": -1.5,
-     "confidence": 1,
-     "why": "projection Charleston Cougars +1.6 vs line +1.5; caution: Charleston Cougars played yesterday"
-    },
-    "total": {
-     "side": "Under",
-     "line": 160.5,
-     "confidence": 1,
-     "why": "adjusted total 160.0 (model 163.0); fatigue lowers scoring: Charleston Cougars played yesterday; Kennesaw State Owls played yesterday"
+     "why": "adjusted total 152.2 (model 152.2)"
     }
    }
   },
@@ -3683,13 +1342,13 @@
     "home_margin": -1.5,
     "spread": 1.5,
     "total": 168.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 1.0,
-    "total": 166.9,
-    "home_pts": 84.0,
-    "away_pts": 83.0
+    "margin": 1.1,
+    "total": 166.6,
+    "home_pts": 83.8,
+    "away_pts": 82.8
    },
    "matchup": {
     "pace": 76.6,
@@ -3764,8 +1423,8 @@
     "Weber State Wildcats played yesterday"
    ],
    "call": {
-    "adj_margin": -0.5,
-    "adj_total": 165.4,
+    "adj_margin": -0.4,
+    "adj_total": 165.1,
     "fatigue": [
      "Weber State Wildcats played yesterday"
     ],
@@ -3773,665 +1432,346 @@
      "side": "Weber State Wildcats",
      "line": 1.5,
      "confidence": 1,
-     "why": "projection Weber State Wildcats -0.5 vs line -1.5; against: less rest; caution: Weber State Wildcats played yesterday"
+     "why": "projection Weber State Wildcats -0.4 vs line -1.5; against: less rest; caution: Weber State Wildcats played yesterday"
     },
     "total": {
      "side": "Under",
      "line": 168.5,
      "confidence": 1,
-     "why": "adjusted total 165.4 (model 166.9); fatigue lowers scoring: Weber State Wildcats played yesterday"
+     "why": "adjusted total 165.1 (model 166.6); fatigue lowers scoring: Weber State Wildcats played yesterday"
     }
    }
   },
   {
-   "game_id": "401911241",
-   "home": "Richmond Spiders",
-   "away": "Bethune-Cookman Wildcats",
+   "game_id": "401922253",
+   "home": "Northwestern State Demons",
+   "away": "West Florida Argonauts",
    "neutral": false,
    "tier": "low",
    "commence": "2026-11-25 23:00:00+00:00",
    "tip_et": "6:00 PM",
    "line": {
-    "home_margin": 11.5,
-    "spread": -11.5,
-    "total": 146.5,
-    "provider": "DraftKings"
+    "home_margin": 1.5,
+    "spread": -1.5,
+    "total": 139.5,
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 10.8,
-    "total": 150.9,
-    "home_pts": 80.9,
-    "away_pts": 70.0
+    "margin": -3.7,
+    "total": 144.6,
+    "home_pts": 70.5,
+    "away_pts": 74.1
    },
    "matchup": {
-    "pace": 70.5,
-    "home_ortg": 118.1,
-    "away_ortg": 98.6,
-    "apm_diff": 12.5,
-    "box_diff": 1.5,
+    "pace": 70.1,
+    "home_ortg": 104.7,
+    "away_ortg": 103.9,
+    "apm_diff": 0.2,
+    "box_diff": -6.0,
     "same_diff": 0.0,
     "new_diff": 0.0,
     "four_factors": {
-     "efg": 0.007,
-     "tov": 0.078,
-     "orb": -0.054,
-     "ftr": -0.068,
-     "3p": -0.008
+     "efg": -0.103,
+     "tov": -0.062,
+     "orb": -0.035,
+     "ftr": 0.121,
+     "3p": -0.232
     }
    },
    "form": {
     "home": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 7,
-     "margin": 5.8,
-     "pf": 78.8,
-     "pa": 73.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +26",
-      "L -10",
-      "L -17",
-      "L -14",
-      "W +4"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -5.7,
-     "pf": 73.9,
-     "pa": 79.6,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -18",
-      "L -18",
-      "L -13",
-      "W +24",
-      "L -23"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 3.0,
-    "away_rest": 7.0,
-    "rest_diff": -2.0,
-    "home_n": 7.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Bethune-Cookman Wildcats has 2 more days of rest"
-   ],
-   "call": {
-    "adj_margin": 10.8,
-    "adj_total": 150.9,
-    "fatigue": [],
-    "spread": {
-     "side": "Bethune-Cookman Wildcats",
-     "line": 11.5,
-     "confidence": 1,
-     "why": "projection Richmond Spiders +10.8 vs line +11.5; against: recent margins favour the other side; note: rest edge (not counted)"
-    },
-    "total": {
-     "side": "Over",
-     "line": 146.5,
-     "confidence": 1,
-     "why": "adjusted total 150.9 (model 150.9)"
-    }
-   }
-  },
-  {
-   "game_id": "401920076",
-   "home": "George Mason Patriots",
-   "away": "Longwood Lancers",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": 16.5,
-    "spread": -16.5,
-    "total": 145.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 12.0,
-    "total": 148.8,
-    "home_pts": 80.4,
-    "away_pts": 68.4
-   },
-   "matchup": {
-    "pace": 72.4,
-    "home_ortg": 110.2,
-    "away_ortg": 95.5,
-    "apm_diff": 9.5,
-    "box_diff": 9.6,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.007,
-     "tov": 0.005,
-     "orb": -0.003,
-     "ftr": 0.072,
-     "3p": -0.048
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 9.8,
-     "pf": 72.2,
-     "pa": 62.4,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +17",
-      "W +8",
-      "L -1",
-      "W +23",
-      "W +11"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 7,
-     "margin": 12.6,
-     "pf": 88.0,
-     "pa": 75.4,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +5",
-      "W +56",
-      "L -6",
-      "W +6",
-      "L -6"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 4.0,
-    "rest_diff": 0.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [
-    "Our projection is 4.5 pts better for Longwood Lancers than the line"
-   ],
-   "call": {
-    "adj_margin": 12.0,
-    "adj_total": 148.8,
-    "fatigue": [],
-    "spread": {
-     "side": "Longwood Lancers",
-     "line": 16.5,
-     "confidence": 1,
-     "why": "projection George Mason Patriots +12.0 vs line +16.5"
-    },
-    "total": {
-     "side": "Over",
-     "line": 145.5,
-     "confidence": 1,
-     "why": "adjusted total 148.8 (model 148.8)"
-    }
-   }
-  },
-  {
-   "game_id": "401920847",
-   "home": "UNC Wilmington Seahawks",
-   "away": "St. Thomas Tommies",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": 5.5,
-    "spread": -5.5,
-    "total": 156.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 7.2,
-    "total": 163.3,
-    "home_pts": 85.2,
-    "away_pts": 78.1
-   },
-   "matchup": {
-    "pace": 70.5,
-    "home_ortg": 119.6,
-    "away_ortg": 111.7,
-    "apm_diff": 5.1,
-    "box_diff": 3.5,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": -0.042,
-     "tov": -0.026,
-     "orb": 0.163,
-     "ftr": -0.024,
-     "3p": -0.079
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 11.0,
-     "pf": 84.8,
-     "pa": 73.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +3",
-      "W +18",
-      "W +59",
-      "L -1",
-      "W +9"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 8,
-     "margin": 7.4,
-     "pf": 80.0,
-     "pa": 72.6,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +37",
-      "L -2",
-      "W +9",
-      "W +32",
-      "W +28"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 4.0,
-    "rest_diff": 0.0,
-    "home_n": 7.0,
-    "away_n": 8.0
-   },
-   "a_card": false,
-   "notes": [
-    "Our total is 6.8 over the line"
-   ],
-   "call": {
-    "adj_margin": 7.2,
-    "adj_total": 163.3,
-    "fatigue": [],
-    "spread": {
-     "side": "UNC Wilmington Seahawks",
-     "line": -5.5,
-     "confidence": 1,
-     "why": "projection UNC Wilmington Seahawks +7.2 vs line +5.5"
-    },
-    "total": {
-     "side": "Over",
-     "line": 156.5,
-     "confidence": 2,
-     "why": "adjusted total 163.3 (model 163.3)"
-    }
-   }
-  },
-  {
-   "game_id": "401918971",
-   "home": "Utah State Aggies",
-   "away": "SMU Mustangs",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": 3.5,
-    "spread": -3.5,
-    "total": 162.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 2.2,
-    "total": 170.5,
-    "home_pts": 86.3,
-    "away_pts": 84.2
-   },
-   "matchup": {
-    "pace": 76.6,
-    "home_ortg": 104.8,
-    "away_ortg": 103.4,
-    "apm_diff": 2.0,
-    "box_diff": 1.8,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.017,
-     "tov": 0.051,
-     "orb": -0.062,
-     "ftr": -0.027,
-     "3p": 0.042
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 9,
-     "l": 1,
-     "this_season": 5,
-     "margin": 21.2,
-     "pf": 90.7,
-     "pa": 69.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +36",
-      "W +34",
-      "W +32",
-      "W +38",
-      "W +30"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 13.8,
-     "pf": 84.6,
-     "pa": 70.8,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +25",
-      "W +35",
-      "W +25",
-      "W +4",
-      "W +46"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 7.0,
-    "away_rest": 5.0,
-    "rest_diff": 0.0,
-    "home_n": 5.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [
-    "Our total is 8.0 over the line"
-   ],
-   "call": {
-    "adj_margin": 2.2,
-    "adj_total": 170.5,
-    "fatigue": [],
-    "spread": {
-     "side": "SMU Mustangs",
-     "line": 3.5,
-     "confidence": 1,
-     "why": "projection Utah State Aggies +2.2 vs line +3.5; against: recent margins favour the other side"
-    },
-    "total": {
-     "side": "Over",
-     "line": 162.5,
-     "confidence": 2,
-     "why": "adjusted total 170.5 (model 170.5)"
-    }
-   }
-  },
-  {
-   "game_id": "401918960",
-   "home": "NC State Wolfpack",
-   "away": "Norfolk State Spartans",
-   "neutral": false,
-   "tier": "mixed",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": 28.5,
-    "spread": -28.5,
-    "total": 150.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 31.6,
-    "total": 149.2,
-    "home_pts": 90.4,
-    "away_pts": 58.8
-   },
-   "matchup": {
-    "pace": 67.4,
-    "home_ortg": 127.6,
-    "away_ortg": 94.1,
-    "apm_diff": 21.3,
-    "box_diff": 20.7,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.065,
-     "tov": 0.017,
-     "orb": -0.003,
-     "ftr": 0.019,
-     "3p": 0.127
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 6,
-     "margin": 9.0,
-     "pf": 83.1,
-     "pa": 74.1,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +14",
-      "W +34",
-      "W +19",
-      "W +10",
-      "L -6"
-     ]
-    },
-    "away": {
      "n": 10,
      "w": 2,
      "l": 8,
-     "this_season": 7,
-     "margin": -8.0,
-     "pf": 73.3,
-     "pa": 81.3,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -31",
-      "L -11",
-      "L -25",
-      "L -14",
-      "L -9"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 5.0,
-    "away_rest": 4.0,
-    "rest_diff": 1.0,
-    "home_n": 6.0,
-    "away_n": 7.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": 31.6,
-    "adj_total": 149.2,
-    "fatigue": [],
-    "spread": {
-     "side": "NC State Wolfpack",
-     "line": -28.5,
-     "confidence": 2,
-     "why": "projection NC State Wolfpack +31.6 vs line +28.5; recent margins favour our side"
-    },
-    "total": {
-     "side": "Under",
-     "line": 150.5,
-     "confidence": 1,
-     "why": "adjusted total 149.2 (model 149.2)"
-    }
-   }
-  },
-  {
-   "game_id": "401911028",
-   "home": "Wisconsin Badgers",
-   "away": "Northeastern Huskies",
-   "neutral": false,
-   "tier": "mixed",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": 19.5,
-    "spread": -19.5,
-    "total": 154.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 13.2,
-    "total": 157.9,
-    "home_pts": 85.5,
-    "away_pts": 72.4
-   },
-   "matchup": {
-    "pace": 71.8,
-    "home_ortg": 115.9,
-    "away_ortg": 100.5,
-    "apm_diff": 10.7,
-    "box_diff": 8.2,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.075,
-     "tov": 0.024,
-     "orb": 0.034,
-     "ftr": 0.122,
-     "3p": 0.091
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
      "this_season": 6,
-     "margin": 5.1,
-     "pf": 77.1,
-     "pa": 72.0,
+     "margin": -9.5,
+     "pf": 62.4,
+     "pa": 71.9,
      "cover": 0,
      "no_cover": 0,
      "vs_line": null,
      "over": 0,
      "under": 0,
      "last": [
-      "W +9",
-      "W +47",
-      "W +8",
-      "L -5",
-      "L -17"
+      "L -38",
+      "L -22",
+      "W +28",
+      "L -1",
+      "L -7"
      ]
     },
     "away": {
-     "n": 10,
+     "n": 7,
      "w": 3,
-     "l": 7,
-     "this_season": 6,
-     "margin": -4.6,
-     "pf": 78.7,
-     "pa": 83.3,
+     "l": 4,
+     "this_season": 7,
+     "margin": 18.1,
+     "pf": 87.9,
+     "pa": 69.7,
      "cover": 0,
      "no_cover": 0,
      "vs_line": null,
      "over": 0,
      "under": 0,
      "last": [
-      "L -25",
-      "W +4",
-      "W +11",
-      "L -7",
+      "W +51",
+      "L -2",
+      "L -2",
+      "W +18",
       "L -13"
      ]
     }
    },
    "schedule": {
     "home_rest": 5.0,
-    "away_rest": 4.0,
-    "rest_diff": 1.0,
+    "away_rest": 3.0,
+    "rest_diff": 2.0,
     "home_n": 6.0,
-    "away_n": 6.0
+    "away_n": 7.0
    },
    "a_card": false,
    "notes": [
-    "Our projection is 6.3 pts better for Northeastern Huskies than the line"
+    "Northwestern State Demons has 2 more days of rest",
+    "Our projection is 5.2 pts better for West Florida Argonauts than the line",
+    "Our total is 5.1 over the line"
    ],
    "call": {
-    "adj_margin": 13.2,
-    "adj_total": 157.9,
+    "adj_margin": -3.7,
+    "adj_total": 144.6,
     "fatigue": [],
     "spread": {
-     "side": "Northeastern Huskies",
-     "line": 19.5,
-     "confidence": 1,
-     "why": "projection Wisconsin Badgers +13.2 vs line +19.5; against: recent margins favour the other side"
+     "side": "West Florida Argonauts",
+     "line": 1.5,
+     "confidence": 2,
+     "why": "projection Northwestern State Demons -3.7 vs line +1.5; recent margins favour our side; against: less rest"
     },
     "total": {
      "side": "Over",
-     "line": 154.5,
+     "line": 139.5,
      "confidence": 1,
-     "why": "adjusted total 157.9 (model 157.9)"
+     "why": "adjusted total 144.6 (model 144.6)"
+    }
+   }
+  },
+  {
+   "game_id": "401920549",
+   "home": "Charleston Cougars",
+   "away": "Kennesaw State Owls",
+   "neutral": true,
+   "tier": "low",
+   "commence": "2026-11-25 23:00:00+00:00",
+   "tip_et": "6:00 PM",
+   "line": {
+    "home_margin": 1.5,
+    "spread": -1.5,
+    "total": 160.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 1.9,
+    "total": 162.7,
+    "home_pts": 82.3,
+    "away_pts": 80.4
+   },
+   "matchup": {
+    "pace": 77.2,
+    "home_ortg": 100.3,
+    "away_ortg": 100.0,
+    "apm_diff": 4.8,
+    "box_diff": 5.9,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": -0.023,
+     "tov": 0.018,
+     "orb": -0.116,
+     "ftr": 0.17,
+     "3p": -0.065
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 7,
+     "l": 3,
+     "this_season": 6,
+     "margin": 11.2,
+     "pf": 83.7,
+     "pa": 72.5,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +46",
+      "W +10",
+      "W +24",
+      "L -16",
+      "L -11"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 7,
+     "l": 3,
+     "this_season": 7,
+     "margin": 14.6,
+     "pf": 83.9,
+     "pa": 69.3,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +9",
+      "W +53",
+      "L -18",
+      "W +37",
+      "L -4"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 1.0,
+    "away_rest": 1.0,
+    "rest_diff": 0.0,
+    "home_n": 6.0,
+    "away_n": 7.0
+   },
+   "a_card": false,
+   "notes": [
+    "Charleston Cougars played yesterday",
+    "Kennesaw State Owls played yesterday"
+   ],
+   "call": {
+    "adj_margin": 1.9,
+    "adj_total": 159.7,
+    "fatigue": [
+     "Charleston Cougars played yesterday",
+     "Kennesaw State Owls played yesterday"
+    ],
+    "spread": {
+     "side": "Charleston Cougars",
+     "line": -1.5,
+     "confidence": 1,
+     "why": "projection Charleston Cougars +1.9 vs line +1.5; caution: Charleston Cougars played yesterday"
+    },
+    "total": {
+     "side": "Under",
+     "line": 160.5,
+     "confidence": 1,
+     "why": "adjusted total 159.7 (model 162.7); fatigue lowers scoring: Charleston Cougars played yesterday; Kennesaw State Owls played yesterday"
+    }
+   }
+  },
+  {
+   "game_id": "401917182",
+   "home": "Penn State Nittany Lions",
+   "away": "Memphis Tigers",
+   "neutral": true,
+   "tier": "mixed",
+   "commence": "2026-11-25 23:35:00+00:00",
+   "tip_et": "6:35 PM",
+   "line": {
+    "home_margin": -3.5,
+    "spread": 3.5,
+    "total": 162.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": -3.4,
+    "total": 160.9,
+    "home_pts": 78.8,
+    "away_pts": 82.2
+   },
+   "matchup": {
+    "pace": 73.1,
+    "home_ortg": 107.4,
+    "away_ortg": 105.8,
+    "apm_diff": -0.7,
+    "box_diff": -7.8,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.001,
+     "tov": -0.019,
+     "orb": -0.012,
+     "ftr": 0.179,
+     "3p": 0.018
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 6,
+     "margin": 4.2,
+     "pf": 77.0,
+     "pa": 72.8,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +4",
+      "L -6",
+      "W +15",
+      "W +34",
+      "W +7"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 5,
+     "l": 5,
+     "this_season": 5,
+     "margin": -1.9,
+     "pf": 83.4,
+     "pa": 85.3,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +4",
+      "W +1",
+      "L -24",
+      "W +20",
+      "W +20"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 7.0,
+    "away_rest": 3.0,
+    "rest_diff": 2.0,
+    "home_n": 6.0,
+    "away_n": 5.0
+   },
+   "a_card": false,
+   "notes": [
+    "Penn State Nittany Lions has 2 more days of rest"
+   ],
+   "call": {
+    "adj_margin": -3.4,
+    "adj_total": 160.9,
+    "fatigue": [],
+    "spread": {
+     "side": "Penn State Nittany Lions",
+     "line": 3.5,
+     "confidence": 2,
+     "why": "projection Penn State Nittany Lions -3.4 vs line -3.5; recent margins favour our side; note: rest edge (not counted)"
+    },
+    "total": {
+     "side": "Under",
+     "line": 162.5,
+     "confidence": 1,
+     "why": "adjusted total 160.9 (model 160.9)"
     }
    }
   },
@@ -4444,15 +1784,15 @@
    "commence": "2026-11-26 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": -3.5,
-    "spread": 3.5,
+    "home_margin": -2.5,
+    "spread": 2.5,
     "total": 137.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 1.6,
-    "total": 135.1,
-    "home_pts": 68.3,
+    "margin": 1.7,
+    "total": 135.2,
+    "home_pts": 68.4,
     "away_pts": 66.8
    },
    "matchup": {
@@ -4524,23 +1864,132 @@
    },
    "a_card": false,
    "notes": [
-    "Our projection is 5.1 pts better for SIU Edwardsville Cougars than the line"
+    "Our projection is 4.2 pts better for SIU Edwardsville Cougars than the line"
    ],
    "call": {
-    "adj_margin": 1.6,
-    "adj_total": 135.1,
+    "adj_margin": 1.7,
+    "adj_total": 135.2,
     "fatigue": [],
     "spread": {
      "side": "SIU Edwardsville Cougars",
-     "line": 3.5,
+     "line": 2.5,
      "confidence": 2,
-     "why": "projection SIU Edwardsville Cougars +1.6 vs line -3.5; recent margins favour our side"
+     "why": "projection SIU Edwardsville Cougars +1.7 vs line -2.5; recent margins favour our side"
     },
     "total": {
      "side": "Under",
      "line": 137.5,
      "confidence": 1,
-     "why": "adjusted total 135.1 (model 135.1)"
+     "why": "adjusted total 135.2 (model 135.2)"
+    }
+   }
+  },
+  {
+   "game_id": "401911028",
+   "home": "Wisconsin Badgers",
+   "away": "Northeastern Huskies",
+   "neutral": false,
+   "tier": "mixed",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": 19.5,
+    "spread": -19.5,
+    "total": 154.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 13.4,
+    "total": 158.1,
+    "home_pts": 85.8,
+    "away_pts": 72.3
+   },
+   "matchup": {
+    "pace": 71.8,
+    "home_ortg": 115.9,
+    "away_ortg": 100.5,
+    "apm_diff": 10.7,
+    "box_diff": 8.2,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.075,
+     "tov": 0.024,
+     "orb": 0.034,
+     "ftr": 0.122,
+     "3p": 0.091
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 6,
+     "margin": 5.1,
+     "pf": 77.1,
+     "pa": 72.0,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +9",
+      "W +47",
+      "W +8",
+      "L -5",
+      "L -17"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 3,
+     "l": 7,
+     "this_season": 6,
+     "margin": -4.6,
+     "pf": 78.7,
+     "pa": 83.3,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -25",
+      "W +4",
+      "W +11",
+      "L -7",
+      "L -13"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 5.0,
+    "away_rest": 4.0,
+    "rest_diff": 1.0,
+    "home_n": 6.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [
+    "Our projection is 6.1 pts better for Northeastern Huskies than the line"
+   ],
+   "call": {
+    "adj_margin": 13.4,
+    "adj_total": 158.1,
+    "fatigue": [],
+    "spread": {
+     "side": "Northeastern Huskies",
+     "line": 19.5,
+     "confidence": 1,
+     "why": "projection Wisconsin Badgers +13.4 vs line +19.5; against: recent margins favour the other side"
+    },
+    "total": {
+     "side": "Over",
+     "line": 154.5,
+     "confidence": 1,
+     "why": "adjusted total 158.1 (model 158.1)"
     }
    }
   },
@@ -4556,13 +2005,13 @@
     "home_margin": 3.5,
     "spread": -3.5,
     "total": 138.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 10.1,
-    "total": 144.3,
-    "home_pts": 77.2,
-    "away_pts": 67.1
+    "margin": 10.3,
+    "total": 143.9,
+    "home_pts": 77.1,
+    "away_pts": 66.8
    },
    "matchup": {
     "pace": 68.4,
@@ -4633,132 +2082,25 @@
    },
    "a_card": true,
    "notes": [
-    "Our projection is 6.6 pts better for The Citadel Bulldogs than the line",
-    "Our total is 5.8 over the line",
+    "Our projection is 6.8 pts better for The Citadel Bulldogs than the line",
+    "Our total is 5.4 over the line",
     "Backtested A rule fires (low/mixed tier, 6+ gap, favourite, line under 15: 56.6% on unseen seasons)"
    ],
    "call": {
-    "adj_margin": 10.1,
-    "adj_total": 144.3,
+    "adj_margin": 10.3,
+    "adj_total": 143.9,
     "fatigue": [],
     "spread": {
      "side": "The Citadel Bulldogs",
      "line": -3.5,
      "confidence": 3,
-     "why": "projection The Citadel Bulldogs +10.1 vs line +3.5; recent margins favour our side; backtested A rule"
+     "why": "projection The Citadel Bulldogs +10.3 vs line +3.5; recent margins favour our side; backtested A rule"
     },
     "total": {
      "side": "Over",
      "line": 138.5,
      "confidence": 1,
-     "why": "adjusted total 144.3 (model 144.3)"
-    }
-   }
-  },
-  {
-   "game_id": "401909568",
-   "home": "Duke Blue Devils",
-   "away": "UConn Huskies",
-   "neutral": true,
-   "tier": "high",
-   "commence": "2026-11-26 00:00:00+00:00",
-   "tip_et": "7:00 PM",
-   "line": {
-    "home_margin": -1.5,
-    "spread": 1.5,
-    "total": 145.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": -1.4,
-    "total": 150.3,
-    "home_pts": 74.5,
-    "away_pts": 75.9
-   },
-   "matchup": {
-    "pace": 73.4,
-    "home_ortg": 97.3,
-    "away_ortg": 98.3,
-    "apm_diff": -3.4,
-    "box_diff": 4.0,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.03,
-     "tov": -0.044,
-     "orb": 0.027,
-     "ftr": 0.162,
-     "3p": -0.076
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 7,
-     "l": 3,
-     "this_season": 6,
-     "margin": 14.8,
-     "pf": 82.0,
-     "pa": 67.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +61",
-      "L -6",
-      "W +43",
-      "L -21",
-      "W +4"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 8,
-     "l": 2,
-     "this_season": 5,
-     "margin": 12.4,
-     "pf": 76.4,
-     "pa": 64.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +40",
-      "W +8",
-      "W +42",
-      "W +16",
-      "L -6"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 7.0,
-    "rest_diff": -1.0,
-    "home_n": 6.0,
-    "away_n": 5.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": -1.4,
-    "adj_total": 150.3,
-    "fatigue": [],
-    "spread": {
-     "side": "Duke Blue Devils",
-     "line": 1.5,
-     "confidence": 1,
-     "why": "projection Duke Blue Devils -1.4 vs line -1.5"
-    },
-    "total": {
-     "side": "Over",
-     "line": 145.5,
-     "confidence": 1,
-     "why": "adjusted total 150.3 (model 150.3)"
+     "why": "adjusted total 143.9 (model 143.9)"
     }
    }
   },
@@ -4771,16 +2113,16 @@
    "commence": "2026-11-26 00:00:00+00:00",
    "tip_et": "7:00 PM",
    "line": {
-    "home_margin": 7.5,
-    "spread": -7.5,
+    "home_margin": 6.5,
+    "spread": -6.5,
     "total": 146.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 6.9,
+    "margin": 7.1,
     "total": 153.7,
-    "home_pts": 80.3,
-    "away_pts": 73.4
+    "home_pts": 80.4,
+    "away_pts": 73.3
    },
    "matchup": {
     "pace": 70.4,
@@ -4855,22 +2197,565 @@
     "Our total is 7.2 over the line"
    ],
    "call": {
-    "adj_margin": 8.4,
+    "adj_margin": 8.6,
     "adj_total": 152.2,
     "fatigue": [
      "Bellarmine Knights played yesterday"
     ],
     "spread": {
      "side": "Northern Kentucky Norse",
-     "line": -7.5,
+     "line": -6.5,
      "confidence": 1,
-     "why": "projection Northern Kentucky Norse +8.4 vs line +7.5"
+     "why": "projection Northern Kentucky Norse +8.6 vs line +6.5"
     },
     "total": {
      "side": "Over",
      "line": 146.5,
      "confidence": 1,
      "why": "adjusted total 152.2 (model 153.7); caution: Bellarmine Knights played yesterday"
+    }
+   }
+  },
+  {
+   "game_id": "401918960",
+   "home": "NC State Wolfpack",
+   "away": "Norfolk State Spartans",
+   "neutral": false,
+   "tier": "mixed",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": 28.5,
+    "spread": -28.5,
+    "total": 150.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 31.2,
+    "total": 149.3,
+    "home_pts": 90.2,
+    "away_pts": 59.1
+   },
+   "matchup": {
+    "pace": 67.4,
+    "home_ortg": 127.6,
+    "away_ortg": 94.1,
+    "apm_diff": 21.3,
+    "box_diff": 20.7,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.065,
+     "tov": 0.017,
+     "orb": -0.003,
+     "ftr": 0.019,
+     "3p": 0.127
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 6,
+     "margin": 9.0,
+     "pf": 83.1,
+     "pa": 74.1,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +14",
+      "W +34",
+      "W +19",
+      "W +10",
+      "L -6"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 2,
+     "l": 8,
+     "this_season": 7,
+     "margin": -8.0,
+     "pf": 73.3,
+     "pa": 81.3,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -31",
+      "L -11",
+      "L -25",
+      "L -14",
+      "L -9"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 5.0,
+    "away_rest": 4.0,
+    "rest_diff": 1.0,
+    "home_n": 6.0,
+    "away_n": 7.0
+   },
+   "a_card": false,
+   "notes": [],
+   "call": {
+    "adj_margin": 31.2,
+    "adj_total": 149.3,
+    "fatigue": [],
+    "spread": {
+     "side": "NC State Wolfpack",
+     "line": -28.5,
+     "confidence": 2,
+     "why": "projection NC State Wolfpack +31.2 vs line +28.5; recent margins favour our side"
+    },
+    "total": {
+     "side": "Under",
+     "line": 150.5,
+     "confidence": 1,
+     "why": "adjusted total 149.3 (model 149.3)"
+    }
+   }
+  },
+  {
+   "game_id": "401920847",
+   "home": "UNC Wilmington Seahawks",
+   "away": "St. Thomas Tommies",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": 5.5,
+    "spread": -5.5,
+    "total": 156.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 7.1,
+    "total": 163.4,
+    "home_pts": 85.2,
+    "away_pts": 78.2
+   },
+   "matchup": {
+    "pace": 70.5,
+    "home_ortg": 119.6,
+    "away_ortg": 111.7,
+    "apm_diff": 5.1,
+    "box_diff": 3.5,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": -0.042,
+     "tov": -0.026,
+     "orb": 0.163,
+     "ftr": -0.024,
+     "3p": -0.079
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 7,
+     "l": 3,
+     "this_season": 6,
+     "margin": 11.0,
+     "pf": 84.8,
+     "pa": 73.8,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +3",
+      "W +18",
+      "W +59",
+      "L -1",
+      "W +9"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 5,
+     "l": 5,
+     "this_season": 8,
+     "margin": 7.4,
+     "pf": 80.0,
+     "pa": 72.6,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +37",
+      "L -2",
+      "W +9",
+      "W +32",
+      "W +28"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 4.0,
+    "away_rest": 4.0,
+    "rest_diff": 0.0,
+    "home_n": 7.0,
+    "away_n": 8.0
+   },
+   "a_card": false,
+   "notes": [
+    "Our total is 6.9 over the line"
+   ],
+   "call": {
+    "adj_margin": 7.1,
+    "adj_total": 163.4,
+    "fatigue": [],
+    "spread": {
+     "side": "UNC Wilmington Seahawks",
+     "line": -5.5,
+     "confidence": 1,
+     "why": "projection UNC Wilmington Seahawks +7.1 vs line +5.5"
+    },
+    "total": {
+     "side": "Over",
+     "line": 156.5,
+     "confidence": 2,
+     "why": "adjusted total 163.4 (model 163.4)"
+    }
+   }
+  },
+  {
+   "game_id": "401920076",
+   "home": "George Mason Patriots",
+   "away": "Longwood Lancers",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": 16.5,
+    "spread": -16.5,
+    "total": 145.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 12.2,
+    "total": 148.9,
+    "home_pts": 80.5,
+    "away_pts": 68.4
+   },
+   "matchup": {
+    "pace": 72.4,
+    "home_ortg": 110.2,
+    "away_ortg": 95.5,
+    "apm_diff": 9.5,
+    "box_diff": 9.6,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": -0.007,
+     "tov": 0.005,
+     "orb": -0.003,
+     "ftr": 0.072,
+     "3p": -0.048
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 6,
+     "margin": 9.8,
+     "pf": 72.2,
+     "pa": 62.4,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +17",
+      "W +8",
+      "L -1",
+      "W +23",
+      "W +11"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 7,
+     "margin": 12.6,
+     "pf": 88.0,
+     "pa": 75.4,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +5",
+      "W +56",
+      "L -6",
+      "W +6",
+      "L -6"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 4.0,
+    "away_rest": 4.0,
+    "rest_diff": 0.0,
+    "home_n": 6.0,
+    "away_n": 7.0
+   },
+   "a_card": false,
+   "notes": [
+    "Our projection is 4.3 pts better for Longwood Lancers than the line"
+   ],
+   "call": {
+    "adj_margin": 12.2,
+    "adj_total": 148.9,
+    "fatigue": [],
+    "spread": {
+     "side": "Longwood Lancers",
+     "line": 16.5,
+     "confidence": 1,
+     "why": "projection George Mason Patriots +12.2 vs line +16.5"
+    },
+    "total": {
+     "side": "Over",
+     "line": 145.5,
+     "confidence": 1,
+     "why": "adjusted total 148.9 (model 148.9)"
+    }
+   }
+  },
+  {
+   "game_id": "401918971",
+   "home": "Utah State Aggies",
+   "away": "SMU Mustangs",
+   "neutral": true,
+   "tier": "high",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": 3.5,
+    "spread": -3.5,
+    "total": 162.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 2.3,
+    "total": 170.8,
+    "home_pts": 86.6,
+    "away_pts": 84.2
+   },
+   "matchup": {
+    "pace": 76.6,
+    "home_ortg": 104.8,
+    "away_ortg": 103.4,
+    "apm_diff": 2.0,
+    "box_diff": 1.8,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.017,
+     "tov": 0.051,
+     "orb": -0.062,
+     "ftr": -0.027,
+     "3p": 0.042
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 9,
+     "l": 1,
+     "this_season": 5,
+     "margin": 21.2,
+     "pf": 90.7,
+     "pa": 69.5,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +36",
+      "W +34",
+      "W +32",
+      "W +38",
+      "W +30"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 7,
+     "l": 3,
+     "this_season": 6,
+     "margin": 13.8,
+     "pf": 84.6,
+     "pa": 70.8,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +25",
+      "W +35",
+      "W +25",
+      "W +4",
+      "W +46"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 7.0,
+    "away_rest": 5.0,
+    "rest_diff": 0.0,
+    "home_n": 5.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [
+    "Our total is 8.3 over the line"
+   ],
+   "call": {
+    "adj_margin": 2.3,
+    "adj_total": 170.8,
+    "fatigue": [],
+    "spread": {
+     "side": "SMU Mustangs",
+     "line": 3.5,
+     "confidence": 1,
+     "why": "projection Utah State Aggies +2.3 vs line +3.5; against: recent margins favour the other side"
+    },
+    "total": {
+     "side": "Over",
+     "line": 162.5,
+     "confidence": 2,
+     "why": "adjusted total 170.8 (model 170.8)"
+    }
+   }
+  },
+  {
+   "game_id": "401909568",
+   "home": "Duke Blue Devils",
+   "away": "UConn Huskies",
+   "neutral": true,
+   "tier": "high",
+   "commence": "2026-11-26 00:00:00+00:00",
+   "tip_et": "7:00 PM",
+   "line": {
+    "home_margin": -1.5,
+    "spread": 1.5,
+    "total": 145.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": -1.2,
+    "total": 150.5,
+    "home_pts": 74.7,
+    "away_pts": 75.8
+   },
+   "matchup": {
+    "pace": 73.4,
+    "home_ortg": 97.3,
+    "away_ortg": 98.3,
+    "apm_diff": -3.4,
+    "box_diff": 4.0,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.03,
+     "tov": -0.044,
+     "orb": 0.027,
+     "ftr": 0.162,
+     "3p": -0.076
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 7,
+     "l": 3,
+     "this_season": 6,
+     "margin": 14.8,
+     "pf": 82.0,
+     "pa": 67.2,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +61",
+      "L -6",
+      "W +43",
+      "L -21",
+      "W +4"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 8,
+     "l": 2,
+     "this_season": 5,
+     "margin": 12.4,
+     "pf": 76.4,
+     "pa": 64.0,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +40",
+      "W +8",
+      "W +42",
+      "W +16",
+      "L -6"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 4.0,
+    "away_rest": 7.0,
+    "rest_diff": -1.0,
+    "home_n": 6.0,
+    "away_n": 5.0
+   },
+   "a_card": false,
+   "notes": [
+    "Our total is 5.0 over the line"
+   ],
+   "call": {
+    "adj_margin": -1.2,
+    "adj_total": 150.5,
+    "fatigue": [],
+    "spread": {
+     "side": "Duke Blue Devils",
+     "line": 1.5,
+     "confidence": 1,
+     "why": "projection Duke Blue Devils -1.2 vs line -1.5"
+    },
+    "total": {
+     "side": "Over",
+     "line": 145.5,
+     "confidence": 1,
+     "why": "adjusted total 150.5 (model 150.5)"
     }
    }
   },
@@ -4886,13 +2771,13 @@
     "home_margin": 3.5,
     "spread": -3.5,
     "total": 148.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 3.2,
+    "margin": 3.4,
     "total": 150.2,
-    "home_pts": 76.7,
-    "away_pts": 73.5
+    "home_pts": 76.8,
+    "away_pts": 73.4
    },
    "matchup": {
     "pace": 70.8,
@@ -4964,20 +2849,127 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 3.2,
+    "adj_margin": 3.4,
     "adj_total": 150.2,
     "fatigue": [],
     "spread": {
      "side": "Wake Forest Demon Deacons",
      "line": 3.5,
      "confidence": 2,
-     "why": "projection Mississippi State Bulldogs +3.2 vs line +3.5; recent margins favour our side"
+     "why": "projection Mississippi State Bulldogs +3.4 vs line +3.5; recent margins favour our side"
     },
     "total": {
      "side": "Over",
      "line": 148.5,
      "confidence": 1,
      "why": "adjusted total 150.2 (model 150.2)"
+    }
+   }
+  },
+  {
+   "game_id": "401911522",
+   "home": "UC Davis Aggies",
+   "away": "Omaha Mavericks",
+   "neutral": true,
+   "tier": "low",
+   "commence": "2026-11-26 01:00:00+00:00",
+   "tip_et": "8:00 PM",
+   "line": {
+    "home_margin": 4.5,
+    "spread": -4.5,
+    "total": 146.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 5.1,
+    "total": 142.1,
+    "home_pts": 73.6,
+    "away_pts": 68.5
+   },
+   "matchup": {
+    "pace": 73.1,
+    "home_ortg": 97.2,
+    "away_ortg": 89.2,
+    "apm_diff": 5.8,
+    "box_diff": 2.2,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.061,
+     "tov": 0.03,
+     "orb": -0.041,
+     "ftr": -0.037,
+     "3p": 0.039
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 5,
+     "l": 5,
+     "this_season": 5,
+     "margin": 1.9,
+     "pf": 73.1,
+     "pa": 71.2,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -4",
+      "W +13",
+      "W +12",
+      "W +19",
+      "L -7"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 4,
+     "l": 6,
+     "this_season": 6,
+     "margin": -11.6,
+     "pf": 66.6,
+     "pa": 78.2,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -41",
+      "L -34",
+      "W +12",
+      "W +11",
+      "L -30"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 7.0,
+    "away_rest": 7.0,
+    "rest_diff": 0.0,
+    "home_n": 5.0,
+    "away_n": 6.0
+   },
+   "a_card": false,
+   "notes": [],
+   "call": {
+    "adj_margin": 5.1,
+    "adj_total": 142.1,
+    "fatigue": [],
+    "spread": {
+     "side": "UC Davis Aggies",
+     "line": -4.5,
+     "confidence": 2,
+     "why": "projection UC Davis Aggies +5.1 vs line +4.5; recent margins favour our side"
+    },
+    "total": {
+     "side": "Under",
+     "line": 146.5,
+     "confidence": 1,
+     "why": "adjusted total 142.1 (model 142.1)"
     }
    }
   },
@@ -4993,13 +2985,13 @@
     "home_margin": 9.5,
     "spread": -9.5,
     "total": 159.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 5.8,
-    "total": 160.4,
-    "home_pts": 83.1,
-    "away_pts": 77.3
+    "margin": 6.3,
+    "total": 160.3,
+    "home_pts": 83.3,
+    "away_pts": 77.0
    },
    "matchup": {
     "pace": 73.1,
@@ -5073,127 +3065,20 @@
     "Cal State Bakersfield Roadrunners has 3 more days of rest"
    ],
    "call": {
-    "adj_margin": 5.8,
-    "adj_total": 160.4,
+    "adj_margin": 6.3,
+    "adj_total": 160.3,
     "fatigue": [],
     "spread": {
      "side": "Cal State Bakersfield Roadrunners",
      "line": 9.5,
      "confidence": 1,
-     "why": "projection Pepperdine Waves +5.8 vs line +9.5; against: recent margins favour the other side; note: rest edge (not counted)"
+     "why": "projection Pepperdine Waves +6.3 vs line +9.5; against: recent margins favour the other side; note: rest edge (not counted)"
     },
     "total": {
      "side": "Over",
      "line": 159.5,
      "confidence": 1,
-     "why": "adjusted total 160.4 (model 160.4)"
-    }
-   }
-  },
-  {
-   "game_id": "401911522",
-   "home": "UC Davis Aggies",
-   "away": "Omaha Mavericks",
-   "neutral": true,
-   "tier": "low",
-   "commence": "2026-11-26 01:00:00+00:00",
-   "tip_et": "8:00 PM",
-   "line": {
-    "home_margin": 4.5,
-    "spread": -4.5,
-    "total": 146.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 4.9,
-    "total": 142.1,
-    "home_pts": 73.5,
-    "away_pts": 68.6
-   },
-   "matchup": {
-    "pace": 73.1,
-    "home_ortg": 97.2,
-    "away_ortg": 89.2,
-    "apm_diff": 5.8,
-    "box_diff": 2.2,
-    "same_diff": -0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.061,
-     "tov": 0.03,
-     "orb": -0.041,
-     "ftr": -0.037,
-     "3p": 0.039
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 5,
-     "l": 5,
-     "this_season": 5,
-     "margin": 1.9,
-     "pf": 73.1,
-     "pa": 71.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -4",
-      "W +13",
-      "W +12",
-      "W +19",
-      "L -7"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 4,
-     "l": 6,
-     "this_season": 6,
-     "margin": -11.6,
-     "pf": 66.6,
-     "pa": 78.2,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -41",
-      "L -34",
-      "W +12",
-      "W +11",
-      "L -30"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 7.0,
-    "away_rest": 7.0,
-    "rest_diff": 0.0,
-    "home_n": 5.0,
-    "away_n": 6.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": 4.9,
-    "adj_total": 142.1,
-    "fatigue": [],
-    "spread": {
-     "side": "UC Davis Aggies",
-     "line": -4.5,
-     "confidence": 2,
-     "why": "projection UC Davis Aggies +4.9 vs line +4.5; recent margins favour our side"
-    },
-    "total": {
-     "side": "Under",
-     "line": 146.5,
-     "confidence": 1,
-     "why": "adjusted total 142.1 (model 142.1)"
+     "why": "adjusted total 160.3 (model 160.3)"
     }
    }
   },
@@ -5209,13 +3094,13 @@
     "home_margin": 1.5,
     "spread": -1.5,
     "total": 131.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 0.9,
+    "margin": 1.1,
     "total": 132.2,
-    "home_pts": 66.5,
-    "away_pts": 65.6
+    "home_pts": 66.6,
+    "away_pts": 65.5
    },
    "matchup": {
     "pace": 66.8,
@@ -5290,7 +3175,7 @@
     "Eastern Michigan Eagles played yesterday"
    ],
    "call": {
-    "adj_margin": 0.9,
+    "adj_margin": 1.1,
     "adj_total": 129.2,
     "fatigue": [
      "UTEP Miners played yesterday",
@@ -5300,13 +3185,120 @@
      "side": "Eastern Michigan Eagles",
      "line": 1.5,
      "confidence": 1,
-     "why": "projection UTEP Miners +0.9 vs line +1.5; caution: Eastern Michigan Eagles played yesterday"
+     "why": "projection UTEP Miners +1.1 vs line +1.5; caution: Eastern Michigan Eagles played yesterday"
     },
     "total": {
      "side": "Under",
      "line": 131.5,
      "confidence": 1,
      "why": "adjusted total 129.2 (model 132.2); fatigue lowers scoring: UTEP Miners played yesterday; Eastern Michigan Eagles played yesterday"
+    }
+   }
+  },
+  {
+   "game_id": "401924897",
+   "home": "New Mexico Lobos",
+   "away": "Mississippi Valley State Delta Devils",
+   "neutral": false,
+   "tier": "low",
+   "commence": "2026-11-26 02:00:00+00:00",
+   "tip_et": "9:00 PM",
+   "line": {
+    "home_margin": 35.5,
+    "spread": -35.5,
+    "total": 152.5,
+    "provider": "Draft Kings"
+   },
+   "projection": {
+    "margin": 34.0,
+    "total": 150.6,
+    "home_pts": 92.3,
+    "away_pts": 58.3
+   },
+   "matchup": {
+    "pace": 72.3,
+    "home_ortg": 118.8,
+    "away_ortg": 90.2,
+    "apm_diff": 20.8,
+    "box_diff": 22.7,
+    "same_diff": 0.0,
+    "new_diff": 0.0,
+    "four_factors": {
+     "efg": 0.135,
+     "tov": 0.072,
+     "orb": 0.164,
+     "ftr": 0.061,
+     "3p": 0.052
+    }
+   },
+   "form": {
+    "home": {
+     "n": 10,
+     "w": 6,
+     "l": 4,
+     "this_season": 5,
+     "margin": 12.1,
+     "pf": 84.1,
+     "pa": 72.0,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "W +40",
+      "W +29",
+      "W +25",
+      "L -5",
+      "L -25"
+     ]
+    },
+    "away": {
+     "n": 10,
+     "w": 1,
+     "l": 9,
+     "this_season": 5,
+     "margin": -19.0,
+     "pf": 62.5,
+     "pa": 81.5,
+     "cover": 0,
+     "no_cover": 0,
+     "vs_line": null,
+     "over": 0,
+     "under": 0,
+     "last": [
+      "L -27",
+      "L -13",
+      "L -34",
+      "L -16",
+      "L -44"
+     ]
+    }
+   },
+   "schedule": {
+    "home_rest": 4.0,
+    "away_rest": 5.0,
+    "rest_diff": -1.0,
+    "home_n": 5.0,
+    "away_n": 5.0
+   },
+   "a_card": false,
+   "notes": [],
+   "call": {
+    "adj_margin": 34.0,
+    "adj_total": 150.6,
+    "fatigue": [],
+    "spread": {
+     "side": "Mississippi Valley State Delta Devils",
+     "line": 35.5,
+     "confidence": 1,
+     "why": "projection New Mexico Lobos +34.0 vs line +35.5; against: recent margins favour the other side; against: big-line underdog"
+    },
+    "total": {
+     "side": "Under",
+     "line": 152.5,
+     "confidence": 1,
+     "why": "adjusted total 150.6 (model 150.6)"
     }
    }
   },
@@ -5322,12 +3314,12 @@
     "home_margin": 7.5,
     "spread": -7.5,
     "total": 152.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 9.9,
-    "total": 153.5,
-    "home_pts": 81.7,
+    "margin": 10.1,
+    "total": 153.6,
+    "home_pts": 81.8,
     "away_pts": 71.8
    },
    "matchup": {
@@ -5400,127 +3392,20 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 9.9,
-    "adj_total": 153.5,
+    "adj_margin": 10.1,
+    "adj_total": 153.6,
     "fatigue": [],
     "spread": {
      "side": "Loyola Marymount Lions",
      "line": -7.5,
      "confidence": 2,
-     "why": "projection Loyola Marymount Lions +9.9 vs line +7.5; recent margins favour our side"
+     "why": "projection Loyola Marymount Lions +10.1 vs line +7.5; recent margins favour our side"
     },
     "total": {
      "side": "Over",
      "line": 152.5,
      "confidence": 1,
-     "why": "adjusted total 153.5 (model 153.5)"
-    }
-   }
-  },
-  {
-   "game_id": "401924897",
-   "home": "New Mexico Lobos",
-   "away": "Mississippi Valley State Delta Devils",
-   "neutral": false,
-   "tier": "low",
-   "commence": "2026-11-26 02:00:00+00:00",
-   "tip_et": "9:00 PM",
-   "line": {
-    "home_margin": 36.5,
-    "spread": -36.5,
-    "total": 152.5,
-    "provider": "DraftKings"
-   },
-   "projection": {
-    "margin": 34.7,
-    "total": 150.4,
-    "home_pts": 92.6,
-    "away_pts": 57.9
-   },
-   "matchup": {
-    "pace": 72.3,
-    "home_ortg": 118.8,
-    "away_ortg": 90.2,
-    "apm_diff": 20.8,
-    "box_diff": 22.7,
-    "same_diff": 0.0,
-    "new_diff": 0.0,
-    "four_factors": {
-     "efg": 0.135,
-     "tov": 0.072,
-     "orb": 0.164,
-     "ftr": 0.061,
-     "3p": 0.052
-    }
-   },
-   "form": {
-    "home": {
-     "n": 10,
-     "w": 6,
-     "l": 4,
-     "this_season": 5,
-     "margin": 12.1,
-     "pf": 84.1,
-     "pa": 72.0,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "W +40",
-      "W +29",
-      "W +25",
-      "L -5",
-      "L -25"
-     ]
-    },
-    "away": {
-     "n": 10,
-     "w": 1,
-     "l": 9,
-     "this_season": 5,
-     "margin": -19.0,
-     "pf": 62.5,
-     "pa": 81.5,
-     "cover": 0,
-     "no_cover": 0,
-     "vs_line": null,
-     "over": 0,
-     "under": 0,
-     "last": [
-      "L -27",
-      "L -13",
-      "L -34",
-      "L -16",
-      "L -44"
-     ]
-    }
-   },
-   "schedule": {
-    "home_rest": 4.0,
-    "away_rest": 5.0,
-    "rest_diff": -1.0,
-    "home_n": 5.0,
-    "away_n": 5.0
-   },
-   "a_card": false,
-   "notes": [],
-   "call": {
-    "adj_margin": 34.7,
-    "adj_total": 150.4,
-    "fatigue": [],
-    "spread": {
-     "side": "Mississippi Valley State Delta Devils",
-     "line": 36.5,
-     "confidence": 1,
-     "why": "projection New Mexico Lobos +34.7 vs line +36.5; against: recent margins favour the other side; against: big-line underdog"
-    },
-    "total": {
-     "side": "Under",
-     "line": 152.5,
-     "confidence": 1,
-     "why": "adjusted total 150.4 (model 150.4)"
+     "why": "adjusted total 153.6 (model 153.6)"
     }
    }
   },
@@ -5535,14 +3420,14 @@
    "line": {
     "home_margin": -9.5,
     "spread": 9.5,
-    "total": 154.5,
-    "provider": "DraftKings"
+    "total": 153.5,
+    "provider": "Draft Kings"
    },
    "projection": {
     "margin": -10.5,
-    "total": 156.9,
+    "total": 157.0,
     "home_pts": 73.2,
-    "away_pts": 83.7
+    "away_pts": 83.8
    },
    "matchup": {
     "pace": 75.5,
@@ -5617,7 +3502,7 @@
    ],
    "call": {
     "adj_margin": -9.0,
-    "adj_total": 155.4,
+    "adj_total": 155.5,
     "fatigue": [
      "Grand Canyon Lopes played yesterday"
     ],
@@ -5629,9 +3514,9 @@
     },
     "total": {
      "side": "Over",
-     "line": 154.5,
+     "line": 153.5,
      "confidence": 1,
-     "why": "adjusted total 155.4 (model 156.9); caution: Grand Canyon Lopes played yesterday"
+     "why": "adjusted total 155.5 (model 157.0); caution: Grand Canyon Lopes played yesterday"
     }
    }
   },
@@ -5644,13 +3529,13 @@
    "commence": "2026-11-26 03:00:00+00:00",
    "tip_et": "10:00 PM",
    "line": {
-    "home_margin": 4.5,
-    "spread": -4.5,
+    "home_margin": 3.5,
+    "spread": -3.5,
     "total": 144.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 3.6,
+    "margin": 3.7,
     "total": 146.6,
     "home_pts": 75.1,
     "away_pts": 71.5
@@ -5728,17 +3613,17 @@
     "Washington Huskies played yesterday"
    ],
    "call": {
-    "adj_margin": 3.6,
+    "adj_margin": 3.7,
     "adj_total": 143.6,
     "fatigue": [
      "VCU Rams played yesterday",
      "Washington Huskies played yesterday"
     ],
     "spread": {
-     "side": "Washington Huskies",
-     "line": 4.5,
+     "side": "VCU Rams",
+     "line": -3.5,
      "confidence": 1,
-     "why": "projection VCU Rams +3.6 vs line +4.5; caution: Washington Huskies played yesterday"
+     "why": "projection VCU Rams +3.7 vs line +3.5; caution: VCU Rams played yesterday"
     },
     "total": {
      "side": "Under",
@@ -5760,13 +3645,13 @@
     "home_margin": -3.5,
     "spread": 3.5,
     "total": 132.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": -5.7,
-    "total": 139.3,
+    "margin": -5.5,
+    "total": 139.2,
     "home_pts": 66.8,
-    "away_pts": 72.5
+    "away_pts": 72.3
    },
    "matchup": {
     "pace": 66.9,
@@ -5837,23 +3722,23 @@
    },
    "a_card": false,
    "notes": [
-    "Our total is 6.8 over the line"
+    "Our total is 6.7 over the line"
    ],
    "call": {
-    "adj_margin": -5.7,
-    "adj_total": 139.3,
+    "adj_margin": -5.5,
+    "adj_total": 139.2,
     "fatigue": [],
     "spread": {
      "side": "Pacific Tigers",
      "line": -3.5,
      "confidence": 2,
-     "why": "projection Jacksonville State Gamecocks -5.7 vs line -3.5; recent margins favour our side"
+     "why": "projection Jacksonville State Gamecocks -5.5 vs line -3.5; recent margins favour our side"
     },
     "total": {
      "side": "Over",
      "line": 132.5,
      "confidence": 2,
-     "why": "adjusted total 139.3 (model 139.3)"
+     "why": "adjusted total 139.2 (model 139.2)"
     }
    }
   },
@@ -5869,13 +3754,13 @@
     "home_margin": 16.5,
     "spread": -16.5,
     "total": 139.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 15.8,
-    "total": 144.1,
-    "home_pts": 80.0,
-    "away_pts": 64.1
+    "margin": 16.4,
+    "total": 143.8,
+    "home_pts": 80.1,
+    "away_pts": 63.7
    },
    "matchup": {
     "pace": 71.0,
@@ -5947,20 +3832,20 @@
    "a_card": false,
    "notes": [],
    "call": {
-    "adj_margin": 15.8,
-    "adj_total": 144.1,
+    "adj_margin": 16.4,
+    "adj_total": 143.8,
     "fatigue": [],
     "spread": {
      "side": "Incarnate Word Cardinals",
      "line": 16.5,
      "confidence": 1,
-     "why": "projection Hawai'i Rainbow Warriors +15.8 vs line +16.5; against: recent margins favour the other side"
+     "why": "projection Hawai'i Rainbow Warriors +16.4 vs line +16.5; against: recent margins favour the other side"
     },
     "total": {
      "side": "Over",
      "line": 139.5,
      "confidence": 1,
-     "why": "adjusted total 144.1 (model 144.1)"
+     "why": "adjusted total 143.8 (model 143.8)"
     }
    }
   },
@@ -5973,16 +3858,16 @@
    "commence": "2026-11-26 04:59:00+00:00",
    "tip_et": "11:59 PM",
    "line": {
-    "home_margin": 3.5,
-    "spread": -3.5,
+    "home_margin": 4.5,
+    "spread": -4.5,
     "total": 152.5,
-    "provider": "DraftKings"
+    "provider": "Draft Kings"
    },
    "projection": {
-    "margin": 1.7,
-    "total": 153.1,
-    "home_pts": 77.4,
-    "away_pts": 75.7
+    "margin": 1.9,
+    "total": 153.2,
+    "home_pts": 77.5,
+    "away_pts": 75.6
    },
    "matchup": {
     "pace": 72.5,
@@ -6056,22 +3941,22 @@
     "Saint Louis Billikens played yesterday"
    ],
    "call": {
-    "adj_margin": 0.2,
-    "adj_total": 151.6,
+    "adj_margin": 0.4,
+    "adj_total": 151.7,
     "fatigue": [
      "Saint Louis Billikens played yesterday"
     ],
     "spread": {
      "side": "Stanford Cardinal",
-     "line": 3.5,
+     "line": 4.5,
      "confidence": 1,
-     "why": "projection Saint Louis Billikens +0.2 vs line +3.5"
+     "why": "projection Saint Louis Billikens +0.4 vs line +4.5"
     },
     "total": {
      "side": "Under",
      "line": 152.5,
      "confidence": 1,
-     "why": "adjusted total 151.6 (model 153.1); fatigue lowers scoring: Saint Louis Billikens played yesterday"
+     "why": "adjusted total 151.7 (model 153.2); fatigue lowers scoring: Saint Louis Billikens played yesterday"
     }
    }
   }
