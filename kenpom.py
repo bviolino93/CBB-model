@@ -129,6 +129,24 @@ def preseason(season: int) -> pd.DataFrame:
     return pd.DataFrame(call("archive", preseason="true", y=season))
 
 
+SEASON_TABLES = ("four-factors", "pointdist", "misc-stats", "height")
+
+
+def season_table(endpoint: str, season: int) -> pd.DataFrame:
+    """One season-level table (four-factors, pointdist, misc-stats, height).
+    These are as of the end of the season (or today for the current one),
+    so a backtest may only use them from the season BEFORE a game."""
+    cur = season >= datetime.now(timezone.utc).year + (
+        datetime.now(timezone.utc).month >= 8)
+    df = pd.DataFrame(call(endpoint, max_age_h=12.0 if cur else None, y=season))
+    if df.empty:
+        return df
+    for c in df.columns:
+        if c not in ("TeamName", "ConfShort", "DataThrough", "ConfOnly"):
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+    return df
+
+
 # ----------------------------------------------------------------------
 # KenPom names ("Connecticut", "N.C. State", "Miami FL") to ESPN display
 # names ("UConn Huskies", "NC State Wolfpack", "Miami Hurricanes")
@@ -249,6 +267,8 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
     for c in ("kp_margin", "kp_total", "kp_wp", "kp_tempo", "kp_home_rank",
               "kp_away_rank"):
         g[c] = np.nan
+    g["kp_home_name"] = None
+    g["kp_away_name"] = None
     fan, arc, skipped = [], [], 0
     pre: dict[int, pd.DataFrame] = {}
     sel = g[g["season"].isin(list(seasons))]
@@ -320,6 +340,8 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
         g.at[idx, "kp_tempo"] = r.get("PredTempo", np.nan)
         g.at[idx, "kp_home_rank"] = r["VisitorRank"] if swap else r["HomeRank"]
         g.at[idx, "kp_away_rank"] = r["HomeRank"] if swap else r["VisitorRank"]
+        g.at[idx, "kp_home_name"] = r["Visitor"] if swap else r["Home"]
+        g.at[idx, "kp_away_name"] = r["Home"] if swap else r["Visitor"]
         hits += 1
     if verbose:
         n = len(sel)
@@ -378,13 +400,60 @@ def show_day(d: date, team: str = "") -> None:
               f"{r.kp_h_t:.1f}/{r.kp_a_t:.1f}; {line}")
 
 
+def show_gaps(d: date, top: int = 15, lines_dir: str = "data/lines") -> None:
+    """Biggest gaps between KenPom's number and the best DraftKings /
+    FanDuel line, games not started yet. Gap size alone is not a tested
+    edge (see tools/kenpom_backtest.py)."""
+    from books import best_lines, pick_best
+    from cbb_data import fetch_day
+    g = pd.DataFrame(fetch_day(d))
+    g = g.assign(season=g["season"].fillna(0).astype(int), game_date=d)
+    k = load_kenpom(g, sorted(set(g["season"])), ratings=False, budget_min=10)
+    now = pd.Timestamp.now(tz="UTC")
+    k = k[k["kp_margin"].notna() & (pd.to_datetime(k["commence"], utc=True) > now)]
+    bl = best_lines(k, d, lines_dir)
+    sp, to = [], []
+    for r in k.itertuples():
+        rec = bl.get(str(r.game_id))
+        tip = pd.to_datetime(r.commence, utc=True).tz_convert("America/New_York")
+        tip = f"{tip:%-I:%M %p} ET"
+        if not rec:
+            continue
+        m, t = r.kp_margin, r.kp_total
+        for side, team, edge_of in (("home", r.home_team, lambda pt: m + pt),
+                                    ("away", r.away_team, lambda pt: -m + pt)):
+            b = pick_best(rec, "spread", side)
+            if b and edge_of(b[1]) > 0:
+                fav = r.home_team if m > 0 else r.away_team
+                sp.append((edge_of(b[1]), f"{team} {b[1]:+g} ({b[2]:+d}, {b[0]}): "
+                           f"KenPom {fav} by {abs(m):.1f}; {r.away_team} @ "
+                           f"{r.home_team}, {tip}"))
+        for side, edge_of in (("over", lambda pt: t - pt), ("under", lambda pt: pt - t)):
+            b = pick_best(rec, "total", side)
+            if b and edge_of(b[1]) > 0:
+                to.append((edge_of(b[1]), f"{side.title()} {b[1]:g} ({b[2]:+d}, {b[0]}): "
+                           f"KenPom total {t:.1f}; {r.away_team} @ {r.home_team}, {tip}"))
+    print(f"{len(k)} games not started with a KenPom number, {len(bl)} with "
+          f"DK/FD lines\n\nSPREADS (gap = KenPom margin vs the best line)")
+    for e, line in sorted(sp, reverse=True)[:top]:
+        print(f"  {e:4.1f}  {line}")
+    print("\nTOTALS")
+    for e, line in sorted(to, reverse=True)[:top]:
+        print(f"  {e:4.1f}  {line}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--first", type=int, default=2021)
     ap.add_argument("--day", default="", help="print KenPom's games for a date")
     ap.add_argument("--team", default="", help="with --day: only games with this text")
+    ap.add_argument("--gaps", action="store_true",
+                    help="with --day: biggest KenPom vs DK/FD gaps")
     a = ap.parse_args()
+    if a.day and a.gaps:
+        show_gaps(pd.Timestamp(a.day).date())
+        return
     if a.day:
         show_day(pd.Timestamp(a.day).date(), a.team)
         return

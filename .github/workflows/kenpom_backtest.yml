@@ -10,7 +10,7 @@ name: KenPom backtest
 on:
   push:
     branches: [claude/project-thread-gh8o50]
-    paths: [.github/workflows/kenpom_backtest.yml, kenpom.py, tools/kenpom_backtest.py, tools/kenpom_research.py]
+    paths: [.github/workflows/kenpom_backtest.yml, kenpom.py, tools/kenpom_backtest.py, tools/kenpom_research.py, tools/kenpom_model.py]
   workflow_dispatch:
     inputs:
       first:
@@ -70,6 +70,11 @@ jobs:
         run: |
           test -f kp_games.csv || exit 0
           python tools/kenpom_research.py --games kp_games.csv --odds .cache_cbb/odds | tee research.txt
+      - name: KenPom-only model (walk-forward vs the close)
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_model.py --games kp_games.csv | tee model.txt
       - name: Save caches
         if: always()
         uses: actions/cache/save@v4
@@ -81,7 +86,7 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          { echo '```'; cat probe.txt 2>/dev/null; echo; cat out.txt 2>/dev/null; echo; cat research.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          { echo '```'; cat probe.txt 2>/dev/null; echo; cat out.txt 2>/dev/null; echo; cat research.txt 2>/dev/null; echo; cat model.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -91,3 +96,4 @@ jobs:
             out.txt
             probe.txt
             research.txt
+            model.txt

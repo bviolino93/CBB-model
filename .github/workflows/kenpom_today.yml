@@ -15,6 +15,10 @@ on:
       team:
         description: "Only games with this text in a team name (empty = all)"
         default: ""
+      gaps:
+        description: "Also list the biggest KenPom vs DraftKings/FanDuel gaps"
+        type: boolean
+        default: true
 
 defaults:
   run:
@@ -28,6 +32,10 @@ jobs:
       KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY }}
     steps:
       - uses: actions/checkout@v4
+      - name: Latest DK/FD lines from main
+        run: |
+          git fetch --depth=1 origin main
+          git checkout FETCH_HEAD -- data/lines || true
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -38,3 +46,10 @@ jobs:
           [ -n "$day" ] || day=$(TZ=America/New_York date +%F)
           python kenpom.py --day "$day" --team "${{ inputs.team }}" | tee out.txt
           { echo '```'; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Biggest gaps vs DraftKings / FanDuel
+        if: ${{ inputs.gaps || github.event_name == 'push' }}
+        run: |
+          day="${{ inputs.date }}"
+          [ -n "$day" ] || day=$(TZ=America/New_York date +%F)
+          python kenpom.py --day "$day" --gaps | tee gaps.txt
+          { echo '```'; cat gaps.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
