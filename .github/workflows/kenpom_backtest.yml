@@ -10,7 +10,7 @@ name: KenPom backtest
 on:
   push:
     branches: [claude/project-thread-gh8o50]
-    paths: [.github/workflows/kenpom_backtest.yml, kenpom.py, tools/kenpom_backtest.py]
+    paths: [.github/workflows/kenpom_backtest.yml, kenpom.py, tools/kenpom_backtest.py, tools/kenpom_research.py]
   workflow_dispatch:
     inputs:
       first:
@@ -65,6 +65,11 @@ jobs:
         run: |
           python tools/kenpom_backtest.py --first ${{ inputs.first || '2020' }} \
             --out kp_games.csv | tee out.txt
+      - name: Research (what in the data beats the line?)
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_research.py --games kp_games.csv --odds .cache_cbb/odds | tee research.txt
       - name: Save caches
         if: always()
         uses: actions/cache/save@v4
@@ -76,7 +81,7 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          { echo '```'; cat probe.txt 2>/dev/null; echo; cat out.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          { echo '```'; cat probe.txt 2>/dev/null; echo; cat out.txt 2>/dev/null; echo; cat research.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -85,3 +90,4 @@ jobs:
           path: |
             out.txt
             probe.txt
+            research.txt
