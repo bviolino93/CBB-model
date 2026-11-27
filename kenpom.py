@@ -348,13 +348,17 @@ def main():
                   "KENPOM_PASSWORD"):
             if os.environ.get(n):
                 print(f"also set: {n}")
-        if key:
-            d = datetime.now(timezone.utc).date() - timedelta(days=2)
-            rows = call("fanmatch", cache=False, d=f"{d:%Y-%m-%d}")
-            print(f"fanmatch {d}: {len(rows)} games")
-            if rows:
-                print("fields:", sorted(rows[0]))
-                print("first:", rows[0])
+        if not key:
+            raise SystemExit("no KenPom key secret found")
+        d = datetime.now(timezone.utc).date() - timedelta(days=2)
+        rows = call("fanmatch", cache=False, d=f"{d:%Y-%m-%d}")
+        print(f"fanmatch {d}: {len(rows)} games")
+        if rows:
+            print("fields:", sorted(rows[0]))
+        old = call("fanmatch", cache=False, d="2019-01-12")
+        print(f"fanmatch 2019-01-12: {len(old)} games (history check)")
+        if not rows:
+            raise SystemExit("KenPom answered but returned no games")
         return
     from cbb_data import load_games
     g = load_games(a.first, past_lines=False)
