@@ -6,7 +6,7 @@ name: KenPom today
 on:
   push:
     branches: [claude/project-thread-gh8o50]
-    paths: [.github/workflows/kenpom_today.yml]
+    paths: [.github/workflows/kenpom_today.yml, kenpom.py]
   workflow_dispatch:
     inputs:
       date:

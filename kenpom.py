@@ -121,6 +121,10 @@ def archive(d: date) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def current_ratings(season: int) -> pd.DataFrame:
+    return pd.DataFrame(call("ratings", max_age_h=1.0, y=season))
+
+
 def preseason(season: int) -> pd.DataFrame:
     return pd.DataFrame(call("archive", preseason="true", y=season))
 
@@ -264,6 +268,9 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
             try:
                 f = fanmatch(d)
                 a = archive(d) if ratings else pd.DataFrame()
+                if ratings and a.empty and d >= datetime.now(timezone.utc).date() - timedelta(days=1):
+                    # The archive only has past dates: today uses current ratings.
+                    a = current_ratings(int(season))
             except RuntimeError as e:
                 # Rate limited for good: keep what we have, the next run
                 # carries on from the cache.
@@ -318,6 +325,9 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
         n = len(sel)
         print(f"  kenpom: {len(fan)} predictions, matched {hits} of {n} "
               f"ESPN games ({hits / max(n, 1):.0%})")
+    for side in ("h", "a"):
+        for short in ("em", "oe", "de", "t", "pre_em"):
+            g[f"kp_{side}_{short}"] = np.nan
     if ratings and arc:
         arc = _num(pd.concat(arc, ignore_index=True), ARC_COLS)
         arc["espn"] = [maps.get(s, {}).get(n) for s, n in
