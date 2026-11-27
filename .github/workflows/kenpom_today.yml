@@ -1,0 +1,40 @@
+name: KenPom today
+
+# KenPom's prediction and ratings next to ESPN's line for one day's games
+# (kenpom.py --day). Needs the KENPOM_API_KEY secret.
+
+on:
+  push:
+    branches: [claude/project-thread-gh8o50]
+    paths: [.github/workflows/kenpom_today.yml]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date (YYYY-MM-DD, ET). Empty = today"
+        default: ""
+      team:
+        description: "Only games with this text in a team name (empty = all)"
+        default: ""
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  today:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: KenPom vs the line
+        run: |
+          day="${{ inputs.date }}"
+          [ -n "$day" ] || day=$(TZ=America/New_York date +%F)
+          python kenpom.py --day "$day" --team "${{ inputs.team }}" | tee out.txt
+          { echo '```'; cat out.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"

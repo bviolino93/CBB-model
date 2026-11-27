@@ -39,7 +39,7 @@ BASE = "https://kenpom.com/api.php"
 CACHE_DIR = os.environ.get("KENPOM_CACHE", ".cache_kenpom")
 KEY_NAMES = ("KENPOM_API_KEY", "KENPOM_KEY", "KENPOM_TOKEN",
              "KENPOM_API_TOKEN", "KENPOM")
-PAUSE = float(os.environ.get("KENPOM_PAUSE", "0.4"))
+PAUSE = float(os.environ.get("KENPOM_PAUSE", "1.0"))
 
 
 def api_key() -> tuple[str, str]:
@@ -100,7 +100,8 @@ def call(endpoint: str, cache: bool = True, max_age_h: float | None = None,
             raise RuntimeError(f"KenPom refused the key ({err})")
         if r.status_code == 404:
             return []
-        time.sleep(min(60, 3 * 2 ** i))
+        # 429: KenPom's rate limit. Wait it out, longer each time.
+        time.sleep(60 * (i + 1) if r.status_code == 429 else min(60, 3 * 2 ** i))
     raise RuntimeError(f"KenPom {endpoint} {params} failed: {err}")
 
 
@@ -260,14 +261,20 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
             if not cached and time.time() > deadline:
                 skipped += 1
                 continue
-            f = fanmatch(d)
+            try:
+                f = fanmatch(d)
+                a = archive(d) if ratings else pd.DataFrame()
+            except RuntimeError as e:
+                # Rate limited for good: keep what we have, the next run
+                # carries on from the cache.
+                print(f"  kenpom: stopped fetching at {d}: {str(e)[:120]}")
+                deadline = 0
+                skipped += 1
+                continue
             if not f.empty:
-                f = f.assign(game_date=d, season=int(season))
-                fan.append(f)
-            if ratings:
-                a = archive(d)
-                if not a.empty:
-                    arc.append(a.assign(game_date=d, season=int(season)))
+                fan.append(f.assign(game_date=d, season=int(season)))
+            if not a.empty:
+                arc.append(a.assign(game_date=d, season=int(season)))
     if skipped and verbose:
         print(f"  kenpom: {skipped} dates not fetched yet (time budget); "
               f"run again to fill them")
@@ -335,11 +342,42 @@ def load_kenpom(g: pd.DataFrame, seasons, ratings: bool = True,
     return g
 
 
+def show_day(d: date, team: str = "") -> None:
+    """KenPom's prediction next to ESPN's line for one date's games."""
+    from cbb_data import fetch_day
+    g = pd.DataFrame(fetch_day(d))
+    g = g.assign(season=g["season"].fillna(0).astype(int), game_date=d)
+    k = load_kenpom(g, sorted(set(g["season"])), budget_min=30)
+    if team:
+        t = team.lower()
+        k = k[k["home_team"].str.lower().str.contains(t)
+              | k["away_team"].str.lower().str.contains(t)]
+    for r in k.sort_values("commence").itertuples():
+        if not np.isfinite(r.kp_margin):
+            print(f"{r.away_team} @ {r.home_team}: no KenPom match")
+            continue
+        hp, ap_ = (r.kp_total + r.kp_margin) / 2, (r.kp_total - r.kp_margin) / 2
+        line = ("no line" if not np.isfinite(r.spread_line) else
+                f"line {r.home_team} {-r.spread_line:+.1f}, total "
+                f"{r.total_line:.1f}")
+        print(f"{r.away_team} @ {r.home_team}{' (neutral)' if r.neutral else ''}: "
+              f"KenPom {r.home_team} {hp:.0f}-{ap_:.0f} ({r.kp_margin:+.1f}, "
+              f"total {r.kp_total:.0f}, win {r.kp_wp:.0%}); ranks "
+              f"{r.kp_home_rank:.0f} vs {r.kp_away_rank:.0f}; AdjEM "
+              f"{r.kp_h_em:+.1f} vs {r.kp_a_em:+.1f}, tempo "
+              f"{r.kp_h_t:.1f}/{r.kp_a_t:.1f}; {line}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--first", type=int, default=2021)
+    ap.add_argument("--day", default="", help="print KenPom's games for a date")
+    ap.add_argument("--team", default="", help="with --day: only games with this text")
     a = ap.parse_args()
+    if a.day:
+        show_day(pd.Timestamp(a.day).date(), a.team)
+        return
     if a.probe:
         name, key = api_key()
         print("KenPom key secret:", name or "NONE SET",
