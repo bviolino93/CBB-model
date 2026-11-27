@@ -397,7 +397,9 @@ def show_day(d: date, team: str = "") -> None:
               f"total {r.kp_total:.0f}, win {r.kp_wp:.0%}); ranks "
               f"{r.kp_home_rank:.0f} vs {r.kp_away_rank:.0f}; AdjEM "
               f"{r.kp_h_em:+.1f} vs {r.kp_a_em:+.1f}, tempo "
-              f"{r.kp_h_t:.1f}/{r.kp_a_t:.1f}; {line}")
+              f"{r.kp_h_t:.1f}/{r.kp_a_t:.1f}; {line}"
+              + (f"; FINAL {r.home_team} {r.home_score:.0f}-{r.away_score:.0f}"
+                 if getattr(r, "completed", False) and np.isfinite(r.home_score) else ""))
 
 
 def show_gaps(d: date, top: int = 15, lines_dir: str = "data/lines") -> None:
