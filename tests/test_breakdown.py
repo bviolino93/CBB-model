@@ -86,3 +86,29 @@ def test_assess_big_gap_caps_confidence_and_rest_not_counted():
     sp = bd.assess(b)["spread"]
     assert sp["side"] == "HCU" and sp["confidence"] == 2
     assert "from the line" in sp["why"] and "rest edge (not counted)" in sp["why"]
+
+
+def test_kenpom_is_context_only():
+    # 11-27 Virginia @ Xavier (neutral): line Xavier +6.5, KenPom Virginia by 8
+    b = {"home": "Xavier Musketeers", "away": "Virginia Cavaliers", "tier": "high",
+         "a_card": False, "neutral": True, "tip_et": "11:00 AM",
+         "line": {"home_margin": -6.5, "spread": 6.5, "total": 156.5},
+         "projection": {"margin": -5.0, "total": 159.8, "home_pts": 77.4,
+                        "away_pts": 82.4},
+         "matchup": {"four_factors": {}},
+         "form": {"home": {"n": 0}, "away": {"n": 0}}, "schedule": {},
+         "kenpom": bd.kenpom_block({"kp_margin": -8.0, "kp_total": 158.0,
+                                    "kp_wp": 0.24, "kp_home_rank": 49,
+                                    "kp_away_rank": 8, "kp_h_oe": 110.0,
+                                    "kp_h_de": 100.0, "kp_a_oe": 118.0,
+                                    "kp_a_de": 95.0, "kp_h_t": 74.0,
+                                    "kp_a_t": 69.5})}
+    without = dict(b, kenpom={})
+    c, c0 = bd.assess(b), bd.assess(without)
+    assert c["spread"]["side"] == "Xavier Musketeers"
+    assert c["spread"]["confidence"] == c0["spread"]["confidence"]
+    assert "KenPom Virginia Cavaliers by 8 (#49 vs #8) disagrees" in c["spread"]["why"]
+    assert "KenPom total 158 (agrees)" in c["total"]["why"]
+    b["call"], b["notes"] = c, []
+    md = bd.to_markdown("2026-11-27", [b])
+    assert "**KenPom:** Xavier Musketeers 75, Virginia Cavaliers 83" in md

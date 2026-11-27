@@ -151,8 +151,8 @@ def by_season(fr: pd.DataFrame) -> None:
     act_m = fr["home_score"] - fr["away_score"]
     act_t = fr["home_score"] + fr["away_score"]
     for s, x in fr.groupby("season"):
-        ok = x[["kp_margin", "spread_line"]].notna().all(1)
-        okt = x[["kp_total", "total_line"]].notna().all(1)
+        ok = x[["kp_margin", "spread_line"]].notna().all(axis=1)
+        okt = x[["kp_total", "total_line"]].notna().all(axis=1)
         if not ok.any():
             continue
         e = lambda col, act, msk: np.abs(x[col] - act[x.index])[msk].mean()

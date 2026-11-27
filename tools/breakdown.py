@@ -32,6 +32,8 @@ import tonight  # noqa: E402  (patches cbb_data.mark_non_d1 for a young season)
 import cbb_predict as cp  # noqa: E402
 from cbb_data import load_games, tier  # noqa: E402
 from cbb_players import load_box  # noqa: E402
+import kenpom  # noqa: E402
+import books  # noqa: E402
 
 K = "l"      # live-roster player features (no hindsight on who played)
 
@@ -181,6 +183,9 @@ def assess(b: dict) -> dict:
             (pick_home and ln["home_margin"] > 0) or (not pick_home and ln["home_margin"] < 0)):
         conf = min(conf, 1)          # big underdogs on huge lines: weakest spot
         against.append("big-line underdog")
+    kr = kenpom_reason(b, pick_home)
+    if kr:
+        notes.append(kr + " (context, not counted)")
     team = b["home"] if pick_home else b["away"]
     line = ln["spread"] if pick_home else -ln["spread"]
     spread = {"side": team, "line": line, "confidence": int(min(5, max(1, conf))),
@@ -190,11 +195,15 @@ def assess(b: dict) -> dict:
     if ln.get("total") is not None and p.get("total") is not None:
         over = adj_t > ln["total"]
         tc = 1 + (1 if abs(adj_t - ln["total"]) >= 6 else 0) - (1 if over and fatigue else 0)
+        k = b.get("kenpom") or {}
+        kt = (f"; KenPom total {k['total']:.0f} "
+              f"({'agrees' if (k['total'] > ln['total']) == over else 'disagrees'})"
+              if k and k['total'] != ln['total'] else "")
         tot = {"side": "Over" if over else "Under", "line": ln["total"],
                "confidence": int(min(5, max(1, tc))),
                "why": f"adjusted total {adj_t:.1f} (model {p['total']:.1f})"
                       + (f"; {'caution' if over else 'fatigue lowers scoring'}: "
-                         f"{'; '.join(fatigue)}" if fatigue else "")}
+                         f"{'; '.join(fatigue)}" if fatigue else "") + kt}
     return {"adj_margin": round(adj_m, 1), "adj_total": round(adj_t, 1),
             "fatigue": fatigue, "spread": spread, "total": tot}
 
@@ -219,6 +228,14 @@ def to_markdown(day, games: list[dict]) -> str:
             out.append(f"**Projection:** {hs} {p['home_pts']:.0f}, {as_} "
                        f"{p['away_pts']:.0f} ({hs} {p['margin']:+.1f}, total "
                        f"{p['total']:.1f})")
+        k = b.get("kenpom") or {}
+        if k:
+            out.append(f"**KenPom:** {hs} {k['home_pts']}, {as_} {k['away_pts']} "
+                       f"({hs} {k['margin']:+.0f}, total {k['total']:.0f}, "
+                       f"{hs} wins {k['home_wp']:.0%}); rank #{k['home_rank']:.0f} vs "
+                       f"#{k['away_rank']:.0f}; offense/defense per 100 {hs} "
+                       f"{k['home_oe']}/{k['home_de']}, {as_} {k['away_oe']}/"
+                       f"{k['away_de']}; tempo {k['home_tempo']}/{k['away_tempo']}")
         mm = []
         if m.get("pace") is not None:
             mm.append(f"pace {m['pace']:.1f}, offense per 100 {hs} "
@@ -251,14 +268,80 @@ def to_markdown(day, games: list[dict]) -> str:
         c = b.get("call") or {}
         if c:
             sp, t = c["spread"], c.get("total")
-            out.append(f"**Call:** {sp['side']} {sp['line']:+g} ({sp['confidence']}/5): "
-                       f"{sp['why']}"
-                       + (f" | {t['side']} {t['line']:g} ({t['confidence']}/5): {t['why']}"
-                          if t else ""))
+            at = lambda x, sign: (f" [best: {x['book']} {x['book_line']:{sign}g} "
+                                  f"{x['price']:+d}]" if x.get("book") else "")
+            out.append(f"**Call:** {sp['side']} {sp['line']:+g}{at(sp, '+')} "
+                       f"({sp['confidence']}/5): {sp['why']}"
+                       + (f" | {t['side']} {t['line']:g}{at(t, '')} ({t['confidence']}/5): "
+                          f"{t['why']}" if t else ""))
         if b["notes"]:
             out.append("**Notes:** " + "; ".join(b["notes"]))
         out.append("")
     return "\n".join(out)
+
+
+def add_kenpom(te: pd.DataFrame) -> pd.DataFrame:
+    """KenPom's prediction and ratings for the day's games, when the
+    KENPOM_API_KEY secret is set. Context only: the backtest
+    (tools/kenpom_backtest.py, 37,807 games 2020-26) found KenPom's line
+    does not beat the close (spreads 49-51% at every gap), so it does not
+    move the projection or the confidence."""
+    if not kenpom.api_key()[1]:
+        return te
+    try:
+        return kenpom.load_kenpom(te, sorted(set(te["season"].astype(int))),
+                                  budget_min=10)
+    except Exception as e:      # never lose the sheet over KenPom
+        print(f"kenpom skipped: {e}")
+        return te
+
+
+def kenpom_block(r: dict) -> dict:
+    m, t = _f(r.get("kp_margin")), _f(r.get("kp_total"))
+    if m is None or t is None:
+        return {}
+    return {"margin": m, "total": t,
+            "home_pts": round((t + m) / 2), "away_pts": round((t - m) / 2),
+            "home_wp": _f(r.get("kp_wp"), 2),
+            "home_rank": _f(r.get("kp_home_rank"), 0),
+            "away_rank": _f(r.get("kp_away_rank"), 0),
+            "home_oe": _f(r.get("kp_h_oe")), "home_de": _f(r.get("kp_h_de")),
+            "away_oe": _f(r.get("kp_a_oe")), "away_de": _f(r.get("kp_a_de")),
+            "home_tempo": _f(r.get("kp_h_t")), "away_tempo": _f(r.get("kp_a_t"))}
+
+
+def kenpom_reason(b: dict, pick_home: bool) -> str:
+    """One line on where KenPom stands relative to the line and our side."""
+    k, ln = b.get("kenpom") or {}, b["line"]
+    if not k or ln.get("home_margin") is None:
+        return ""
+    fav = b["home"] if k["margin"] >= 0 else b["away"]
+    side = "agrees" if (k["margin"] > ln["home_margin"]) == pick_home else "disagrees"
+    if k["margin"] == ln["home_margin"]:
+        side = "matches the line"
+    rk = ""
+    if k.get("home_rank") is not None and k.get("away_rank") is not None:
+        rk = f" (#{k['home_rank']:.0f} vs #{k['away_rank']:.0f})"
+    return (f"KenPom {fav} by {abs(k['margin']):.0f}{rk}, {side}"
+            if side == "matches the line" else
+            f"KenPom {fav} by {abs(k['margin']):.0f}{rk} {side} with our side")
+
+
+def add_best_price(b: dict) -> None:
+    """Quote the call at the better of DraftKings and FanDuel."""
+    c = b.get("call") or {}
+    if not c or not b.get("books"):
+        return
+    sp = c["spread"]
+    side = "home" if sp["side"] == b["home"] else "away"
+    best = books.pick_best(b["books"], "spread", side)
+    if best:
+        sp["book"], sp["book_line"], sp["price"] = best
+    t = c.get("total")
+    if t:
+        best = books.pick_best(b["books"], "total", t["side"].lower())
+        if best:
+            t["book"], t["book_line"], t["price"] = best
 
 
 def build_day(day, first: int = 2021) -> list[dict]:
@@ -281,6 +364,12 @@ def build_day(day, first: int = 2021) -> list[dict]:
     pr = cp.predict_frame(m, te, "trees")
     te["pred_margin"], te["pred_total"] = pr["pred_margin"], pr["pred_total"]
     te["tier"] = tier(te)
+    te = add_kenpom(te)
+    try:
+        dkfd = books.best_lines(te, day)
+    except Exception as e:          # never lose the sheet over a lines file
+        print(f"DK/FD lines skipped: {e}")
+        dkfd = {}
     meta = tonight.espn_meta(day)
     out = []
     for r in te.sort_values("commence").to_dict("records"):
@@ -316,9 +405,12 @@ def build_day(day, first: int = 2021) -> list[dict]:
              "schedule": {k: _f(r.get(k)) for k in
                           ("home_rest", "away_rest", "rest_diff", "home_n",
                            "away_n")},
-             "a_card": a_card(r["tier"], gap, lh)}
+             "a_card": a_card(r["tier"], gap, lh),
+             "kenpom": kenpom_block(r),
+             "books": dkfd.get(gid, {})}
         b["notes"] = notes(b)
         b["call"] = assess(b)
+        add_best_price(b)
         out.append(b)
     print(f"breakdown done: {len(out)} games ({time.time() - t0:.0f}s)")
     return out
