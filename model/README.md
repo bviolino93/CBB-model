@@ -9,6 +9,7 @@ Nothing in here changes the existing model or the daily breakdown.
 | `kenpom_ml.py` | Underdog moneylines: KenPom's record and profit when it picks the market underdog, and on value dogs (KenPom chance above the no-vig price), from ESPN's pregame moneylines (run with tool = kenpom_ml) |
 | `kenpom_ml_backtest.py` | Backtest of the underdog moneyline rule (KenPom has the dog above 50%) from 2020: by season, price, win chance, tier, month and venue (workflow "New model: underdog ML backtest") |
 | `market_patterns.py` | Market-only patterns season by season: underdogs and home teams against the spread, overs on low totals and unders on high ones (runs first in the underdog ML backtest workflow) |
+| `kenpom_today.py` | Today's KenPom plays filtered to this season's best spots (totals 4+ off the line with the middle, high-major spreads 2-6 off), priced at DK/FD (tool = kenpom_today) |
 | `kenpom_day.py` | How KenPom's FanMatch predictions did against the spread and total on one date (or a range): record overall, by gap to the line and by conference tier, graded against ESPN's pregame line and, where logged, the DraftKings/FanDuel line |
 
 ## Run

@@ -18,7 +18,7 @@ on:
       tool:
         description: "kenpom_day (spread/total) or kenpom_ml (underdog moneylines)"
         type: choice
-        options: [kenpom_day, kenpom_ml]
+        options: [kenpom_day, kenpom_ml, kenpom_today]
         default: kenpom_day
 
 defaults:
@@ -47,6 +47,7 @@ jobs:
           [ -n "$day" ] || day=$(TZ=America/New_York date -d yesterday +%F)
           to="${{ inputs.to }}"
           tool="${{ inputs.tool }}"; [ -n "$tool" ] || tool=kenpom_day
+          if [ "$tool" = kenpom_today ]; then python -m model.kenpom_today ${{ inputs.date && format('--date {0}', inputs.date) || '' }} | tee out.md; cat out.md >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
           python -m model.$tool --date "$day" ${to:+--to "$to"} --csv kenpom_day.csv | tee out.md
           cat out.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
