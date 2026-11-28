@@ -444,6 +444,29 @@ def show_gaps(d: date, top: int = 15, lines_dir: str = "data/lines") -> None:
         print(f"  {e:4.1f}  {line}")
 
 
+def show_matchup(teams: str, season: int) -> None:
+    """Side-by-side KenPom profile for two teams (comma separated, KenPom
+    names or a piece of them): ratings, four factors, shot mix, misc
+    stats, height and experience, plus each team's games this season."""
+    names = [t.strip().lower() for t in teams.split(",") if t.strip()]
+    tabs = {"ratings": current_ratings(season)}
+    for ep in SEASON_TABLES:
+        try:
+            tabs[ep] = season_table(ep, season)
+        except Exception as e:                       # noqa: BLE001
+            print(f"{ep}: {str(e)[:100]}")
+    for ep, t in tabs.items():
+        if t.empty or "TeamName" not in t:
+            continue
+        if "ConfOnly" in t:
+            t = t[t["ConfOnly"].astype(str).str.lower() != "true"]
+        pick = t[t["TeamName"].str.lower().apply(
+            lambda n: any(n == x or n.startswith(x) for x in names))]
+        drop = [c for c in pick.columns if c in ("DataThrough", "ConfOnly", "Season")]
+        print(f"\n== {ep} ==")
+        print(pick.drop(columns=drop).T.to_string(header=False))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true")
@@ -452,7 +475,12 @@ def main():
     ap.add_argument("--team", default="", help="with --day: only games with this text")
     ap.add_argument("--gaps", action="store_true",
                     help="with --day: biggest KenPom vs DK/FD gaps")
+    ap.add_argument("--matchup", default="", help="two teams, comma separated")
+    ap.add_argument("--season", type=int, default=2027)
     a = ap.parse_args()
+    if a.matchup:
+        show_matchup(a.matchup, a.season)
+        return
     if a.day and a.gaps:
         show_gaps(pd.Timestamp(a.day).date())
         return

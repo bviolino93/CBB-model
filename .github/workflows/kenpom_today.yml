@@ -15,6 +15,9 @@ on:
       team:
         description: "Only games with this text in a team name (empty = all)"
         default: ""
+      matchup:
+        description: "Two teams for a side-by-side KenPom profile (comma separated)"
+        default: ""
       gaps:
         description: "Also list the biggest KenPom vs DraftKings/FanDuel gaps"
         type: boolean
@@ -53,3 +56,8 @@ jobs:
           [ -n "$day" ] || day=$(TZ=America/New_York date +%F)
           python kenpom.py --day "$day" --gaps | tee gaps.txt
           { echo '```'; cat gaps.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - name: Matchup profile
+        if: ${{ inputs.matchup != '' }}
+        run: |
+          python kenpom.py --matchup "${{ inputs.matchup }}" | tee matchup.txt
+          { echo '```'; cat matchup.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
