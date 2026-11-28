@@ -55,6 +55,7 @@ jobs:
           day="${{ inputs.date }}"
           [ -n "$day" ] || day=$(TZ=America/New_York date +%F)
           python kenpom.py --day "$day" --gaps | tee gaps.txt
+          python kenpom.py --day "$day" --ml | tee -a gaps.txt
           { echo '```'; cat gaps.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
       - name: Matchup profile
         if: ${{ inputs.matchup != '' }}

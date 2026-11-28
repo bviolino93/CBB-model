@@ -444,6 +444,86 @@ def show_gaps(d: date, top: int = 15, lines_dir: str = "data/lines") -> None:
         print(f"  {e:4.1f}  {line}")
 
 
+def _implied(american: float) -> float:
+    a = float(american)
+    return 100 / (a + 100) if a > 0 else -a / (-a + 100)
+
+
+def show_ml(d: date, top: int = 15, lines_dir: str = "data/lines") -> None:
+    """KenPom win chance vs DraftKings / FanDuel moneylines (vig removed
+    per book, then averaged), games not started. Lists sides where the
+    best price is worth more than KenPom's chance says. Not a tested
+    edge: there is no college moneyline history to backtest."""
+    import glob
+    from books import BOOKS, NAMES
+    from cbb_data import _sim, fetch_day, match_events
+    g = pd.DataFrame(fetch_day(d))
+    g = g.assign(season=g["season"].fillna(0).astype(int), game_date=d)
+    k = load_kenpom(g, sorted(set(g["season"])), ratings=False, budget_min=10)
+    now = pd.Timestamp.now(tz="UTC")
+    k = k[k["kp_wp"].notna() & (pd.to_datetime(k["commence"], utc=True) > now)]
+    files = sorted(glob.glob(os.path.join(lines_dir, "games_*.csv")))
+    if not files or k.empty:
+        print("no lines or no KenPom games")
+        return
+    s = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+    s = s[s["book"].isin(BOOKS) & (s["market"] == "h2h")]
+    tip = pd.to_datetime(s["commence_time"], utc=True)
+    s = s[((tip - pd.Timedelta(hours=5)).dt.date == d)
+          & (pd.to_datetime(s["snapshot_utc"], utc=True) < tip)]
+    s = s.sort_values("snapshot_utc").groupby(["event_id", "book", "outcome"]).tail(1)
+    ev = s.drop_duplicates("event_id")
+    gmap = match_events(k, [{"id": r.event_id, "commence_time": r.commence_time,
+                             "home_team": r.home_team, "away_team": r.away_team}
+                            for r in ev.itertuples()])
+    ki = k.set_index(k["game_id"].astype(str))
+    rows = []
+    for eid, gid in gmap.items():
+        if str(gid) not in ki.index:
+            continue
+        r = ki.loc[str(gid)]
+        e = s[s["event_id"] == eid]
+        fair, best = {"home": [], "away": []}, {}
+        for bk, x in e.groupby("book"):
+            if len(x) != 2:
+                continue
+            side = {}
+            for o in x.itertuples():
+                side["home" if _sim(o.outcome, r["home_team"]) >= _sim(o.outcome, r["away_team"]) else "away"] = o.price
+            if len(side) != 2:
+                continue
+            ph, pa = _implied(side["home"]), _implied(side["away"])
+            fair["home"].append(ph / (ph + pa))
+            fair["away"].append(pa / (ph + pa))
+            for sd in ("home", "away"):
+                if sd not in best or side[sd] > best[sd][1]:
+                    best[sd] = (NAMES.get(bk, bk), int(side[sd]))
+        if not fair["home"]:
+            continue
+        t = pd.to_datetime(r["commence"], utc=True).tz_convert("America/New_York")
+        for sd, wp in (("home", r["kp_wp"]), ("away", 1 - r["kp_wp"])):
+            bk, price = best[sd]
+            dec = 1 + (price / 100 if price > 0 else 100 / -price)
+            mkt = float(np.mean(fair[sd]))
+            rows.append({"team": r[f"{sd}_team"], "price": price, "book": bk,
+                         "kp": wp, "mkt": mkt, "ev": wp * dec - 1,
+                         "game": f"{r['away_team']} @ {r['home_team']}",
+                         "tip": f"{t:%-I:%M %p} ET", "margin": r["kp_margin"]})
+    x = pd.DataFrame(rows)
+    print(f"{len(gmap)} games with DK/FD moneylines and a KenPom number\n")
+    if x.empty:
+        return
+    for lab, sub in (("UNDERDOGS (+100 or longer)", x[x["price"] >= 100]),
+                     ("FAVORITES", x[x["price"] < 100])):
+        print(lab + "  (KenPom win % vs market no-vig %, EV per $1 at best price)")
+        sub = sub[sub["ev"] > 0].sort_values("ev", ascending=False).head(top)
+        for r in sub.itertuples():
+            print(f"  {r.team} {r.price:+d} ({r.book}): KenPom {r.kp:.0%} vs market "
+                  f"{r.mkt:.0%}, EV {r.ev:+.2f}; KenPom margin {r.margin:+.0f} (home); "
+                  f"{r.game}, {r.tip}")
+        print()
+
+
 def show_matchup(teams: str, season: int) -> None:
     """Side-by-side KenPom profile for two teams (comma separated, KenPom
     names or a piece of them): ratings, four factors, shot mix, misc
@@ -517,12 +597,17 @@ def main():
     ap.add_argument("--team", default="", help="with --day: only games with this text")
     ap.add_argument("--gaps", action="store_true",
                     help="with --day: biggest KenPom vs DK/FD gaps")
+    ap.add_argument("--ml", action="store_true",
+                    help="with --day: KenPom win chance vs DK/FD moneylines")
     ap.add_argument("--matchup", default="", help="two teams, comma separated")
     ap.add_argument("--season", type=int, default=2027)
     a = ap.parse_args()
     if a.matchup:
         show_matchup(a.matchup, a.season)
         show_form(a.matchup, a.season)
+        return
+    if a.day and a.ml:
+        show_ml(pd.Timestamp(a.day).date())
         return
     if a.day and a.gaps:
         show_gaps(pd.Timestamp(a.day).date())
