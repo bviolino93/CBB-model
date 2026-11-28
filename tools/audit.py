@@ -295,22 +295,20 @@ def live_roster_debut(g, box):
     head("1e. 'Live roster' players known only because they played (debuts)")
     cfg = cp.PredictConfig()
     av = cp.availability(g, box, cfg)
-    q = cp.played_rows(box)
-    q = q[q["team"] != NON_D1][["game_id", "team", "season", "player_id"]]
     tgi = cp.team_game_index(g)
-    q = q.merge(tgi, on=["game_id", "team", "season"])
-    rec = pd.concat([q.assign(n=q["n"] + k) for k in range(1, cfg.roster_games + 1)])
-    rec = rec[["team", "season", "n", "player_id"]].merge(tgi, on=["team", "season", "n"])
-    known = set(zip(rec["game_id"], rec["team"], rec["player_id"]))
+    p = cp.played_rows(box)
+    seen = p.groupby(["team", "player_id"])["commence"].min()
     live = av["l"]
-    deb = np.array([(a, b, c) not in known for a, b, c in
-                    zip(live["game_id"], live["team"], live["player_id"])])
+    tip = pd.to_datetime(g.set_index("game_id")["commence"], utc=True)
+    first = pd.to_datetime(pd.Series([seen.get((t, x)) for t, x in
+                                      zip(live["team"], live["player_id"])]), utc=True)
+    deb = (first.isna() | (first.to_numpy() >= tip.reindex(live["game_id"]).to_numpy())).to_numpy()
     tg = live.assign(deb=deb).groupby(["game_id", "team"])["deb"].sum()
     n_tg = len(tg)
     t5 = tgi[tgi["n"] >= 5]
     late = list(zip(t5["game_id"], t5["team"]))
     say(f"  live-roster rows {len(live)}; {deb.sum()} ({deb.mean():.1%}) are "
-        f"players added only because the box shows them debuting that game")
+        f"players not seen for the team before tip (known only from that game's box)")
     say(f"  team-games with at least one: {(tg > 0).sum()} of {n_tg} "
         f"({(tg > 0).mean():.1%}); after a team's 5th game: "
         f"{(tg[tg.index.isin(late)] > 0).mean():.1%}")
@@ -360,7 +358,7 @@ def neutral_check(g, kp, oos):
     x["cat"] = np.select(
         [~neu & at_home, ~neu & ~at_home, neu & at_home, neu & ~at_home],
         ["home, own arena", "home flag, OTHER arena", "neutral flag, home's OWN arena",
-         "neutral, elsewhere"])
+         "neutral, elsewhere"], default="")
     say("  games by category and season:")
     say(pd.crosstab(x["cat"], x["season"]).to_string())
     # How off is each model in each category? Positive = home did better
@@ -721,6 +719,7 @@ FIRST = 2021
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--box-cache", default=".cache_box")
+    ap.add_argument("--only", default="", help="comma list of sections to run")
     ap.add_argument("--days", default="2025-12-06,2026-01-24,2026-02-28")
     a = ap.parse_args()
     days = [pd.Timestamp(x).date() for x in a.days.split(",")]
@@ -771,7 +770,11 @@ def main():
         pass
     say(f"games {len(g)}, box rows {len(box)} ({time.time() - T0:.0f}s)")
 
+    only = {x.strip() for x in a.only.split(",") if x.strip()}
+
     def run(name, fn, *args):
+        if only and name not in only:
+            return None
         try:
             return fn(*args)
         except Exception:      # noqa: BLE001
@@ -780,8 +783,12 @@ def main():
 
     run("kenpom timing", kenpom_timing, kp)
     run("live roster", live_roster_debut, g, box)
-    h = cp.build(g, box, cp.PredictConfig(), first_season=FIRST, verbose=True)
-    h["game_id"] = h["game_id"].astype(str)
+    if only and not only & {"trees overfit", "truncation trees", "neutral", "confidence"}:
+        h = None
+    else:
+        h = cp.build(g, box, cp.PredictConfig(), first_season=FIRST, verbose=True)
+    if h is not None:
+        h["game_id"] = h["game_id"].astype(str)
     res = run("trees overfit", trees_overfit, h)
     oos, models = res if res else (None, {})
     run("truncation trees", truncation_trees, g, box, h, days, models)
