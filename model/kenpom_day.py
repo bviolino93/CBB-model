@@ -176,6 +176,33 @@ def main():
             print(f"## {label} vs {name}\n")
             print("\n".join(table(k, f"{tag}_{mk}", f"{tag}_{mk}_gap")) + "\n")
 
+    if d0 != d1:
+        print("## By date (ESPN line)\n")
+        print("| date | games | spread | total | KenPom overs / unders | games over / under |")
+        print("| --- | --- | --- | --- | --- | --- |")
+        for d, s in k.groupby("game_date"):
+            ou = s[s["total_line"].notna()]
+            print(f"| {d} | {len(s)} | "
+                  f"{record(s.rename(columns={'espn_ats': 'result'}).dropna(subset=['result']))} | "
+                  f"{record(s.rename(columns={'espn_ou': 'result'}).dropna(subset=['result']))} | "
+                  f"{(ou['kp_total'] > ou['total_line']).sum()} / {(ou['kp_total'] < ou['total_line']).sum()} | "
+                  f"{(ou['total'] > ou['total_line']).sum()} / {(ou['total'] < ou['total_line']).sum()} |")
+        print()
+        print("## Totals: KenPom over picks vs under picks (ESPN line)\n")
+        print("| KenPom side | record |\n| --- | --- |")
+        x = k[k["espn_ou"].notna()]
+        for name, m in (("over", x["kp_total"] > x["total_line"]),
+                        ("under", x["kp_total"] < x["total_line"])):
+            print(f"| {name} | {record(x[m].rename(columns={'espn_ou': 'result'}))} |")
+        print()
+        print("## Spread: KenPom on the favourite vs the underdog (ESPN line)\n")
+        print("| KenPom side | record |\n| --- | --- |")
+        x = k[k["espn_ats"].notna() & (k["spread_line"] != 0)]
+        fav = np.sign(x["kp_margin"] - x["spread_line"]) == np.sign(x["spread_line"])
+        for name, m in (("favourite", fav), ("underdog", ~fav)):
+            print(f"| {name} | {record(x[m].rename(columns={'espn_ats': 'result'}))} |")
+        print()
+
     print("## Game by game (ESPN line)\n")
     print("| game | final | KenPom | line | ATS | total line | O/U |")
     print("| --- | --- | --- | --- | --- | --- | --- |")
