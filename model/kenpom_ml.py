@@ -67,7 +67,11 @@ def parse_ml(js: dict) -> tuple[float, float, int]:
             a.append(am)
     if not h:
         return float("nan"), float("nan"), 0
-    return float(np.median(h)), float(np.median(a)), len(h)
+    def med(v):
+        # A median of -100 and +100 is 0: anything inside (-100, 100) is even money.
+        m = float(np.median(v))
+        return 100.0 if abs(m) < 100 else m
+    return med(h), med(a), len(h)
 
 
 def implied(ml: float) -> float:
