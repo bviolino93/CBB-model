@@ -7,7 +7,7 @@ name: "New model: underdog ML backtest"
 on:
   push:
     branches: [claude/project-thread-new-model]
-    paths: [.github/workflows/model_ml_backtest.yml, model/kenpom_ml_backtest.py]
+    paths: [.github/workflows/model_ml_backtest.yml, model/kenpom_ml_backtest.py, model/market_patterns.py]
   workflow_dispatch:
     inputs:
       first:
@@ -52,7 +52,12 @@ jobs:
             kenpom-bt-
             espn-cbb-breakdown-
             espn-cbb-
+      - name: Market patterns (no model)
+        run: |
+          python -m model.market_patterns --first ${{ inputs.first || '2020' }} | tee patterns.md
+          cat patterns.md >> "$GITHUB_STEP_SUMMARY"
       - name: Backtest
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
           python -m model.kenpom_ml_backtest --first ${{ inputs.first || '2020' }} \
             --min-wp ${{ inputs.min_wp || '0.5' }} --out ml_games.csv | tee out.md
@@ -72,4 +77,5 @@ jobs:
           retention-days: 14
           path: |
             out.md
+            patterns.md
             ml_games.csv
