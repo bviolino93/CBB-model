@@ -1,0 +1,75 @@
+name: "New model: underdog ML backtest"
+
+# Backtest of backing the moneyline underdog when KenPom picks it to win
+# (model/kenpom_ml_backtest.py). Needs the KENPOM_API_KEY secret. The first
+# run fills the ESPN and KenPom caches; if it runs out of time, run again.
+
+on:
+  push:
+    branches: [claude/project-thread-new-model]
+    paths: [.github/workflows/model_ml_backtest.yml, model/kenpom_ml_backtest.py]
+  workflow_dispatch:
+    inputs:
+      first:
+        description: "First season (end year)"
+        default: "2020"
+      min_wp:
+        description: "Bet the dog when KenPom's win chance is above this"
+        default: "0.5"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+concurrency:
+  group: model-ml-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      CBB_FETCH_MINUTES: "60"
+      CBB_ML_FETCH_MINUTES: "150"
+      KENPOM_FETCH_MINUTES: "90"
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY || secrets.KENPOM_KEY || secrets.KENPOM_TOKEN || secrets.KENPOM_API_TOKEN || secrets.KENPOM }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Restore caches
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: model-ml-${{ github.run_id }}
+          restore-keys: |
+            model-ml-
+            kenpom-bt-
+            espn-cbb-breakdown-
+            espn-cbb-
+      - name: Backtest
+        run: |
+          python -m model.kenpom_ml_backtest --first ${{ inputs.first || '2020' }} \
+            --min-wp ${{ inputs.min_wp || '0.5' }} --out ml_games.csv | tee out.md
+          cat out.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Save caches
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: model-ml-${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ml-backtest
+          retention-days: 14
+          path: |
+            out.md
+            ml_games.csv
