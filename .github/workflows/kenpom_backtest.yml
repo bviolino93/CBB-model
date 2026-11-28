@@ -1,0 +1,111 @@
+name: KenPom backtest
+
+# Walk-forward test of KenPom's FanMatch line, our own score ratings and a
+# blend of the two against ESPN's pregame lines (tools/kenpom_backtest.py).
+# Needs the KenPom API key as a repository secret (any of KENPOM_API_KEY,
+# KENPOM_KEY, KENPOM_TOKEN, KENPOM_API_TOKEN, KENPOM). The first run fills
+# the KenPom and ESPN caches; if it runs out of time, run it again.
+# KenPom data stays in the Actions cache and is never committed.
+
+on:
+  push:
+    branches: [claude/project-thread-gh8o50]
+    paths: [.github/workflows/kenpom_backtest.yml, kenpom.py, tools/kenpom_backtest.py, tools/kenpom_research.py, tools/kenpom_model.py, tools/kenpom_mismatch.py, tools/kenpom_alt.py]
+  workflow_dispatch:
+    inputs:
+      first:
+        description: "First tested season (end year; one warm-up season is loaded before it)"
+        default: "2020"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+concurrency:
+  group: kenpom-backtest
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      CBB_FETCH_MINUTES: "150"
+      KENPOM_FETCH_MINUTES: "120"
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY || secrets.KENPOM_KEY || secrets.KENPOM_TOKEN || secrets.KENPOM_API_TOKEN || secrets.KENPOM }}
+      KENPOM_EMAIL: ${{ secrets.KENPOM_EMAIL || secrets.KENPOM_USER || secrets.KENPOM_USERNAME }}
+      KENPOM_PASSWORD: ${{ secrets.KENPOM_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Check the KenPom key
+        run: python kenpom.py --probe | tee probe.txt
+      - name: Restore caches
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: kenpom-bt-${{ github.run_id }}
+          restore-keys: |
+            kenpom-bt-
+      - name: Restore ESPN cache (first run)
+        if: hashFiles('.cache_cbb/days/*') == ''
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-breakdown-${{ github.run_id }}
+          restore-keys: |
+            espn-cbb-breakdown-
+            espn-cbb-
+      - name: Backtest
+        run: |
+          python tools/kenpom_backtest.py --first ${{ inputs.first || '2020' }} \
+            --out kp_games.csv | tee out.txt
+      - name: Research (what in the data beats the line?)
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_research.py --games kp_games.csv --odds .cache_cbb/odds | tee research.txt
+      - name: Mismatch games (does KenPom lean over / to the favorite?)
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_mismatch.py --games kp_games.csv | tee mismatch.txt
+      - name: Other ways to use the data
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_alt.py --games kp_games.csv --odds .cache_cbb/odds | tee alt.txt
+      - name: KenPom-only model (walk-forward vs the close)
+        if: always()
+        run: |
+          test -f kp_games.csv || exit 0
+          python tools/kenpom_model.py --games kp_games.csv | tee model.txt
+      - name: Save caches
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: kenpom-bt-${{ github.run_id }}
+      - name: Summary
+        if: always()
+        run: |
+          { echo '```'; cat probe.txt 2>/dev/null; echo; cat out.txt 2>/dev/null; echo; cat research.txt 2>/dev/null; echo; cat model.txt 2>/dev/null; echo; cat mismatch.txt 2>/dev/null; echo; cat alt.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kenpom-backtest
+          retention-days: 14
+          path: |
+            out.txt
+            probe.txt
+            research.txt
+            model.txt
+            mismatch.txt
+            alt.txt

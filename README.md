@@ -19,6 +19,9 @@ instead of assuming it.
 | `cbb_players.py` | Player box scores for every game from ESPN's game summaries (trimmed, cached per game, time-budgeted fetch) |
 | `cbb_predict.py` | Player-based line, no market input: player impact (game-level adjusted plus-minus, carried across transfers), box value per 40, roster continuity, pace and efficiency ratings, four factors, schedule; ridge and boosted trees. Two availability sets: the live roster (what we can know before tip) and who actually played (hindsight, for comparison only) |
 | `tools/model_lab.py` | Season-by-season test of each step of the player model against final scores and the closing line, with slices by market depth, season stage and month |
+| `kenpom.py` | KenPom API (secret `KENPOM_API_KEY`): FanMatch predictions and archived ratings by date, so nothing is known before it was published; KenPom names matched to ESPN's; `--day YYYY-MM-DD` prints KenPom next to the line |
+| `tools/kenpom_backtest.py` | KenPom's line, our score ratings and a ridge blend of both (fitted on earlier seasons only) against the close, with the usual slices. "KenPom backtest" workflow |
+| `books.py` | Latest DraftKings / FanDuel spread and total per game from `data/lines/`, and the better of the two for a side |
 | `log_lines.py` | Snapshots spreads, totals and moneylines from The Odds API into `data/lines/`; `--close` takes the closing line once per wave of tips |
 
 Seasons are labelled by the year they end (2027 = 2026-27), as ESPN does.

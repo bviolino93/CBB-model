@@ -1,0 +1,72 @@
+name: KenPom accuracy
+
+# Which inputs make KenPom's margin and total predictions more accurate
+# on seasons the models never saw (tools/kenpom_accuracy.py)? Box scores
+# for missing players and season-to-date matchup stats come from ESPN
+# and are cached in .cache_box; a cold cache fills over a run or two.
+# KenPom data stays in the Actions cache and is never committed.
+
+on:
+  push:
+    branches: [claude/project-thread-gh8o50]
+    paths: [.github/workflows/kenpom_accuracy.yml, tools/kenpom_accuracy.py, tools/missing_players.py]
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+concurrency:
+  group: kenpom-accuracy
+  cancel-in-progress: false
+
+jobs:
+  accuracy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      CBB_FETCH_MINUTES: "200"
+      KENPOM_FETCH_MINUTES: "60"
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Restore KenPom / ESPN caches
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: kenpom-bt-${{ github.run_id }}
+          restore-keys: |
+            kenpom-bt-
+      - name: Restore box score cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_box
+          key: cbb-box-${{ github.run_id }}
+          restore-keys: |
+            cbb-box-
+      - name: KenPom games
+        run: python tools/kenpom_backtest.py --first 2020 --out kp_games.csv > bt.txt
+      - name: Accuracy test
+        run: python tools/kenpom_accuracy.py --games kp_games.csv --box-cache .cache_box | tee acc.txt
+      - name: Save box score cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache_box
+          key: cbb-box-${{ github.run_id }}
+      - name: Summary
+        if: always()
+        run: |
+          { echo '```'; cat acc.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kenpom-accuracy
+          retention-days: 14
+          path: acc.txt
