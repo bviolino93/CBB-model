@@ -1,0 +1,68 @@
+name: Model audit
+
+# Leak / silent-error audit of the college models (tools/audit.py):
+# KenPom timing, truncation test of every input, neutral sites vs venue,
+# rows lost in joins, in- vs out-of-sample, calibration. Uses the caches
+# the KenPom backtest and accuracy runs filled; KenPom data stays in the
+# Actions cache and is never committed.
+
+on:
+  push:
+    branches: [claude/project-thread-w7yvxt]
+    paths: [.github/workflows/audit.yml, tools/audit.py]
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Cut-off days for the truncation test (comma separated)"
+        default: "2025-12-06,2026-01-24,2026-02-28"
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+concurrency:
+  group: model-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      CBB_FETCH_MINUTES: "60"
+      KENPOM_FETCH_MINUTES: "20"
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Restore KenPom / ESPN caches
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache_cbb
+            .cache_kenpom
+          key: kenpom-bt-${{ github.run_id }}
+          restore-keys: |
+            kenpom-bt-
+      - name: Restore box score cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_box
+          key: cbb-box-${{ github.run_id }}
+          restore-keys: |
+            cbb-box-
+      - name: Audit
+        run: python tools/audit.py --box-cache .cache_box --days "${{ inputs.days || '2025-12-06,2026-01-24,2026-02-28' }}" | tee audit.txt
+      - name: Summary
+        if: always()
+        run: |
+          { echo '```'; cat audit.txt 2>/dev/null; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: model-audit
+          retention-days: 14
+          path: audit.txt
