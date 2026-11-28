@@ -467,6 +467,48 @@ def show_matchup(teams: str, season: int) -> None:
         print(pick.drop(columns=drop).T.to_string(header=False))
 
 
+def show_form(teams: str, season: int) -> None:
+    """Each team's games this season: score, closing line, KenPom's
+    pregame margin, and how the team did against both."""
+    from cbb_data import fill_lines, load_season
+    names = [t.strip().lower() for t in teams.split(",") if t.strip()]
+    g = load_season(season)
+    g = g[g["completed"].astype(bool) & (g["season_type"] != "PRE")]
+    hit = lambda col: g[col].str.lower().apply(lambda n: any(x in n for x in names))
+    g = g[hit("home_team") | hit("away_team")]
+    g = fill_lines(g)
+    g = g.assign(season=season)
+    k = load_kenpom(g, [season], ratings=False, budget_min=10, verbose=False)
+    for x in names:
+        print(f"\n== {x}: games this season ==")
+        rows = k[k["home_team"].str.lower().str.contains(x, regex=False)
+                 | k["away_team"].str.lower().str.contains(x, regex=False)]
+        ats, akp = [], []
+        for r in rows.sort_values("commence").itertuples():
+            home = x in r.home_team.lower()
+            opp = r.away_team if home else r.home_team
+            sgn = 1 if home else -1
+            m = sgn * (r.home_score - r.away_score)
+            line = sgn * r.spread_line if np.isfinite(r.spread_line) else np.nan
+            kp = sgn * r.kp_margin if np.isfinite(r.kp_margin) else np.nan
+            vs_l = m - line if np.isfinite(line) else np.nan
+            vs_k = m - kp if np.isfinite(kp) else np.nan
+            tot = r.home_score + r.away_score
+            ou = ("" if not np.isfinite(r.total_line) else
+                  f" total {tot:.0f} vs {r.total_line:.1f} ({'O' if tot > r.total_line else 'U'})")
+            where = "vs" if r.neutral else ("home" if home else "at")
+            print(f"  {r.game_date}  {where:4s} {opp:32s} {'W' if m > 0 else 'L'} {m:+4.0f}"
+                  f"  line {line:+5.1f} ({vs_l:+5.1f})  KenPom {kp:+5.1f} ({vs_k:+5.1f}){ou}")
+            ats.append(vs_l)
+            akp.append(vs_k)
+        a = pd.Series(ats).dropna()
+        b = pd.Series(akp).dropna()
+        if len(a):
+            print(f"  ATS {int((a > 0).sum())}-{int((a < 0).sum())}, avg vs line {a.mean():+.1f}, "
+                  f"last 3 vs line {a.tail(3).mean():+.1f}; avg vs KenPom {b.mean():+.1f}, "
+                  f"last 3 vs KenPom {b.tail(3).mean():+.1f}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--probe", action="store_true")
@@ -480,6 +522,7 @@ def main():
     a = ap.parse_args()
     if a.matchup:
         show_matchup(a.matchup, a.season)
+        show_form(a.matchup, a.season)
         return
     if a.day and a.gaps:
         show_gaps(pd.Timestamp(a.day).date())
