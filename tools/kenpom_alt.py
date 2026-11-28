@@ -81,6 +81,10 @@ def classifier(f: pd.DataFrame) -> None:
              "kp_h_oe", "kp_a_oe", "kp_h_de", "kp_a_de", "tempo_avg", "tempo_diff",
              "pre_shift", "min_n", "same_conf", "neutral_f", "month",
              "h_luck_pg", "a_luck_pg", "h_hca_res", "h_vs_kp_5", "a_vs_kp_5"]
+    feats = [c for c in feats if c in f]
+    f = f.copy()
+    for c in feats:
+        f[c] = pd.to_numeric(f[c], errors="coerce").astype(float)
     print("\n== F. cover classifier (fitted on earlier seasons only) ==")
     for market, act, ln in (("spread", "actual_m", "spread_line"),
                             ("total", "actual_t", "total_line")):
@@ -94,8 +98,9 @@ def classifier(f: pd.DataFrame) -> None:
             m = HistGradientBoostingClassifier(max_iter=200, learning_rate=0.03,
                                                max_leaf_nodes=15, min_samples_leaf=300,
                                                l2_regularization=1.0, random_state=0)
-            m.fit(f.loc[tr, feats], (y[tr] > 0).astype(int))
-            p[te] = m.predict_proba(f.loc[te, feats])[:, 1]
+            use = [c for c in feats if f.loc[tr, c].nunique() > 1]
+            m.fit(f.loc[tr, use], (y[tr] > 0).astype(int))
+            p[te] = m.predict_proba(f.loc[te, use])[:, 1]
         for th in (0.53, 0.55, 0.57, 0.60):
             bet = pd.Series(0.0, index=f.index)
             bet[p >= th] = 1
