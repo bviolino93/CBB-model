@@ -1,0 +1,51 @@
+name: "New model: KenPom day"
+
+# How KenPom's predictions did against the spread and total on a date
+# (model/kenpom_day.py). Needs the KENPOM_API_KEY secret.
+
+on:
+  push:
+    branches: [claude/project-thread-new-model]
+    paths: [.github/workflows/model_kenpom_day.yml, model/**]
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date (YYYY-MM-DD, ET). Empty = yesterday"
+        default: ""
+      to:
+        description: "Last date of a range (empty = one day)"
+        default: ""
+
+defaults:
+  run:
+    shell: bash -eo pipefail {0}
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      KENPOM_API_KEY: ${{ secrets.KENPOM_API_KEY || secrets.KENPOM_KEY || secrets.KENPOM_TOKEN || secrets.KENPOM_API_TOKEN || secrets.KENPOM }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Logged DK/FD lines from main
+        run: |
+          git fetch --depth=1 origin main
+          git checkout FETCH_HEAD -- data/lines || true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Grade KenPom
+        run: |
+          day="${{ inputs.date }}"
+          [ -n "$day" ] || day=$(TZ=America/New_York date -d yesterday +%F)
+          to="${{ inputs.to }}"
+          python -m model.kenpom_day --date "$day" ${to:+--to "$to"} --csv kenpom_day.csv | tee out.md
+          cat out.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kenpom-day
+          path: |
+            out.md
+            kenpom_day.csv
