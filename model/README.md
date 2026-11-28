@@ -6,6 +6,7 @@ Nothing in here changes the existing model or the daily breakdown.
 
 | File | What it does |
 | --- | --- |
+| `kenpom_ml.py` | Underdog moneylines: KenPom's record and profit when it picks the market underdog, and on value dogs (KenPom chance above the no-vig price), from ESPN's pregame moneylines (run with tool = kenpom_ml) |
 | `kenpom_day.py` | How KenPom's FanMatch predictions did against the spread and total on one date (or a range): record overall, by gap to the line and by conference tier, graded against ESPN's pregame line and, where logged, the DraftKings/FanDuel line |
 
 ## Run

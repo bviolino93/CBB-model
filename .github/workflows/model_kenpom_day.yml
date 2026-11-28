@@ -15,6 +15,11 @@ on:
       to:
         description: "Last date of a range (empty = one day)"
         default: ""
+      tool:
+        description: "kenpom_day (spread/total) or kenpom_ml (underdog moneylines)"
+        type: choice
+        options: [kenpom_day, kenpom_ml]
+        default: kenpom_day
 
 defaults:
   run:
@@ -41,7 +46,8 @@ jobs:
           day="${{ inputs.date }}"
           [ -n "$day" ] || day=$(TZ=America/New_York date -d yesterday +%F)
           to="${{ inputs.to }}"
-          python -m model.kenpom_day --date "$day" ${to:+--to "$to"} --csv kenpom_day.csv | tee out.md
+          tool="${{ inputs.tool }}"; [ -n "$tool" ] || tool=kenpom_day
+          python -m model.$tool --date "$day" ${to:+--to "$to"} --csv kenpom_day.csv | tee out.md
           cat out.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:
