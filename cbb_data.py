@@ -377,7 +377,10 @@ def load_games(first: int = 2019, last: int | None = None,
 _WORDS = [(r"\bstate\b", "st"), (r"\bsaint\b", "st"), (r"\bst\.", "st"),
           (r"\buniversity\b", ""), (r"\bthe\b", ""), (r"&", " and "),
           (r"\buconn\b", "connecticut"), (r"\bumass\b", "massachusetts"),
-          (r"\bole miss\b", "mississippi"), (r"\bpitt\b", "pittsburgh")]
+          (r"\bole miss\b", "mississippi"), (r"\bpitt\b", "pittsburgh"),
+          # Odds API short names that missed ESPN's (tools/audit.py, 3)
+          (r"\bgw\b", "george washington"), (r"\bumkc\b", "kansas city"),
+          (r"\bkangaroos\b", "roos"), (r"\bse\b", "southeast")]
 
 
 def norm_name(name: str) -> str:

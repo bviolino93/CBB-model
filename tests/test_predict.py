@@ -105,9 +105,8 @@ def test_live_roster_skips_returning_scratch():
     cfg = cp.PredictConfig(roster_games=1)
     av = cp.availability(g, b, cfg)
     tgi = cp.team_game_index(g)
-    # Live roster for game n is drawn from game n-1 (plus debuts), so a
-    # player who played tonight but not last game and not debuting must
-    # be absent.
+    # Live roster for game n is drawn from game n-1, so a player who
+    # played tonight but not last game must be absent.
     q = cp.played_rows(b).merge(tgi, on=["game_id", "team", "season"])
     t = q[q["team"] == "T0"]
     sets = t.groupby("n")["player_id"].apply(set)
@@ -116,8 +115,8 @@ def test_live_roster_skips_returning_scratch():
     first = t.groupby("player_id")["n"].min()
     for n in range(2, len(sets)):
         tonight_only = sets[n] - sets[n - 1]
-        returning = {p for p in tonight_only if first[p] < n}
-        assert not (returning & live.get(n, set()))
+        assert not (tonight_only & live.get(n, set()))
+    assert len(first)
 
 
 def test_apm_finds_skill(built):
@@ -152,3 +151,19 @@ def test_models_fit_and_predict(built):
         pytest.skip("too few games")
     p = cp.predict_frame(m, te, "ridge")
     assert p["pred_margin"].notna().all()
+
+
+def test_live_roster_never_uses_tonights_box():
+    """Every live-roster player for a game must be known from earlier
+    games: no one appears only because tonight's box lists him."""
+    g, b, _ = league(seasons=(2021, 2022), teams=4)
+    from cbb_players import attach_games
+    b = attach_games(b, g)
+    cfg = cp.PredictConfig(roster_games=2)
+    live = cp.availability(g, b, cfg)["l"]
+    gd = g.set_index("game_id")["commence"]
+    p = cp.played_rows(b)
+    seen = p.groupby(["team", "player_id"])["commence"].min()
+    first_seen = [seen.get((t, pid)) for t, pid in zip(live["team"], live["player_id"])]
+    tip = gd.reindex(live["game_id"]).to_numpy()
+    assert all(f is not None and f < t for f, t in zip(first_seen, tip))

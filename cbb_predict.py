@@ -32,10 +32,10 @@ hindsight the market didn't have:
   played  ("_h")  the players who actually played. Same as the NBA test.
                   Optimistic: knows about late scratches.
   roster  ("_l")  what a live model can know: every player who played
-                  for the team in one of its last 5 games, plus anyone
-                  playing his first game of the season for it (rosters
-                  are public before tip, who sits isn't). This is the one
-                  to bet with.
+                  for the team in one of its last 5 games (for its first
+                  game of a season: its last 5 games of last season).
+                  Nothing from the game itself. This is the one to bet
+                  with.
 
 Everything for a game is built from games before its date only.
 tools/model_lab.py fits the models season by season and tests them
@@ -282,11 +282,19 @@ def availability(g: pd.DataFrame, box: pd.DataFrame,
                      for k in range(1, cfg.roster_games + 1)])
     rec = rec[["team", "season", "n", "player_id"]].merge(
         tgi, on=["team", "season", "n"])
-    # ... or debuting for the team this season tonight
-    first = q.groupby(["team", "season", "player_id"])["n"].transform("min")
-    debut = q[q["n"] == first]
+    # ... and for a team's first game of the season, whoever played in
+    # its last roster_games games of LAST season (returning players are
+    # known before tip). This used to add players debuting tonight, which
+    # only the box score of tonight's game can tell: the backtest knew
+    # about 3.8% of live-roster rows that the live model never can
+    # (tools/audit.py, 1e and 1c).
+    last = q.groupby(["team", "season"])["n"].transform("max")
+    prev = q[q["n"] > last - cfg.roster_games]
+    prev = prev.assign(season=prev["season"] + 1, n=0)
+    prev = prev[["team", "season", "n", "player_id"]].merge(
+        tgi, on=["team", "season", "n"])
     live = pd.concat([rec[["game_id", "team", "player_id"]],
-                      debut[["game_id", "team", "player_id"]]])
+                      prev[["game_id", "team", "player_id"]]])
     return {"h": hind, "l": live.drop_duplicates()}
 
 
