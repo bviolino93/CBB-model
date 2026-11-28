@@ -6,9 +6,11 @@ name: Model audit
 # the KenPom backtest and accuracy runs filled; KenPom data stays in the
 # Actions cache and is never committed.
 
+# Runs on the pull request into the KenPom branch: a pull_request run can
+# restore that base branch's caches (a push run on a sibling branch can't).
 on:
-  push:
-    branches: [claude/project-thread-w7yvxt]
+  pull_request:
+    branches: [claude/project-thread-gh8o50]
     paths: [.github/workflows/audit.yml, tools/audit.py]
   workflow_dispatch:
     inputs:
@@ -41,7 +43,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Latest logged DK/FD lines from main (not committed here)
-        run: git fetch -q origin main && git checkout origin/main -- data/lines
+        run: git fetch -q origin main && git checkout FETCH_HEAD -- data/lines
       - name: Restore KenPom / ESPN caches
         uses: actions/cache/restore@v4
         with:
@@ -51,6 +53,20 @@ jobs:
           key: kenpom-bt-${{ github.run_id }}
           restore-keys: |
             kenpom-bt-
+      - name: Restore ESPN cache (fallback)
+        if: hashFiles('.cache_cbb/days/*') == ''
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache_cbb
+          key: espn-cbb-breakdown-${{ github.run_id }}
+          restore-keys: |
+            espn-cbb-breakdown-
+            espn-cbb-
+      - name: Cache check
+        run: |
+          for d in .cache_cbb/days .cache_cbb/odds .cache_kenpom/fanmatch .cache_kenpom/archive .cache_box/box; do
+            echo "$d: $(ls $d 2>/dev/null | wc -l) files"
+          done
       - name: Restore box score cache
         uses: actions/cache/restore@v4
         with:
